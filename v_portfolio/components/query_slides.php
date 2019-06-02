@@ -1,9 +1,6 @@
 <?php
 
-$servername = "localhost";
-$username = "phpmyadmin";
-$password = "2020DofSM!";
-$dbname = "viscid";
+include("vcinfo.inc");
 
 //<img class="vcSlides" src="img_snowtops.jpg" style="width:100%">
 

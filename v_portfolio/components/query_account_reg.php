@@ -20,10 +20,7 @@ $date_created = date("Y-m-d H:i:s",$date_created);
 }*/
 
 
-$servername = "localhost";
-$username = "phpmyadmin";
-$password = "2020DofSM!";
-$dbname = "viscid";
+include("vcinfo.inc");
 
 //echo '{"order":';
 

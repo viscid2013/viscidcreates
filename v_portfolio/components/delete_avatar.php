@@ -5,11 +5,7 @@ if (isset($_SESSION['id'])){
 }
 
 //fetch file location of current avatar
-
-$servername = "localhost";
-$username = "phpmyadmin";
-$password = "2020DofSM!";
-$dbname = "viscid";
+include("vcinfo.inc");
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);

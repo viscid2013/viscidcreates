@@ -4,10 +4,7 @@ if (isset($_SESSION['id'])){
 	$oid = $_SESSION['id'];
 }
 
-$servername = "localhost";
-$username = "phpmyadmin";
-$password = "2020DofSM!";
-$dbname = "viscid";
+include("vcinfo.inc");
 
 //echo '{"order":';
 

@@ -18,10 +18,7 @@ $resultJSON = json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
 
 */
 
-$servername = "localhost";
-$username = "phpmyadmin";
-$password = "2020DofSM!";
-$dbname = "viscid";
+include("vcinfo.inc");
 
 //echo '{"order":';
 

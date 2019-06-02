@@ -15,10 +15,7 @@ if (isset($_REQUEST['mid'])){
 }*/
 
 
-$servername = "localhost";
-$username = "phpmyadmin";
-$password = "2020DofSM!";
-$dbname = "viscid";
+include("vcinfo.inc");
 
 //echo '{"order":';
 

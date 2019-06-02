@@ -36,10 +36,7 @@ $expires_year = $expires[1];
 }*/
 
 
-$servername = "localhost";
-$username = "phpmyadmin";
-$password = "2020DofSM!";
-$dbname = "viscid";
+include("vcinfo.inc");
 
 //echo '{"order":';
 

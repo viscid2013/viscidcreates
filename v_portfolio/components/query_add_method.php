@@ -30,10 +30,7 @@ if (isset($_REQUEST['expires_year'])){
 }*/
 
 
-$servername = "localhost";
-$username = "phpmyadmin";
-$password = "2020DofSM!";
-$dbname = "viscid";
+include("vcinfo.inc");
 
 //echo '{"order":';
 

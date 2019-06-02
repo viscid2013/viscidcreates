@@ -87,5 +87,5 @@
 					
 				</script>
 <?php
-include("../components/main_script.php");
+//include("../components/main_script.php");
 ?>
