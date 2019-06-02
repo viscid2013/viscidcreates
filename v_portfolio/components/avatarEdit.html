@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	
+	
+<style type="text/css">
+	
+	
+	.editAvatar{
+		
+	}
+	
+	.avatar{
+		border-radius: 50%;
+		overflow: hidden;
+		border: 1px solid #c00;
+	}
+	
+	.box{
+		border-radius: 50%;
+		overflow: hidden;
+		position: relative;
+		width: 50%;		/* desired width */
+		border: 1px solid #c00;
+	}
+	.box:before{
+		content: "";
+		display: block;
+		padding-top: 100%; 	/* initial ratio of 1:1*/
+	}
+	
+	.content{
+		position:  absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		/*background-image: url("../uploads/Captain_Caveman.jpg");
+		background-position: center;*/
+		background-repeat: no-repeat;
+		background-size: 100%;
+	}
+	
+	
+	</style>
+	
+<title>Test Avatar Edit</title>
+</head>
+
+<body>
+<!--<div id="" class="w3-container w3-col w3-half" style="position: relative; margin: 25%">-->
+	<div class="box">
+		<div id="acct_avatar" class="content">
+			<!--<img id="acct_avatar" class="editAvatar" alt="avatar" src="../uploads/benlogo.png" />-->
+		</div>
+	</div>
+<!--</div>-->	
+	
+	
+</body>
+</html>

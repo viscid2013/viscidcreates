@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="main_script.php" server="192.168.2.9//var/www/html/" local="132038051173569301" remote="132038051160000000" Dst="2" />
+<file name="query_inventory.php" server="192.168.2.9//var/www/html/" local="132019556394603692" remote="132019559570000000" Dst="2" />
+<file name="query_orders.php" server="192.168.2.9//var/www/html/" local="132035125185735967" remote="132035125170000000" Dst="2" />
+<file name="query_order_detail.php" server="192.168.2.9//var/www/html/" local="132024725383941622" remote="132024725390000000" Dst="2" />
+<file name="query_account_reg.php" server="192.168.2.9//var/www/html/" local="132036769657746581" remote="132036769690000000" Dst="2" />
+<file name="main_scriptJS.js" server="192.168.2.9//var/www/html/" local="132027350068690223" remote="132027350360000000" Dst="2" />
+<file name="vc_authenticate.php" server="192.168.2.9//var/www/html/" local="132029048493555854" remote="132029048470000000" Dst="2" />
+<file name="vc_loginform.php" server="192.168.2.9//var/www/html/" local="132029054934482314" remote="132029054910000000" Dst="2" />
+<file name="vc_logout.php" server="192.168.2.9//var/www/html/" local="132029080432666213" remote="132029080460000000" Dst="2" />
+<file name="upload.php" server="192.168.2.9//var/www/html/" local="132032527772786632" remote="132032527770000000" Dst="2" />
+<file name="uploadForm.php" server="192.168.2.9//var/www/html/" local="132032159604943350" remote="132032159600000000" Dst="2" />
+<file name="query_profile.php" server="192.168.2.9//var/www/html/" local="132033802590328043" remote="132033802590000000" Dst="2" />
+<file name="avatarEdit.html" server="192.168.2.9//var/www/html/" local="132032038881218982" remote="132032038870000000" Dst="2" />
+<file name="avatarEdit.php" server="192.168.2.9//var/www/html/" local="132034233206700682" remote="132034233210000000" Dst="2" />
+<file name="draggable_background.js" server="192.168.2.9//var/www/html/" local="132033495082882945" remote="132033502180000000" Dst="2" />
+<file name="query_update_avatar.php" server="192.168.2.9//var/www/html/" local="132034587552432767" remote="132034587590000000" Dst="2" />
+<file name="delete_avatar.php" server="192.168.2.9//var/www/html/" local="132034279417891461" remote="132034279410000000" Dst="2" />
+<file name="query_update_profile.php" server="192.168.2.9//var/www/html/" local="132036219143293219" remote="132036219150000000" Dst="2" />
+<file name="query_methods.php" server="192.168.2.9//var/www/html/" local="132034460090265235" remote="132034460070000000" Dst="2" />
+<file name="query_method_detail.php" server="192.168.2.9//var/www/html/" local="132034584239601815" remote="132034584230000000" Dst="2" />
+<file name="query_remove_method.php" server="192.168.2.9//var/www/html/" local="132036219257846856" remote="132036219260000000" Dst="2" />
+<file name="query_update_method.php" server="192.168.2.9//var/www/html/" local="132034760583873061" remote="132034760570000000" Dst="2" />
+<file name="query_add_method.php" server="192.168.2.9//var/www/html/" local="132035169320596501" remote="132035169320000000" Dst="2" />
+<file name="query_toggle_setting.php" server="192.168.2.9//var/www/html/" local="132036472369837230" remote="132036472390000000" Dst="2" />
+<file name="query_check_setting.php" server="192.168.2.9//var/www/html/" local="132037988142796807" remote="132037988130000000" Dst="2" />
+<file name="vc_slides.php" server="192.168.2.9//var/www/html/" local="132038708903120041" remote="132038708900000000" Dst="2" />
+<file name="query_slides.php" server="192.168.2.9//var/www/html/" local="132039064302806165" remote="132039064290000000" Dst="2" />
+</dwsync>

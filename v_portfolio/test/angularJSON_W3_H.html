@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+
+<meta charset="utf-8">
+<title>Angular JSON Test</title>
+	
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="../styles/vstyle_W3.css">
+	<link rel="stylesheet" href="../styles/vc_core/style.css">
+<link href="https://fonts.googleapis.com/css?family=Assistant:200,400" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1 {font-family: 'Assistant', sans-serif}
+img {margin-bottom: -7px}
+.w3-row-padding img {margin-bottom: 12px}
+</style>
+
+<body>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-top w3-theme-dark w3-animate-top w3-xxlarge" style="display:none;padding-top:50px; z-index: 3;" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-black w3-xxlarge w3-padding w3-display-topright" style="padding:6px 24px">
+    <i class="fa fa-remove"></i>
+  </a>
+  <div class="w3-bar-block w3-center">
+    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">About</a>
+    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Photos</a>
+    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Shop</a>
+    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Contact</a>
+  </div>
+</nav>	
+	
+<!-- Behind-Sidebar -->
+<a href="javascript:void(0)" onclick="w3_close()">
+	<nav id="transBackMain" class="w3-sidebar w3-top w3-white w3-animate-top w3-xxlarge w3-opacity-min" style="display:none;padding-top:150px; z-index: 2;"></nav>	
+</a> 
+	
+<!-- !PAGE CONTENT! -->
+<div class="w3-content" style="max-width:1500px">
+	
+<div class="w3-top" style="z-index: 1">
+	
+<!-- Header 3.0 -->
+	
+<div class="w3-bar w3-white">
+  <div class="w3-bar-item"><span class="w3-button w3-xlarge w3-white" onclick="w3_open()"><i class="fa fa-bars"></i></span></div>
+ 	<div class="w3-bar-item w3-button w3-xlarge w3-center w3-hide-small w3-hide-medium" style="width:35%">
+		<span><img src="../branding_icons/vc_logotype.svg" alt="viscid creates title image" style="width:100%" /></span>
+	</div>
+	<div class="w3-bar-item w3-button w3-xlarge w3-center w3-hide-large w3-hide-small" style="width:40%">
+		<span><img src="../branding_icons/vc_logotype.svg" alt="viscid creates title image" style="width:100%" /></span>
+	</div>
+	<div class="w3-bar-item w3-button w3-xlarge w3-center w3-hide-large w3-hide-medium" style="width:50%">
+		<span><img src="../branding_icons/vc_logotype.svg" alt="viscid creates title image" style="width:100%" /></span>
+	</div>
+  <div class="w3-bar-item w3-button w3-xlarge w3-right w3-hide-small">
+	  <a class="iconlink" href="javascript:void(0)" onclick="">
+	  	<span class="vcicon icon-cartvc"></span>
+	  </a>
+	</div>
+  <div class="w3-bar-item w3-button w3-xlarge w3-right">
+	  <a class="iconlink" href="javascript:void(0)" onclick="">
+	  	<span class="vcicon icon-accountvc"></span>
+	  </a>
+	</div>
+</div>
+	
+<!--<div class="w3-clear"></div>-->	
+<!-- Search and Filters -->	
+	
+	<div class="w3-row w3-padding w3-display-container" style="height:40px; box-shadow: 0px 2px 3px grey;">
+  		<div class="searchRow w3-half w3-display-left w3-padding-small w3-theme-l4" style="height:100%">
+			<span class="vcicon icon-searchvc" style="font-size: 120%"></span>
+			<input type="text" style="width:80%" />
+			<div class="w3-button w3-display-right w3-hide-large w3-hide-medium" style="height:100%">
+				<a class="iconlink" href="javascript:void(0)" onclick="filter_open()">
+					<span class="vcicon icon-filtervc"><span class="path1"></span><span class="path2"></span></span>
+				</a>
+			</div>
+		</div>
+  		<div class="w3-half w3-display-right w3-padding-small w3-theme-l5 w3-hide-small" style="height:100%">
+			<span class="w3-display-right" style="font-size: 120%;font-weight: 400">
+				Filter: 
+				4x6&nbsp;<input type="checkbox" />&nbsp;|&nbsp;
+				5x7&nbsp;<input type="checkbox" />&nbsp;|&nbsp;
+				11x17&nbsp;<input type="checkbox" />
+			</span>
+		</div>
+	</div>
+	
+<!-- Phone filter div -->
+	
+<div id="filtersMobile" class="w3-center w3-padding-small w3-margin-bottom w3-theme-l5 w3-hide-medium w3-hide-large w3-animate-left w3-card" style="height:50px;display: none;">
+			<span style="font-size: 120%;font-weight: 400">
+				Filter: 
+				4x6&nbsp;<input type="checkbox" />&nbsp;|&nbsp;
+				5x7&nbsp;<input type="checkbox" />&nbsp;|&nbsp;
+				11x17&nbsp;<input type="checkbox" />
+			</span>
+		</div>	
+
+	</div> <!-- end div top -->	
+	
+<!-- PHOTO GRID -->
+<div id="myGrid" class="w3-row" ng-app="myApp" ng-controller="inventoryCtrl" style="margin-top:120px;">
+
+<!-- image tiles -->
+  <div class="vcImageTile w3-third w3-card w3-display-container w3-hover-opacity w3-hover-theme" ng-repeat="x in title">
+	  
+	<div class="vcImageTileBar w3-theme-l3 w3-cell-row w3-opacity">
+		  <!--<div class="w3-container w3-cell"><img src="../branding_icons/Icon_favorites.svg" alt="favorites icon" />&nbsp;{{x.num_favs}}</div>-->
+		<div class="w3-container w3-cell"><span class="vcicon icon-favoritesvc"></span>&nbsp;{{x.num_favs}}</div>
+		  <div class="w3-container w3-cell"><span class="vcicon icon-commentsvc"></span>&nbsp;{{x.num_favs}}</div>
+		  <div class="w3-container w3-cell"><span class="vcicon icon-sharevc"></span></div>
+    </div><!-- end image tileBar -->
+	  
+		<div class="vcImage"> 
+			<a href="../images/{{ x.image_link }}" ><img src="../images/{{ x.image_link }}" alt="{{x.title}}"  style="width:100%" /></a>
+		</div> 
+	  <div class="vcImageTileName w3-display-topleft w3-theme-light w3-opacity-min w3-hide" style="width: 100%;">
+      <div class="">{{ x.title }}</div>
+    </div>
+
+  </div> <!-- end image tiles -->
+	
+</div>
+
+	</div><!-- END PAGE CONTENT -->
+	
+<script>
+var app = angular.module('myApp', []);
+app.controller('inventoryCtrl', function($scope, $http) {
+  $http.get("testSelectJSON3.php")
+  .then(function (response) {$scope.title = response.data.inventory;});
+});
+
+// Open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.width = "50%";
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("transBackMain").style.display = "block";
+  document.getElementById("transBackMain").style.width = "100%";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("transBackMain").style.display = "none";
+}
+	function filter_open(){
+		if( document.getElementById("filtersMobile").style.display == "none" ){
+		document.getElementById("filtersMobile").style.display = "block";
+		}//end if
+		else if( document.getElementById("filtersMobile").style.display == "block" ){
+				document.getElementById("filtersMobile").style.display = "none";
+		}//end else if
+	}//end filter_open
+
+	
+</script>
+	
+</body>
+</html>

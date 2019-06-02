@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Accordion - No auto height</title>
+  <!--<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">-->
+  <link rel="stylesheet" href="../styles/jquery-ui.theme.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="../styles/vstyle_W3.css">
+	<link rel="stylesheet" href="../styles/vc_accordion.css">
+	<link rel="stylesheet" href="../styles/vc_core/style.css">
+<link href="https://fonts.googleapis.com/css?family=Assistant:200,400" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1 {font-family: 'Assistant', sans-serif}
+img {margin-bottom: -7px}
+.w3-row-padding img {margin-bottom: 12px}
+</style>
+	
+  <script>
+  $( function() {
+    $( "#accordion" ).accordion({
+      heightStyle: "content",
+	  collapsible: true
+    });
+  } );
+  </script>
+</head>
+<body>
+ 
+<div id="accordion" class="acctAccordionContainer">
+  <h3 class="w3-block w3-border-bottom w3-border-theme w3-theme-l4 w3-left w3-padding-top">Profile</h3>
+  <div><!-- begin jquery accordion section div (equiv to panel from other accordion code) -->
+	  
+  <div class="w3-padding-24 w3-center" style="width: 85%">
+	<div class="w3-padding">
+			<img class="acct_profile_img w3-circle w3-hover-opacity" alt="round profile pic" src="../Accounts/Images/profileImg.jpg" />
+	</div>
+	<div class="w3-padding">
+		<div class="w3-bar">
+			<div class="vc_button_form vc_boxshadow w3-button w3-theme-l3" style="margin-right: 4px">Upload</div>
+			<div class="vc_button_form w3-button vc_boxshadow w3-theme-alertPink" style="margin-left: 4px">Delete</div>
+		</div>
+		<div style="font-size: 110%">Username:&nbsp;[username]</div>
+	</div>
+</div>
+	  
+<form class="w3-container w3-card w3-margin-bottom">
+	<h3>Update Personal Info</h3>
+	<p>
+		<label>First Name</label>
+		<input class="w3-input" type="text"></p>
+	<p>
+		<label>Last Name</label>
+		<input class="w3-input" type="text"></p>
+	<p>
+		<label>Email</label>
+		<input class="w3-input" type="text"></p>
+	<p>
+		<div class="w3-block w3-button vc_boxshadow w3-theme-action">Update</div></p>
+</form>	
+<form class="w3-container w3-card">
+	<h3>Update Password</h3>
+	<p>
+		<label>Current Password</label>
+		<input class="w3-input" type="text"></p>
+	<p>
+		<label>New Password</label>
+		<input class="w3-input" type="text"></p>
+	<p>
+		<label>Confirm New Password</label>
+		<input class="w3-input" type="text"></p>
+	<p>
+		<div class="w3-block w3-button vc_boxshadow w3-theme-action">Update</div></p>
+</form>	
+	  
+  </div><!-- end jquery accordion section div -->
+  <h3>Section 2</h3>
+  <div>
+    <p>Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In suscipit faucibus urna. </p>
+  </div>
+  <h3>Section 3</h3>
+  <div>
+    <p>Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis. Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui. </p>
+    <ul>
+      <li>List item</li>
+      <li>List item</li>
+      <li>List item</li>
+      <li>List item</li>
+      <li>List item</li>
+      <li>List item</li>
+      <li>List item</li>
+    </ul>
+  </div>
+</div>
+ 
+ 
+</body>
+</html>

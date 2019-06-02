@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="../styles/vstyle_W3.css">
+	
+<style type="text/css">
+	
+	body {
+		background-color: #ccc;
+	}
+
+	.box{
+		border-radius: 50%;
+		overflow: hidden;
+		position: relative;
+		width: 50%;		/* desired width */
+		border: 1px solid #c00;
+	}
+	.box:before{
+		content: "";
+		display: block;
+		padding-top: 100%; 	/* initial ratio of 1:1*/
+	}
+	
+	.content{
+		position:  absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		background-image: url("../uploads/Captain_Caveman.jpg");
+		/*background-position: center;*/
+		background-repeat: no-repeat;
+		background-size: 100%;
+	}
+	
+#contentId {
+  position: absolute;
+  z-index: 9;
+  background-color: #f1f1f1;
+  border: 1px solid #d3d3d3;
+  text-align: center;
+}
+
+#mydivheader {
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  background-color: #2196F3;
+  color: #fff;
+}
+	
+	</style>
+	
+<title>Test Avatar Edit</title>
+</head>
+
+<body>
+<div id="" class="panel w3-container" style="width: 50%; position: relative;">
+	<div class="box">
+		<div id="contentId" class="content">
+			<!--<img id="acct_avatar" class="editAvatar" alt="avatar" src="../uploads/benlogo.png" />-->
+		</div>
+	</div>
+</div>	
+	
+<script>
+// Make the DIV element draggable:
+dragElement(document.getElementById("contentId"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    // if present, the header is where you move the DIV from:
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    // otherwise, move the DIV from anywhere inside the DIV: 
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    // stop moving when mouse button is released:
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+	
+	</script>
+	
+</body>
+</html>

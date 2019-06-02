@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+
+<meta charset="utf-8">
+<title>Angular JSON Test</title>
+	
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="../styles/vstyle_W3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1 {font-family: "Montserrat", sans-serif}
+img {margin-bottom: -7px}
+.w3-row-padding img {margin-bottom: 12px}
+</style>
+
+<body>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-black w3-animate-top w3-xxlarge" style="display:none;padding-top:150px" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-black w3-xxlarge w3-padding w3-display-topright" style="padding:6px 24px">
+    <i class="fa fa-remove"></i>
+  </a>
+  <div class="w3-bar-block w3-center">
+    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">About</a>
+    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Photos</a>
+    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Shop</a>
+    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Contact</a>
+  </div>
+</nav>	
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-content" style="max-width:1500px">
+	
+<!-- Header -->
+<div class="w3-opacity">
+<span class="w3-button w3-xxlarge w3-white w3-left" onclick="w3_open()"><i class="fa fa-bars"></i></span> 
+<div class="w3-clear"></div>
+<header class="w3-center w3-margin-bottom">
+  <img src="../branding_icons/Logo_title.svg" alt="viscid creates title image" style="width:65%" />
+</header>
+	<div class="w3-row w3-padding w3-margin-bottom w3-display-container" style="height:35px">
+  		<div class="w3-half w3-display-left w3-padding-small w3-theme-l4" style="height:100%">
+			<img src="../branding_icons/Icon_search.svg" alt="search icon" style="height:100%;padding-bottom:3px;" />
+			<input type="text" />
+			<div class="w3-display-right w3-hide-large w3-hide-medium" style="height:100%">
+				<img src="../branding_icons/Icon_filter.svg" alt="filter icon" style="height:100%" />
+			</div>
+		</div>
+  		<div class="w3-half w3-display-right w3-padding-small w3-theme-l5 w3-hide-small" style="height:100%">
+			Filters: 
+			<img src="../branding_icons/Icon_filter.svg" alt="filter icon" style="height:100%" />
+		</div>
+	</div>
+</div>
+
+<!-- PHOTO GRID -->
+<div id="myGrid" class="w3-row" ng-app="myApp" ng-controller="inventoryCtrl">
+
+
+  <div class="w3-third" ng-repeat="x in title">
+    <!--<div>{{ x.title }}</div>-->
+    <!--<td>{{ x.image_link }}</td>-->
+	<a href="../images/{{ x.image_link }}" ><img src="../images/{{ x.image_link }}" alt="{{x.title}}"  style="width:80%" /></a>
+  </div>
+
+
+</div>
+
+	</div><!-- END PAGE CONTENT -->
+	
+<script>
+var app = angular.module('myApp', []);
+app.controller('inventoryCtrl', function($scope, $http) {
+  $http.get("testSelectJSON3.php")
+  .then(function (response) {$scope.title = response.data.inventory;});
+});
+
+// Open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.width = "50%";
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+	
+</script>
+	
+</body>
+</html>
