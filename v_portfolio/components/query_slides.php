@@ -25,10 +25,10 @@ try {
 			echo '<div class="w3-display-container vcSlides" style="font-size:130%;">
 				<input id="slide_' . $iid[$ii] . '" value="' . ($ii +1) . '" style="display: none;">
 			  <img id="slideImg_' . ($ii +1) . '" class="vcSlidesImg" src="../images/' . $img[$ii] . '" style="width:100%">
-			  <div class="w3-display-topleft w3-theme-l3 w3-opacity-min w3-padding w3-center w3-row" style="width: 100%;">
-				<div class="w3-third"><span class="vcicon icon-favoritesvc"></span>&nbsp;' . $favs[$ii] . '</div>
-				<div class="w3-third"><span class="vcicon icon-commentsvc"></span>&nbsp;' . $favs[$ii] . '</div>
-				<div class="w3-third"><span class="vcicon icon-sharevc"></span></div>
+			  <div class="w3-display-topleft w3-theme-l3 w3-opacity-min w3-padding w3-center w3-cell-row slidesBar" style="width: 100%;">
+				<div class="w3-cell"><span class="vcicon icon-favoritesvc"></span>&nbsp;' . $favs[$ii] . '</div>
+				<div class="w3-cell"><span class="vcicon icon-commentsvc"></span>&nbsp;' . $favs[$ii] . '</div>
+				<div class="w3-cell"><span class="vcicon icon-sharevc"></span></div>
 			  </div>
 			</div>';
 			
