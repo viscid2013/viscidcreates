@@ -1,4 +1,6 @@
-	<form name="vcLogin" class="w3-container w3-card w3-margin-bottom w3-margin-top w3-white" method="post" action="../components/vc_authenticate.php" ng-app="myAppl" ng-controller="validateCtrl" novalidate>
+	
+<body ng-app="myAppl">
+<form name="vcLogin" class="w3-container w3-card w3-margin-bottom w3-margin-top w3-white" method="post" action="../components/vc_authenticate.php" ng-controller="validateCtrl" novalidate>
 	<h3 id="loginHeader">Login or Register!</h3>
 	
 	<p><label>Email Address</label>
@@ -11,7 +13,7 @@
 		
 	<p>
 		<label>Password</label>
-		<input class="w3-input loginreg" type="password" id="vcpass" name="vcpass" ng-model="password" ng-minlength="6" required>
+		<input class="w3-input loginreg" type="password" id="vcpass" name="vcpass" ng-model="vcPass" ng-minlength="6" required>
 		<span class="w3-text-theme-required" ng-show="vcLogin.vcPass.$dirty && vcLogin.vcPass.$invalid">
 			<span ng-show="vcLogin.vcPass.$error.required">Password is required.</span>
 			<span ng-if="!vcLogin.vcPass.$valid">Min 6 characters</span>
@@ -67,3 +69,4 @@ appl.controller('validateCtrl', function($scope) {
 	$scope.vclast = '';
 });
 </script>
+</body>

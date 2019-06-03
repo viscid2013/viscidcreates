@@ -39,20 +39,22 @@ app.controller('paymethodsCtrl', function($scope, $http) {
 	
 /* end myfavsCtrl controller */
 
-/*app.controller('validateCtrl', function($scope) {
-	$scope.vcPass = '';
+app.controller('validateCtrl', function($scope) {
+	$scope.vcpass = '';
 	$scope.vcemail = '';
 	$scope.vcconfpw = '';
 	$scope.vcfirst = '';
 	$scope.vclast = '';
-});*/
+});
+	
+	/* end validateCtrl controller */
 	
 app.directive('matchPass', function() {
   return {
     require: 'ngModel',
     link: function(scope, element, attr, mCtrl) {
       function myValidation(value) {
-		  var pw1 = document.getElementById("vcPass").value;
+		  var pw1 = document.getElementById("vcpass").value;
         if (value == pw1) {
           mCtrl.$setValidity('match', true);
         } else {
@@ -151,9 +153,9 @@ if( menuid !== 'avatar_modal' && menuid !== 'edit_avatar_modal' && menuid !== 'd
   document.getElementById("transBackMain").style.width = "100%";
 }
 
-	if( menuid == 'loginSidebar' ){
+	/*if( menuid == 'loginSidebar' ){
 	   loadLogin('loginFormSidebar');
-	   }
+	   }*/
 }
 
 function w3_close(menuid) {
@@ -248,9 +250,13 @@ function yesnoReg(which){
 	var conf = document.getElementsByClassName("confShow");
 	var login = document.getElementsByClassName("loginShow");
 	var confPW = document.getElementById("vcConfPW");
+	var vcFirst = document.getElementById("vcFirst");
+	var vcLast = document.getElementById("vcLast");
 	
 	if( which == 'reg' ){
-		confPW.setAttribute('required','');
+		confPW.setAttribute('required','required');
+		vcFirst.setAttribute('required','required');
+		vcLast.setAttribute('required','required');
 	}
 	
 	for( var l=0; l < login.length; l++ ){
@@ -281,11 +287,12 @@ function cancelReg(){
 	for( var l=0; l < login.length; l++ ){
 		var ll = login[l];
 	   		ll.classList.remove("w3-hide");
+			
 	}
 	for( var c=0; c <conf.length; c++ ){
 		var cc = conf[c];
 		cc.classList.add("w3-hide");
-
+		cc.removeAttribute('required');
 	}
 	
 }
@@ -316,6 +323,19 @@ function loginregForm(which){
 		postAjax('../components/query_account_reg.php', formObj, function(data){ console.log(data); });
 	}//end if
 
+}
+	
+function clearMsg(){
+	var bl = document.getElementById("badlogin");	
+	var rm = document.getElementById("regMsg");
+	
+	if( bl.style.display != "none" ){
+	   bl.style.display = "none";
+	   }
+	if( rm.style.display != "none" ){
+	   rm.style.display = "none";
+	   }
+	
 }
 	
 function profileUpdateForm(which){
@@ -355,6 +375,33 @@ function postAjax(url, data, success) {
 														 //alert( xhr.responseText );
 														  showUpdate();
 														 }
+												  	  else if( xhr.responseText == "badpass" ){
+														var msgp = document.getElementById("badlogin");
+														  msgp.innerHTML = "Incorrect password entered.";
+														  msgp.style.display = "block";
+															  }
+												  
+												  	  else if( xhr.responseText == "baduser" ){
+														var msgu = document.getElementById("badlogin");
+														  msgu.innerHTML = "Incorrect username entered.";
+														  msgu.style.display = "block";
+															  }
+												  	  else if( xhr.responseText == "error" ){
+														var msgu = document.getElementById("badlogin");
+														  msgu.innerHTML = "There was an issue logging in.";
+														  msgu.style.display = "block";
+															  }
+												  	  else if( xhr.responseText == "newGood" ){
+														var msgng = document.getElementById("regMsg");
+														  msgng.innerHTML = "Thanks for registering! Please log in.";
+														  msgng.style.display = "block";
+														  cancelReg();
+															  }
+												  	  else if( xhr.responseText == "newBad" ){
+														var msgnb = document.getElementById("regMsg");
+														  msgnb.innerHTML = "Oops. Something went wrong. Please contact us!";
+														  msgnb.style.display = "block";
+															  }
 
 													  else{
 														  loadAcct( xhr.responseText );

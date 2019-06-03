@@ -8,7 +8,7 @@
 include("../header/vc_header_main.php");
 
 ?>		
-<body onload="loadLogin('loginAcctPg'); loadAvatar(); openAccordion(); noticeChecks();">
+<body onload="loadAvatar(); openAccordion(); noticeChecks();">
 
 <?php
 
@@ -19,7 +19,75 @@ if (!isset($_SESSION['loggedin'])) {
 ?>
 <div class="w3-container" style="margin-top: 150px;">
 	<div id="loginAcctPg" class="w3-container" style="margin: 0 auto">
-		<?php //include("../components/vc_loginform.php"); ?>
+		<!-- login form 
+	<form name="vcLogin" class="w3-container w3-card w3-margin-bottom w3-margin-top w3-white" method="post" action="../components/vc_authenticate.php" ng-controller="validateCtrl" novalidate>-->
+	<form name="vcLogin" id="vcLogin" class="w3-container w3-card w3-margin-bottom w3-margin-top w3-white" ng-controller="validateCtrl" novalidate>
+	<h3 id="loginHeader">Login or Register!</h3>
+	<div id="badlogin" class="w3-theme-alertPink" style="display: none;"></div>
+		<div id="regMsg" class="w3-text-theme" style="display: none;"></div>
+	<p><label>Email Address</label>
+	  <input onFocus="clearMsg()" class="w3-input loginreg" type="email" id="vcemail" name="vcemail" ng-model="email" required>
+	  <span class="w3-text-theme-required" ng-show="vcLogin.vcemail.$dirty && vcLogin.vcemail.$invalid">
+		  <span ng-show="vcLogin.vcemail.$error.required">Email is required.</span>
+		  <span ng-show="vcLogin.vcemail.$error.email">Invalid email address.</span>
+	  </span>
+	</p>
+		
+	<p>
+		<label>Password</label>
+		<input onFocus="clearMsg()" class="w3-input loginreg" type="password" id="vcpass" name="vcpass" ng-model="vcpass" ng-minlength="6" required>
+		<span class="w3-text-theme-required" ng-show="vcLogin.vcemail.$dirty && vcLogin.vcpass.$invalid">
+		  <span ng-show="vcLogin.vcpass.$error.required">Email is required.</span>
+			<span ng-if="!vcLogin.vcpass.$valid">Min 6 characters</span>
+  		</span>
+	</p>
+	<p class="w3-hide confShow w3-animate-zoom" id="confirmPW">
+		<label>Confirm Password</label>
+		<input id="vcConfPW" class="w3-input loginreg" type="password" name="vcconfpw" ng-model="vcconfpw" required match-pass>
+	  <span class="w3-text-theme-required" ng-show="vcLogin.vcconfpw.$dirty && vcLogin.vcconfpw.$invalid">
+		  <span ng-show="vcLogin.vcconfpw.$error.required">Please confirm password.</span>
+		  <span ng-if="!vcLogin.vcconfpw.$valid">Passwords must match.</span>
+	  </span>
+	</p>			
+	<p class="w3-hide confShow w3-animate-zoom" id="addFirst">
+		<label>First Name</label>
+		<input id="vcFirst" class="w3-input loginreg" type="text" name="vcfirst" ng-model="vcfirst" required>
+		<span class="w3-text-theme-required" ng-show="vcLogin.vcfirst.$dirty && vcLogin.vcfirst.$invalid">
+		 	<span ng-show="vcLogin.vcfirst.$error.required">First name is required.</span>
+	  </span>
+	</p>
+
+	<p class="w3-hide confShow w3-animate-zoom" id="addLast">
+		<label>Last Name</label>
+		<input id="vcLast" class="w3-input loginreg" type="text" name="vclast" ng-model="vclast" required>
+		<span class="w3-text-theme-required" ng-show="vcLogin.vclast.$dirty && vcLogin.vclast.$invalid">
+		  <span ng-show="vcLogin.vclast.$error.required">Last name is required.</span>
+	  </span>
+	</p>		
+	<p>
+		<div class="w3-row w3-center">
+			<div id="loginDiv" class="loginShow w3-half w3-container w3-margin-bottom">
+				<!--show if invalid - won't submit -->
+				<div class="w3-block w3-button vc_boxshadow w3-light-grey" style="cursor: not-allowed !important;" ng-show="vcLogin.vcemail.$dirty && vcLogin.vcemail.$invalid || vcLogin.vcpass.$dirty && vcLogin.vcpass.$invalid">Login</div>
+				<!--show if valid will submit -->
+				<div class="" ng-hide="vcLogin.vcemail.$dirty && vcLogin.vcemail.$invalid || vcLogin.vcpass.$dirty && vcLogin.vcpass.$invalid">
+					<div class="w3-block w3-button vc_boxshadow w3-theme-action" onClick="loginregForm('login')">Login</div>
+				</div>
+			</div>
+			<div id="registerDiv" class="loginShow w3-half w3-container">
+				<div class="w3-block w3-button vc_boxshadow w3-theme-action" onClick="yesnoReg('reg')">Register</div>
+			</div>
+			<div id="cancelDiv" class="confShow w3-half w3-container w3-hide" onClick="yesnoReg('cancel')">
+				<div class="w3-block w3-button vc_boxshadow w3-theme-action">Cancel</div>
+			</div>
+			<div id="confirmDiv" class="confShow w3-half w3-container w3-hide">
+				<div class="w3-block w3-button vc_boxshadow w3-grey" ng-show="vcLogin.vcemail.$dirty && vcLogin.vcemail.$invalid || vcLogin.vcPass.$dirty && vcLogin.vcPass.$invalid || vcLogin.vcconfpw.$invalid">Confirm</div>
+				<div class="w3-block w3-button vc_boxshadow w3-theme-action" ng-hide="vcLogin.vcemail.$dirty && vcLogin.vcemail.$invalid || vcLogin.vcPass.$dirty && vcLogin.vcPass.$invalid || vcLogin.vcconfpw.$invalid" onClick="loginregForm('reg')">Confirm</div>
+			</div>
+		</div>
+	</p>
+</form>
+	<!-- end login form -->
 	</div>
 </div>
 <?php

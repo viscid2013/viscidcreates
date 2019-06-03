@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="main_script.php" server="192.168.2.9//var/www/html/" local="132038051173569301" remote="132038051160000000" Dst="2" />
+<file name="main_script.php" server="192.168.2.9//var/www/html/" local="132040324691364671" remote="132040324680000000" Dst="2" />
 <file name="query_inventory.php" server="192.168.2.9//var/www/html/" local="132039614904316044" remote="132039614890000000" Dst="2" />
 <file name="query_orders.php" server="192.168.2.9//var/www/html/" local="132039615249420403" remote="132039615230000000" Dst="2" />
 <file name="query_order_detail.php" server="192.168.2.9//var/www/html/" local="132039615155455022" remote="132039615140000000" Dst="2" />
-<file name="query_account_reg.php" server="192.168.2.9//var/www/html/" local="132039614140844275" remote="132039614210000000" Dst="2" />
+<file name="query_account_reg.php" server="192.168.2.9//var/www/html/" local="132040329852398650" remote="132040329840000000" Dst="2" />
 <file name="main_scriptJS.js" server="192.168.2.9//var/www/html/" local="132027350068690223" remote="132027350360000000" Dst="2" />
-<file name="vc_authenticate.php" server="192.168.2.9//var/www/html/" local="132039616123584843" remote="132039616100000000" Dst="2" />
-<file name="vc_loginform.php" server="192.168.2.9//var/www/html/" local="132029054934482314" remote="132029054910000000" Dst="2" />
+<file name="vc_authenticate.php" server="192.168.2.9//var/www/html/" local="132039928284478758" remote="132039928270000000" Dst="2" />
+<file name="vc_loginform.php" server="192.168.2.9//var/www/html/" local="132039666144038367" remote="132039666130000000" Dst="2" />
 <file name="vc_logout.php" server="192.168.2.9//var/www/html/" local="132029080432666213" remote="132029080460000000" Dst="2" />
 <file name="upload.php" server="192.168.2.9//var/www/html/" local="132039616013511075" remote="132039615990000000" Dst="2" />
 <file name="uploadForm.php" server="192.168.2.9//var/www/html/" local="132032159604943350" remote="132032159600000000" Dst="2" />

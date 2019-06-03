@@ -9,9 +9,22 @@
   </a>
   <div class="w3-bar-block w3-center">
     <a href="vc_home.php" class="w3-bar-item w3-button w3-text-light-grey w3-hover-black">Home</a>
-    <a href="vc_account.php" class="w3-bar-item w3-button w3-text-light-grey w3-hover-black">Account</a>
-    <a href="#" class="w3-bar-item w3-button w3-text-light-grey w3-hover-black">Contact</a>
+	<a href="#" class="w3-bar-item w3-button w3-text-light-grey w3-hover-black">Contact</a>
 	<a href="vc_bio.php" class="w3-bar-item w3-button w3-text-light-grey w3-hover-black">Bio</a>
+	<?php if (!isset($_SESSION['loggedin'])) { ?>
+	<a href="vc_account.php" class="w3-bar-item w3-button w3-text-light-grey w3-hover-black">Log In</a>
+	  	<?php }
+
+	  else{
+	  ?>
+	<a href="vc_account.php" class="w3-bar-item w3-button w3-text-light-grey w3-hover-black">Account</a>
+	<a href="../components/vc_logout.php" class="w3-bar-item w3-button w3-text-light-grey w3-hover-black">Log Out</a>
+
+	  <?php     		  
+		  
+	  }
+	  
+	  ?>
   </div>
 </nav>	
 	
@@ -20,7 +33,9 @@
   <a href="javascript:void(0)" onclick="w3_close('loginSidebar')" class="w3-button w3-black w3-xlarge w3-padding w3-display-topright" style="padding:6px 24px">
     <i class="fa fa-remove"></i>
   </a>
-  <div id="loginFormSidebar" class="w3-container" style="width: 90%"><!-- login form loaded via AJAX --></div>
+  <div id="loginFormSidebar" class="w3-container" style="width: 90%">
+	  <!-- replace with account options if logged in? -->
+	</div>
 </nav>
 	
 <!-- Behind-Sidebars -->
@@ -45,16 +60,28 @@
   <div class="w3-bar-item w3-button w3-xlarge w3-right">
 	
 	<?php if (!isset($_SESSION['loggedin'])) { ?>
-	  <span class="vcicon icon-accountvc w3-hide-small w3-hide-medium" onClick="w3_open('loginSidebar','40%')"></span>
-	  <span class="vcicon icon-accountvc w3-hide-large w3-hide-small" onClick="w3_open('loginSidebar','75%')"></span>
-	  <span class="vcicon icon-accountvc w3-hide-large w3-hide-medium" onClick="w3_open('loginSidebar','90%')"></span>
+	  <a href="vc_account.php" class="iconlink">
+		  	<span class="vcicon icon-accountvc w3-hide-small w3-hide-medium"></span>
+		</a>
+	  <a href="vc_account.php" class="iconlink">
+	  		<span class="vcicon icon-accountvc w3-hide-large w3-hide-small"></span>
+		  </a>
+	  <a href="vc_account.php" class="iconlink">
+	  		<span class="vcicon icon-accountvc w3-hide-large w3-hide-medium"></span>
+	  </a>
 	<?php }
-	  
+
 	  else{
 	  ?>		
-	  <a class="iconlink" href="../components/vc_logout.php"><span class="vcicon icon-accountvc w3-hide-small w3-hide-medium w3-theme"></span></a>
-	  <a class="iconlink" href="../components/vc_logout.php"><span class="vcicon icon-accountvc w3-hide-large w3-hide-small w3-theme"></span></a>
-	  <a class="iconlink" href="../components/vc_logout.php"><span class="vcicon icon-accountvc w3-hide-large w3-hide-medium w3-theme"></span></a>
+	  <a href="vc_account.php" class="iconlink">
+		  	<span class="vcicon icon-accountvc w3-hide-small w3-hide-medium w3-text-theme"></span>
+		</a>
+	  <a href="vc_account.php" class="iconlink">
+	  		<span class="vcicon icon-accountvc w3-hide-large w3-hide-small w3-text-theme"></span>
+		  </a>
+	  <a href="vc_account.php" class="iconlink">
+	  		<span class="vcicon icon-accountvc w3-hide-large w3-hide-medium w3-text-theme"></span>
+	  </a>
 	  
 	<?php     		  
 		  

@@ -1,10 +1,10 @@
 <?php
 
-if (isset($_REQUEST['vcEmail'])){
-	$vcEmail = $_REQUEST['vcEmail'];
+if (isset($_REQUEST['vcemail'])){
+	$vcEmail = $_REQUEST['vcemail'];
 }
-if (isset($_REQUEST['vcPass'])){
-	$vcPass = $_REQUEST['vcPass'];
+if (isset($_REQUEST['vcpass'])){
+	$vcPass = $_REQUEST['vcpass'];
 	$vcPass = password_hash($vcPass, PASSWORD_ARGON2I);
 }
 if (isset($_REQUEST['vcFirst'])){
@@ -15,10 +15,11 @@ if (isset($_REQUEST['vcLast'])){
 }
 $date_created = mktime();
 $date_created = date("Y-m-d H:i:s",$date_created);
-/*else{
-	$vcEmail = "";
-}*/
 
+$bgPos = "center";
+$bgSize = "100%";
+
+$avatar_link = "../branding_icons/blankUser.svg";
 
 include("vcinfo.inc");
 
@@ -28,8 +29,8 @@ try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "INSERT INTO users (email, first, last, date_created)
-    VALUES ('" . $vcEmail . "', '" . $vcFirst . "', '" . $vcLast . "','" . $date_created . "')";
+    $sql = "INSERT INTO users (email, first, last, date_created, bgPos, bgSize, avatar_link)
+    VALUES ('" . $vcEmail . "', '" . $vcFirst . "', '" . $vcLast . "','" . $date_created . "', '" . $bgPos . "','" . $bgSize . "', '" . $avatar_link . "')";
     // use exec() because no results are returned
 	if( $conn->exec($sql) ){
 		$sql2 = "INSERT INTO access (uid, date_created)
@@ -57,11 +58,12 @@ try {
 		
 		
 	}
-    echo "New record created successfully";
+    echo "newGood";
     }
 catch(PDOException $e)
     {
-    echo $sql . "<br>" . $e->getMessage();
+    //echo $sql . "<br>" . $e->getMessage();
+	echo "newBad";
     }
 
 $conn = null;

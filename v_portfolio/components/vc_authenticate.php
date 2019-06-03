@@ -24,8 +24,9 @@ try {
 			
 	
 	//select by uid from access
-    $stmt = $conn->prepare("SELECT uid, upass FROM access WHERE uid = ". $uid ." LIMIT 1"); 
-	//$stmt->bindParam(':uid', $uid, PDO::PARAM_INT);
+    //$stmt = $conn->prepare("SELECT uid, upass FROM access WHERE uid = ". $uid ." LIMIT 1"); 
+	$stmt = $conn->prepare("SELECT uid, upass FROM access WHERE uid = :uid LIMIT 1"); 
+	$stmt->bindParam(':uid', $uid);
 		
 	$stmt->execute();
 	// Store the result so we can check if the account exists in the database.
@@ -40,8 +41,8 @@ try {
 	$result = $stmt->fetch(PDO::FETCH_ASSOC);
 		$id = $result['uid'];
 		$password = $result['upass'];
-		echo $id . "<br />";
-		echo $password;
+		//echo $id . "<br />";
+		//echo $password;
 		
 	// Account exists, now we verify the password.
 	// Note: remember to use password_hash in your registration file to store the hashed passwords.
@@ -53,16 +54,17 @@ try {
 		$_SESSION['id'] = $id;
 		echo "<script>window.location = '../pages/vc_account.php'</script>";
 	} else {
-		echo 'Incorrect password!';
+		echo 'badpass';
 	}
 } else {
-	echo 'Incorrect username!';
+	echo 'baduser';
 }
 	
 	
 }
 catch(PDOException $e) {
-    echo "Error: UID: ". $uid . " | " . $e->getMessage();
+    //echo "Error: UID: ". $uid . " | " . $e->getMessage();
+	echo "error";
 }
 $conn = null;
 
