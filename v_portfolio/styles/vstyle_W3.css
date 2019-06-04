@@ -66,10 +66,11 @@
 	.vcSlides {
 		display: none;
 	}
-	
+
+
 	.slideButton {
 		height: 100%;
-		opacity: 0.35;
+		opacity: 0.5;
 	}
 /* end - copied from v1.5 of vc_slides.php */
 .vcImageTileName {
@@ -251,7 +252,7 @@ input:checked + .tSlider:before {
 }
 	
 	.vcSlidesTile{
-		width: 100%;
+		width: 85%;
 	}
 	
 .vcImageTileBar {
