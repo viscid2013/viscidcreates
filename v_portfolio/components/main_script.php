@@ -368,7 +368,7 @@ function addToCart(aid){
 	   }
 	else{
 		var cartObj = '{"addId":"' + add + '","size":"' + size +'"}';
-		//alert( togObj );
+		alert( cartObj );
 		cartObj = JSON.parse(cartObj);
 	postAjax('../components/create_cart_session.php', cartObj, function(data){ console.log(data); });
 	}

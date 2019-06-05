@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="main_script.php" server="192.168.2.9//var/www/html/" local="132041988361021540" remote="132041988350000000" Dst="2" />
+<file name="main_script.php" server="192.168.2.9//var/www/html/" local="132042260899927203" remote="132042260900000000" Dst="2" />
 <file name="query_inventory.php" server="192.168.2.9//var/www/html/" local="132039614904316044" remote="132039614890000000" Dst="2" />
 <file name="query_orders.php" server="192.168.2.9//var/www/html/" local="132039615249420403" remote="132039615230000000" Dst="2" />
 <file name="query_order_detail.php" server="192.168.2.9//var/www/html/" local="132039615155455022" remote="132039615140000000" Dst="2" />
@@ -28,5 +28,5 @@
 <file name="vc_slides.php" server="192.168.2.9//var/www/html/" local="132038811044907948" remote="132039611500000000" Dst="2" />
 <file name="query_slides.php" server="192.168.2.9//var/www/html/" local="132041628814318340" remote="132041628810000000" Dst="2" />
 <file name="vcinfo.inc" server="192.168.2.9//var/www/html/" local="132039613798691335" remote="132039613940000000" Dst="2" />
-<file name="create_cart_session.php" server="192.168.2.9//var/www/html/" local="132041973713704506" remote="132041973720000000" Dst="2" />
+<file name="create_cart_session.php" server="192.168.2.9//var/www/html/" local="132042418967210798" remote="132042418990000000" Dst="2" />
 </dwsync>

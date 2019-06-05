@@ -30,7 +30,20 @@
 	
 <!-- Begin Cart Modal -->
 
-
+   <div id="cart_modal" class="w3-modal w3-animate-opacity">
+    <div id="cart_modal_content" class="w3-modal-content w3-card w3-animate-zoom w3-center" style="width: 40%;">
+	<header class="w3-container w3-theme">
+		<h3>Your Cart</h3>
+		<span onclick="document.getElementById('delete_avatar_modal').style.display='none'" class="w3-button w3-display-topright" style="font-size: 170%">&times;</span>
+	</header>
+      <div class="w3-bar">
+			<div class="vc_button_form vc_boxshadow w3-button w3-theme-l3" style="margin-right: 4px" onclick="document.getElementById('delete_avatar_modal').style.display='none'">CANCEL</div>
+		  	<a href="../components/delete_avatar.php">
+				<div class="vc_button_form w3-button vc_boxshadow w3-theme-alertPink" style="margin-left: 4px">Delete</div>
+			</a>
+		</div>
+    </div>
+  </div>
 
 <!-- End Cart Modal -->
 
@@ -50,8 +63,12 @@
 	</div>
   <div class="w3-bar-item w3-button w3-xlarge w3-right" style="position: relative;">
 	  <a class="iconlink" href="javascript:void(0)" onclick="">
-	<?php if ( isset($_SESSION['user_cart']) || isset($_SESSION['guest_cart']) ) { ?>
-		  <span class="w3-round w3-theme-d3" style="position: absolute; right: 2; bottom: 2; font-size: 60%; padding: 0px 2px 0px 2px">0</span>
+	<?php if ( isset($_SESSION['cart_items']) ) { 
+		
+			$cartNum = count($_SESSION['cart_items']);
+
+		  ?>
+		  <span class="w3-round w3-theme-d3" style="position: absolute; right: 2; bottom: 2; font-size: 60%; padding: 0px 2px 0px 2px"><?php echo $cartNum;  ?></span>
 	  	<span id="cartIcon" class="vcicon icon-cartvc w3-text-theme"></span>
 		 	<?php }
 
