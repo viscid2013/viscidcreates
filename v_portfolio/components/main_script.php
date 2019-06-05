@@ -360,6 +360,21 @@ function profileUpdateForm(which){
 
 }
 
+function addToCart(aid){
+	var add = aid;
+	var size = document.getElementById("size_"+add).value;
+	if(size == '' || size == undefined){
+	   alert("Please select a size");
+	   }
+	else{
+		var cartObj = '{"addId":"' + add + '","size":"' + size +'"}';
+		//alert( togObj );
+		cartObj = JSON.parse(cartObj);
+	postAjax('../components/create_cart_session.php', cartObj, function(data){ console.log(data); });
+	}
+	
+}
+	
 function postAjax(url, data, success) {
 
     var params = typeof data == 'string' ? data : Object.keys(data).map(
@@ -401,6 +416,13 @@ function postAjax(url, data, success) {
 														var msgnb = document.getElementById("regMsg");
 														  msgnb.innerHTML = "Oops. Something went wrong. Please contact us!";
 														  msgnb.style.display = "block";
+															  }
+												  	  else if( xhr.responseText == "cartGood" ){
+														alert("Added to cart");
+														  document.getElementById("cartIcon").classList.add("w3-text-theme")
+															  }
+												  	  else if( xhr.responseText == "cartBad" ){
+														alert("Cart BAD!");
 															  }
 
 													  else{

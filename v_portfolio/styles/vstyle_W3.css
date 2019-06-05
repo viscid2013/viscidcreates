@@ -22,6 +22,8 @@
 .w3-text-theme {color:#96669a !important}
 .w3-border-theme {border-color:#96669a !important}
 .w3-border-theme-l {border-color:#bfa3c2 !important}
+.w3-theme-trans .w3-theme-trans:visited {color:#4a334d !important; background-color: transparent !important}
+.w3-theme-trans:hover {color:#4a334d !important; background-color: transparent; opacity: 0.75 !important}
 
 .w3-hover-theme:hover {color:#fff !important; background-color:#96669a !important}
 .w3-hover-text-theme:hover {color:#96669a !important}
@@ -71,6 +73,7 @@
 	.slideButton {
 		height: 100%;
 		opacity: 0.5;
+		border: none;
 	}
 /* end - copied from v1.5 of vc_slides.php */
 .vcImageTileName {
@@ -191,7 +194,7 @@ input:checked + .tSlider:before {
 }
 	
 	.vcSlidesTile{
-		width: 55%;
+		width: 45%;
 	}
 	
 .vcImageTileBar {
@@ -252,7 +255,7 @@ input:checked + .tSlider:before {
 }
 	
 	.vcSlidesTile{
-		width: 85%;
+		width: 65%;
 	}
 	
 .vcImageTileBar {

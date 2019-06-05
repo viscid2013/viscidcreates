@@ -5,16 +5,14 @@
 	<header class="w3-container w3-theme">
 		<span onclick="document.getElementById('slides_modal').style.display='none'" class="w3-button w3-display-topright" style="font-size: 200%">&times;</span>
 	</header>
-		<div class="w3-content w3-display-container vcSlidesTile">
+		
+	<div class="w3-content w3-display-container vcSlidesTile">
 		
 	<?php include("../components/query_slides.php"); ?>
 
-		  <button class="w3-button w3-black w3-display-left slideButton" onclick="plusDivs(-1)">&#10094;</button>
-		  <button class="w3-button w3-black w3-display-right slideButton" onclick="plusDivs(1)">&#10095;</button>
+		  <button class="w3-button w3-black w3-display-left slideButton" onclick="plusDivs(-1)" style="z-index: 3; height: 98%">&#10094;</button>
+		  <button class="w3-button w3-black w3-display-right slideButton" onclick="plusDivs(1)" style="z-index: 3; height: 98%">&#10095;</button>
 		</div>
-
-
-
 		
 		</div><!-- end modal content div-->
 

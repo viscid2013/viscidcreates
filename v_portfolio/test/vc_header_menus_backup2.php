@@ -28,12 +28,16 @@
   </div>
 </nav>	
 	
-<!-- Begin Cart Modal -->
-
-
-
-<!-- End Cart Modal -->
-
+<!-- Sidebar - login -->
+<nav class="w3-sidebar w3-top w3-theme-dark w3-animate-top modalToHide w3-padding" style="display: none; font-size: 120%; padding-top: 50px; right:0; z-index: 4; margin: 0 auto;" id="loginSidebar">
+  <a href="javascript:void(0)" onclick="w3_close('loginSidebar')" class="w3-button w3-black w3-xlarge w3-padding w3-display-topright" style="padding:6px 24px">
+    <i class="fa fa-remove"></i>
+  </a>
+  <div id="loginFormSidebar" class="w3-container" style="width: 90%">
+	  <!-- replace with account options if logged in? -->
+	</div>
+</nav>
+	
 <!-- Behind-Sidebars -->
 <a href="javascript:void(0)" onclick="w3_close()">
 	<nav id="transBackMain" class="w3-sidebar w3-top w3-white w3-xxlarge w3-opacity-min" style="display:none;padding-top:150px; z-index: 2;"></nav>	
