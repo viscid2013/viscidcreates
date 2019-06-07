@@ -34,10 +34,27 @@
     <div id="cart_modal_content" class="w3-modal-content w3-card w3-animate-zoom w3-center" style="width: 40%;">
 	<header class="w3-container w3-theme">
 		<h3>Your Cart</h3>
-		<span onclick="document.getElementById('delete_avatar_modal').style.display='none'" class="w3-button w3-display-topright" style="font-size: 170%">&times;</span>
+		<span onclick="document.getElementById('cart_modal').style.display='none'" class="w3-button w3-display-topright" style="font-size: 170%">&times;</span>
 	</header>
+		<div id="cartContent" class="w3-container">
+		
+			<?php
+			/* if( isset( $_SESSION['id_sizes'] ) && isset( $_SESSION['cart_items']  )  ){
+				/*foreach( $_SESSION['id_sizes'] as $key=>$val ){
+				echo "<img id='cartImg_" . $key . "' src='' alt='img_thumb'> | Size ID: ". $val . "<br />";
+					}*/
+				 //echo "Hello?";
+				 //include("../components/query_cart_contents.php");
+			/* }
+			else{
+				echo "Your cart is empty";
+			}*/
+			
+			?>
+			
+		</div>
       <div class="w3-bar">
-			<div class="vc_button_form vc_boxshadow w3-button w3-theme-l3" style="margin-right: 4px" onclick="document.getElementById('delete_avatar_modal').style.display='none'">CANCEL</div>
+			<div class="vc_button_form vc_boxshadow w3-button w3-theme-l3" style="margin-right: 4px" >CANCEL</div>
 		  	<a href="../components/delete_avatar.php">
 				<div class="vc_button_form w3-button vc_boxshadow w3-theme-alertPink" style="margin-left: 4px">Delete</div>
 			</a>
@@ -62,19 +79,20 @@
 		<a class="iconlink" href="vc_home.php"><img class="logoTypeImage" src="../branding_icons/vc_logotype.svg" alt="viscid creates title image" /></a>
 	</div>
   <div class="w3-bar-item w3-button w3-xlarge w3-right" style="position: relative;">
-	  <a class="iconlink" href="javascript:void(0)" onclick="">
+	  <a class="iconlink" href="javascript:void(0)" onClick="loadPage('../components/query_cart_contents.php', updateCartContent)">
 	<?php if ( isset($_SESSION['cart_items']) ) { 
 		
 			$cartNum = count($_SESSION['cart_items']);
 
 		  ?>
-		  <span class="w3-round w3-theme-d3" style="position: absolute; right: 2; bottom: 2; font-size: 60%; padding: 0px 2px 0px 2px"><?php echo $cartNum;  ?></span>
+		  <span id="cartNumSpan" class="w3-round w3-theme-d3" style="position: absolute; right: 2; bottom: 2; font-size: 60%; padding: 0px 2px 0px 2px"><?php echo $cartNum;  ?></span>
 	  	<span id="cartIcon" class="vcicon icon-cartvc w3-text-theme"></span>
 		 	<?php }
 
 	  else{
 	  ?> 
-		<span id="cartIcon" class="vcicon icon-cartvc"></span>  
+		  <span id="cartNumSpan" class="w3-round w3-theme-d3" style="position: absolute; right: 2; bottom: 2; font-size: 60%; padding: 0px 2px 0px 2px"><?php echo $cartNum;  ?></span>
+	  	<span id="cartIcon" class="vcicon icon-cartvc"></span>
 	<?php     		  
 		  
 	  }

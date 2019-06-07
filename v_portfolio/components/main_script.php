@@ -148,7 +148,7 @@ function openAccordion(){
 function w3_open(menuid,size) {
   document.getElementById(menuid).style.width = size;
   document.getElementById(menuid).style.display = "block";
-if( menuid !== 'avatar_modal' && menuid !== 'edit_avatar_modal' && menuid !== 'delete_avatar_modal' ) {
+if( menuid !== 'avatar_modal' && menuid !== 'edit_avatar_modal' && menuid !== 'delete_avatar_modal' && menuid != 'cart_modal' ) {
   document.getElementById("transBackMain").style.display = "block";
   document.getElementById("transBackMain").style.width = "100%";
 }
@@ -368,11 +368,36 @@ function addToCart(aid){
 	   }
 	else{
 		var cartObj = '{"addId":"' + add + '","size":"' + size +'"}';
-		alert( cartObj );
+		//alert( cartObj );
 		cartObj = JSON.parse(cartObj);
 	postAjax('../components/create_cart_session.php', cartObj, function(data){ console.log(data); });
 	}
 	
+}
+	
+function loadPage(url, cFunction) {
+	
+  var xhttp;
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      cFunction(this);
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
+	
+}
+	
+function updateCartCount(xhttp){
+	var cCount = xhttp.responseText;
+	document.getElementById("cartNumSpan").innerHTML = cCount;
+}
+	
+function updateCartContent(xhttp){
+	var cContent = xhttp.responseText;
+	document.getElementById("cartContent").innerHTML = cContent;
+	w3_open('cart_modal','100%');
 }
 	
 function postAjax(url, data, success) {
@@ -418,8 +443,8 @@ function postAjax(url, data, success) {
 														  msgnb.style.display = "block";
 															  }
 												  	  else if( xhr.responseText == "cartGood" ){
-														alert("Added to cart");
-														  document.getElementById("cartIcon").classList.add("w3-text-theme")
+														  document.getElementById("cartIcon").classList.add("w3-text-theme");
+														 loadPage('../components/current_cart_count.php', updateCartCount);
 															  }
 												  	  else if( xhr.responseText == "cartBad" ){
 														alert("Cart BAD!");
