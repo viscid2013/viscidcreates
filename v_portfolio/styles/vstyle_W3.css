@@ -32,6 +32,8 @@
 .w3-theme-alertPink {color:#fff !important; background-color:#F0415B !important}
 .w3-text-theme-required {color:#F0415B !important; font-weight: bold;}
 
+.vcBold{ font-weight: bold; color: #333; }
+
 
 /* Other styles */
 
@@ -82,6 +84,13 @@
 
 .searchRow {
 	
+}
+
+.cartImgFrame{
+	height: 100px; 
+	width: 100px; 
+	overflow: hidden; 
+	border: 1px solid #ccc;
 }
 
 .iconlink {

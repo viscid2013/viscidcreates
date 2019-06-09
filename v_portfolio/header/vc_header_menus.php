@@ -80,9 +80,9 @@
 	</div>
   <div class="w3-bar-item w3-button w3-xlarge w3-right" style="position: relative;">
 	  <a class="iconlink" href="javascript:void(0)" onClick="loadPage('../components/query_cart_contents.php', updateCartContent)">
-	<?php if ( isset($_SESSION['cart_items']) ) { 
+	<?php if ( isset($_SESSION['id_sizes']) ) { 
 		
-			$cartNum = count($_SESSION['cart_items']);
+			$cartNum = count($_SESSION['id_sizes']);
 
 		  ?>
 		  <span id="cartNumSpan" class="w3-round w3-theme-d3" style="position: absolute; right: 2; bottom: 2; font-size: 60%; padding: 0px 2px 0px 2px"><?php echo $cartNum;  ?></span>

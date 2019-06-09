@@ -28,8 +28,8 @@
 <file name="vc_slides.php" server="192.168.2.9//var/www/html/" local="132038811044907948" remote="132039611500000000" Dst="2" />
 <file name="query_slides.php" server="192.168.2.9//var/www/html/" local="132041628814318340" remote="132041628810000000" Dst="2" />
 <file name="vcinfo.inc" server="192.168.2.9//var/www/html/" local="132039613798691335" remote="132039613940000000" Dst="2" />
-<file name="create_cart_session.php" server="192.168.2.9//var/www/html/" local="132043766324285612" remote="132043766320000000" Dst="2" />
-<file name="query_cart_contents.php" server="192.168.2.9//var/www/html/" local="132043764677570754" remote="132043764680000000" Dst="2" />
-<file name="current_cart_count.php" server="192.168.2.9//var/www/html/" local="132043769559090453" remote="132043769560000000" Dst="2" />
+<file name="create_cart_session.php" server="192.168.2.9//var/www/html/" local="132045471458225801" remote="132045471460000000" Dst="2" />
+<file name="query_cart_contents.php" server="192.168.2.9//var/www/html/" local="132045471242272672" remote="132045471240000000" Dst="2" />
+<file name="current_cart_count.php" server="192.168.2.9//var/www/html/" local="132045478945501085" remote="132045478940000000" Dst="2" />
 <file name="destroy.php" server="192.168.2.9//var/www/html/" local="132043766699810251" remote="132043766740000000" Dst="2" />
 </dwsync>
