@@ -205,6 +205,40 @@
 		</div>
 		</div>
 	
+	<!-- CART ITEM LISTING CODE -->
+	
+	<!-- BACKUP -->
+	
+echo $result[$key]['title'] . " | <div class='cartImgFrame'><img id='cartImg_" . $key . "' src='../images/" . $result[$key]['image_link'] . "' alt='cart thumbnail image' style='width: 100px' /></div>";
+	
+	<!-- repeating -->
+echo "<div class='w3-cell-row'>
+	<div class='w3-cell cartImgFrame'>
+		<img id='cartImg_" . $key . "' src='../images/" . $result[$key]['image_link'] . "' alt='cart thumbnail image' style='width: 100px' /></div>
+	<div class='w3-cell'>
+		<div>" . $result[$key]['title'] . "[SIZE] </div>
+	</div>
+	</div>";
+		<!-- non repeating -->
+		'<div>
+	<label>Shipping Method: </label>
+		<div>
+			<select class="w3-select w3-border" name="ship" id="ship">
+				<option value="ship1">Standard: 5-7 days</option>
+				<option value="ship2">Expedited: 2-3 days</option>
+				<option value="ship3">Lightspeed: 2 days ago</option>
+			</select>
+		</div>
+		<label>Shipping Method: </label>
+		<div>
+			<textarea class="w3-input w3-border" name="shipAddress"></textarea>
+		</div>
+		<div><label>Taxes &amp; Fees:</label><input type="text" class="w3-input" value=""></div>
+		<div><label>Total:</label><input type="text" class="w3-input" value=""></div>
+</div>';
+	
+echo $result[$key]['title'] . " | <div class='cartImgFrame'><img id='cartImg_" . $key . "' src='../images/" . $result[$key]['image_link'] . "' alt='cart thumbnail image' style='width: 100px' /></div>"	
+	
 	
 </body>
 </html>
