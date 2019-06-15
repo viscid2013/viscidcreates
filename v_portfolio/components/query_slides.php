@@ -23,7 +23,7 @@ try {
 			$iid[$ii] = $array[$ii]["iid"];
 			
 			echo '<div class="w3-cell vcSlides" style="font-size:130%; height: 100%">
-			<div class="w3-theme-l3 w3-padding w3-center w3-cell-row slidesBar" style="width: 100%; position: relative; z-index:4;">
+			<div class="w3-theme-l3 w3-padding w3-center w3-cell-row slidesBar" style="width: 100%; position: relative; z-index:1;">
 				<div class="w3-cell"><span class="vcicon icon-favoritesvc"></span>&nbsp;' . $favs[$ii] . '</div>
 				<div class="w3-cell"><span class="vcicon icon-commentsvc"></span>&nbsp;' . $favs[$ii] . '</div>
 				<div class="w3-cell"><span class="vcicon icon-sharevc"></span></div>
@@ -31,7 +31,7 @@ try {
 				<input id="slide_' . $iid[$ii] . '" value="' . ($ii +1) . '" style="display: none;">
 			  <img id="slideImg_' . ($ii +1) . '" class="vcSlidesImg" src="../images/' . $img[$ii] . '" style="width:100%">
 	
-			<div class="w3-cell-row w3-theme-l3 orderBar" style="width: 100%; position: relative; z-index:4; font-size:90%;">  
+			<div class="w3-cell-row w3-theme-l3 w3-hide-small orderBar" style="width: 100%; position: relative; z-index:1; font-size:90%;">  
 			<div class="w3-cell w3-padding" style="width: 75%">
 			  <select id="size_' . $iid[$ii] . '" class="w3-select w3-border" name="option">
 				  <option value="" disabled selected>Choose a size</option>
@@ -41,9 +41,10 @@ try {
 				</select>
 			</div>
 			<div class="w3-cell w3-padding" style="width: 25%">
-				<div class="w3-button w3-block w3-theme-action" onclick="addToCart(' . $iid[$ii] . ')">Add to Cart</div>
+				<div class="w3-button w3-block w3-theme-action" onclick="addToCart(' . $iid[$ii] . ',\'desk\')">Add to Cart</div>
 			</div>
-			</div>
+			</div>	
+			<div id="addToCartMsg_' . $iid[$ii] . '" class="w3-block w3-theme w3-padding addCartMsgs"></div>
 			</div>';
 			
 

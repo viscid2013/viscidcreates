@@ -1,15 +1,6 @@
 <?php
 
-/*
-{"inventory":[
-  { "id":"", "title":"", "image":"" },
-  { "id":"", "title":"", "image":"" },
-  { "id":"", "title":"", "image":"" }
-]}
 
-$resultJSON = json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
-
-*/
 
 include("vcinfo.inc");
 

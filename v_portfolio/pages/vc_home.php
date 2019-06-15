@@ -11,7 +11,7 @@ include("../header/vc_header_main.php");
 <body>
 
 <?php
-
+	
 include("../header/vc_header_menus.php");
 
 include("vc_photos.php");

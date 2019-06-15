@@ -228,6 +228,12 @@ function loadAvatar() {
 		document.getElementById('acct_first').value = acctObj.first;
 		document.getElementById('acct_last').value = acctObj.last;
 		document.getElementById('acct_email').value = acctObj.email;
+		document.getElementById('address1').value = acctObj.address1;
+		document.getElementById('address2').value = acctObj.address2;
+		document.getElementById('city').value = acctObj.city;
+		document.getElementById('state').value = acctObj.state;
+		document.getElementById('zip').value = acctObj.zip;
+		
     }
   };
   xhttp.open("GET", "../components/query_profile.php", true);
@@ -360,19 +366,111 @@ function profileUpdateForm(which){
 
 }
 
-function addToCart(aid){
+function addToCart(aid, mVd){
 	var add = aid;
-	var size = document.getElementById("size_"+add).value;
+	var mvd =  mVd;
+	if(mvd == "mobile"){
+	   	var size = document.getElementById("mSize_"+add).value;
+		var acm = document.getElementById("mAddToCartMsg_" + aid);
+	   }
+	else{
+		var size = document.getElementById("size_"+add).value;
+		var acm = document.getElementById("addToCartMsg_" + aid);
+	}
+	
 	if(size == '' || size == undefined){
-	   alert("Please select a size");
+	   //alert("Please select a size");
+		
+		acm.innerHTML = "Please select a size";
+		acm.style.display = "block";
+		acm.style.opacity = 1;
+		
+	  var opac = 1;
+
+		var id = setInterval(op, 75);
+
+		function op() {
+		  if (acm.style.opacity <= 0) {
+			  //alert("zero o!");
+			  acm.style.display = "none";
+			clearInterval(id);
+		  } else {
+			  //alert( "hey hey" );
+			opac -= 0.02;
+			 acm.style.opacity = opac;
+		  }
+		}
+		
 	   }
 	else{
 		var cartObj = '{"addId":"' + add + '","size":"' + size +'"}';
 		//alert( cartObj );
 		cartObj = JSON.parse(cartObj);
 	postAjax('../components/create_cart_session.php', cartObj, function(data){ console.log(data); });
+	showAndShrink("addToCartIndicator");
 	}
 	
+}
+	
+/*
+//add to cart backup
+function addToCart(aid){
+	var add = aid;
+	var size = document.getElementById("size_"+add).value;
+	if(size == '' || size == undefined){
+	   //alert("Please select a size");
+		var acm = document.getElementById("addToCartMsg");
+		acm.innerHTML = "Please select a size";
+		acm.style.display = "block";
+		acm.style.opacity = 1;
+		
+	  var opac = 1;
+
+		var id = setInterval(op, 75);
+
+		function op() {
+		  if (acm.style.opacity <= 0) {
+			  //alert("zero o!");
+			  acm.style.display = "none";
+			clearInterval(id);
+		  } else {
+			  //alert( "hey hey" );
+			opac -= 0.02;
+			 acm.style.opacity = opac;
+		  }
+		}
+		
+	   }
+	else{
+		var cartObj = '{"addId":"' + add + '","size":"' + size +'"}';
+		//alert( cartObj );
+		cartObj = JSON.parse(cartObj);
+	postAjax('../components/create_cart_session.php', cartObj, function(data){ console.log(data); });
+	showAndShrink("addToCartIndicator");
+	}
+	
+}
+*/
+	
+
+	
+function showAndShrink(el){
+	var elem = document.getElementById(el); 
+	elem.style.display = 'block';
+  	var sSize = 100;
+  	var id = setInterval(frame, 1);
+  	function frame() {
+    	if (sSize == 1) {
+      		clearInterval(id);
+			elem.style.display = 'none';
+			elem.style.height = '100%'; 
+      		elem.style.width = '100%';  
+    	} else {
+      		sSize--; 
+      	elem.style.height = sSize + '%'; 
+      	elem.style.width = sSize + '%'; 
+    	}
+  	}
 }
 	
 function loadPage(url, cFunction) {
@@ -397,7 +495,30 @@ function updateCartCount(xhttp){
 function updateCartContent(xhttp){
 	var cContent = xhttp.responseText;
 	document.getElementById("cartContent").innerHTML = cContent;
-	w3_open('cart_modal','100%');
+	var cModal = document.getElementById("cart_modal").style.display;
+	//if( cModal === "none" ){
+	  w3_open('cart_modal','100%'); 
+	   //}	
+}
+	
+function removeItem(xhttp) {
+	var conf = xhttp.responseText;
+	loadPage('../components/current_cart_count.php', updateCartCount);
+	loadPage('../components/query_cart_contents.php', updateCartContent);
+}
+	
+function paymentContent(which){
+	var payOrNo = which;
+	if( payOrNo == "pay" ){
+	document.getElementById("cartStep2").style.display = "block";
+	document.getElementById("cartStep1").style.display = "none";
+	document.getElementById("cartButtons1").style.display = "none";	
+	}
+	if( payOrNo == "nopay" ){
+	document.getElementById("cartStep2").style.display = "none";
+	document.getElementById("cartStep1").style.display = "block";
+	document.getElementById("cartButtons1").style.display = "block";
+	}
 }
 	
 function postAjax(url, data, success) {

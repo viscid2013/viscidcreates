@@ -3,7 +3,7 @@
 <!-- BEGIN SITEWIDE HEADER CONTENT -->
 
 <!-- Sidebar - menu -->
-<nav class="w3-sidebar w3-top w3-theme-d2 w3-animate-top w3-xlarge modalToHide" style="display:none;padding-top:50px; z-index: 4;" id="mySidebar">
+<nav class="w3-sidebar w3-top w3-theme-d2 w3-animate-top w3-xlarge modalToHide" style="display:none;padding-top:50px; z-index: 3;" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close('mySidebar')" class="w3-button w3-black w3-xlarge w3-padding w3-display-topright" style="padding:6px 24px">
     <i class="fa fa-remove"></i>
   </a>
@@ -31,33 +31,13 @@
 <!-- Begin Cart Modal -->
 
    <div id="cart_modal" class="w3-modal w3-animate-opacity">
-    <div id="cart_modal_content" class="w3-modal-content w3-card w3-animate-zoom w3-center" style="width: 40%;">
+    <div id="cart_modal_content" class="w3-modal-content w3-card w3-animate-zoom w3-center">
 	<header class="w3-container w3-theme">
 		<h3>Your Cart</h3>
 		<span onclick="document.getElementById('cart_modal').style.display='none'" class="w3-button w3-display-topright" style="font-size: 170%">&times;</span>
 	</header>
 		<div id="cartContent" class="w3-container">
-		
-			<?php
-			/* if( isset( $_SESSION['id_sizes'] ) && isset( $_SESSION['cart_items']  )  ){
-				/*foreach( $_SESSION['id_sizes'] as $key=>$val ){
-				echo "<img id='cartImg_" . $key . "' src='' alt='img_thumb'> | Size ID: ". $val . "<br />";
-					}*/
-				 //echo "Hello?";
-				 //include("../components/query_cart_contents.php");
-			/* }
-			else{
-				echo "Your cart is empty";
-			}*/
-			
-			?>
-			
-		</div>
-      <div class="w3-bar">
-			<div class="vc_button_form vc_boxshadow w3-button w3-theme-l3" style="margin-right: 4px" >CANCEL</div>
-		  	<a href="../components/delete_avatar.php">
-				<div class="vc_button_form w3-button vc_boxshadow w3-theme-alertPink" style="margin-left: 4px">Delete</div>
-			</a>
+				
 		</div>
     </div>
   </div>
@@ -69,7 +49,7 @@
 	<nav id="transBackMain" class="w3-sidebar w3-top w3-white w3-xxlarge w3-opacity-min" style="display:none;padding-top:150px; z-index: 2;"></nav>	
 </a> 
 	
-<div class="w3-top" style="z-index: 1">
+<div class="w3-top" style="z-index: 2">
 	
 <!-- Header 3.0 -->
 	
@@ -82,7 +62,9 @@
 	  <a class="iconlink" href="javascript:void(0)" onClick="loadPage('../components/query_cart_contents.php', updateCartContent)">
 	<?php if ( isset($_SESSION['id_sizes']) ) { 
 		
-			$cartNum = count($_SESSION['id_sizes']);
+			$cartNumR = count($_SESSION['id_sizes'],COUNT_RECURSIVE);
+			$cartNumA = count($_SESSION['id_sizes']);
+			$cartNum = ($cartNumR - $cartNumA);
 
 		  ?>
 		  <span id="cartNumSpan" class="w3-round w3-theme-d3" style="position: absolute; right: 2; bottom: 2; font-size: 60%; padding: 0px 2px 0px 2px"><?php echo $cartNum;  ?></span>

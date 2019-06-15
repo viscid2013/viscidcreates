@@ -33,6 +33,7 @@
 .w3-text-theme-required {color:#F0415B !important; font-weight: bold;}
 
 .vcBold{ font-weight: bold; color: #333; }
+.vcItalic{ font-style: italic; color: #333; }
 
 
 /* Other styles */
@@ -78,6 +79,24 @@
 		border: none;
 	}
 /* end - copied from v1.5 of vc_slides.php */
+
+.addCartMsgs {
+	display: none; 
+	position: absolute; 
+	bottom: 80px; 
+	z-index: 2;
+}
+
+.mAddCartMsgs {
+	display: none; 
+	position: absolute; 
+	bottom: 120px;
+	left: 0px;
+	z-index: 2;
+}
+
+
+
 .vcImageTileName {
 	
 }
@@ -178,7 +197,7 @@ input:checked + .tSlider:before {
 }
 
 .tSlider.round:before {
-  border-radius: 50%;
+  border-radius: 30%;
 }
 
 /* end slider switches */
@@ -244,6 +263,10 @@ input:checked + .tSlider:before {
 	width: 50%;
 }
 	
+#cart_modal_content{
+	width: 30%;
+}
+	
 }/* end large styles */
 
 /* Medium-specific styles */
@@ -303,6 +326,10 @@ input:checked + .tSlider:before {
 	width: 75%;
 }
 	
+#cart_modal_content{
+	width: 65%;
+}
+	
 }/* end medium styles */
 
 /* Small-specific styles */
@@ -320,6 +347,10 @@ input:checked + .tSlider:before {
 .vcImageTile {
 	width: 100%;  
 	height: auto;
+}
+	
+.vcSlidesTile{
+	width: 100%;
 }
 	
 .vcImageTileBar {
@@ -342,7 +373,7 @@ input:checked + .tSlider:before {
 	position: absolute;
 	top: 200px;
 	left: 0px;
-	z-index: 3;
+	z-index: 2;
 }
 	
 .acctAccordionContainer {
@@ -371,6 +402,10 @@ input:checked + .tSlider:before {
 	
 #loginAcctPg{
 	width: 100%;
+}
+	
+#cart_modal_content{
+	width: 90%;
 }
 	
 }/* end small styles */

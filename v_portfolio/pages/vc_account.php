@@ -181,6 +181,29 @@ else {
 		<label>Email</label>
 		<input class="w3-input profileupdate" type="text" name="acct_email" id="acct_email"></p>
 	<p>
+		<label>Addresss Line 1</label>
+		<input class="w3-input profileupdate" type="text" name="address1" id="address1"></p>
+	<p>
+		<label>Addresss Line 2</label>
+		<input class="w3-input profileupdate" type="text" name="address2" id="address2"></p>
+	<p>
+		<label>City</label>
+		<input class="w3-input profileupdate" type="text" name="city" id="city"></p>
+	<p>
+		<label>State</label>
+		<select class="w3-input profileupdate" type="text" name="state" id="state">
+		<?php
+		include("../components/site_arrays.php");
+			foreach($states as $key=>$val){
+				echo '<option value="' . $val . '">' . $key . "-" . $val . '</option>';
+			}
+		?>
+		</select>
+			</p>
+	<p>
+		<label>Zip Code</label>
+		<input class="w3-input profileupdate" type="text" name="zip" id="zip"></p>
+	<p>
 		<div class="w3-block w3-button vc_boxshadow w3-theme-action" onclick="profileUpdateForm('update')">Update</div></p>
 </form>	
 <form class="w3-container w3-card w3-margin-bottom">
@@ -325,7 +348,7 @@ else {
 
 <div id="Demo5" class="panel w3-container">
   <div class="w3-left w3-card w3-padding w3-margin-bottom" style="width: 100%">
-	  <div class="w3-row w3-third"><h3>Order Notifications</h3></div><div class="w3-row w3-twothird w3-text-theme"><span id="afterCheck" class=" w3-light-grey" style="opacity: 0; font-size: 85%;">Preference Updated</span></div>
+	  <div class="w3-row w3-third"><h3>Order Notifications</h3></div><div class="w3-row w3-twothird w3-text-theme"><span id="afterCheck" class="w3-light-grey" style="opacity: 0; font-size: 85%;">Preference Updated</span></div>
 	  		<div class="w3-padding w3-row" style="max-width: 800px;">
 				<div class="w3-half" style="color: #666666; font-size: 140%; font-weight: 400;">Email Notices:&nbsp;</div>
 				<div class="w3-half" style="color: #666666;">
