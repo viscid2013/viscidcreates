@@ -1,3 +1,18 @@
+	<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	
+<meta property="og:url"                content="http://beamcreates.com/v_portfolio/pages/vc_home.php" />
+<meta property="og:type"               content="images" />
+<meta property="og:title"              content="Viscid Creates" />
+<meta property="og:description"        content="Arts and such" />
+<meta property="og:image"              content="http://beamcreates.com/v_portfolio/images/" . $result["image_link"] />
+	
+<title>Viscid Creates</title>
+</head>
+<body>
+
 <?php
 
 // Program to display current page URL. 
@@ -37,20 +52,7 @@ try {
 	if( isset($_REQUEST['imgDiv']) ){
 		
 		?>
-	<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-	
-<meta property="og:url"                content="http://beamcreates.com/v_portfolio/pages/vc_home.php" />
-<meta property="og:type"               content="images" />
-<meta property="og:title"              content="Viscid Creates" />
-<meta property="og:description"        content="Arts and such" />
-<meta property="og:image"              content="http://beamcreates.com/v_portfolio/images/" . $result["image_link"] />
-	
-<title>Viscid Creates</title>
-</head>
-<body>
+
 <?php
 		echo "<img src='../v_portfolio/images/" . $result["image_link"] . "' alt='viscid creates image' title='" . $result["title"] . "' />";
 		
