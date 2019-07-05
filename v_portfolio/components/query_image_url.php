@@ -30,9 +30,9 @@ try {
 
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 	
-	$result = "http://beamcreates.com/v_portfolio/pages/vc_home.php";
+	$result = $link . "?imgDiv=yes";
 	
-	echo $result;
+	//echo $result;
 	
 	if( isset($_REQUEST['imgDiv']) ){
 		
