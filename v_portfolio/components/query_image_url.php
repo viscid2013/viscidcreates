@@ -35,7 +35,7 @@ try {
 	echo $result;
 	
 	if( isset($_REQUEST['imgDiv']) ){
-		echo "<img src='../v_portfolio/images/" . $result["image_link"] . "' alt='viscid creates image' />";
+		echo "<img src='../v_portfolio/images/" . $result["image_link"] . "' alt='viscid creates image' title='" . $result["title"] . "' />";
 	}
 }
 catch(PDOException $e) {
