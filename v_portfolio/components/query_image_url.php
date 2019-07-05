@@ -30,7 +30,7 @@ try {
 
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 	
-	$result = "http://beamcreates.com/v_portfolio/query_image_url.php?imgDiv=yes";
+	$result = "http://beamcreates.com/v_portfolio/pages/vc_home.php";
 	
 	echo $result;
 	
