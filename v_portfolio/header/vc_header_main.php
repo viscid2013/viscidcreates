@@ -4,6 +4,12 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 	
+<meta property="og:url"                content="http://beamcreates.com/v_portfolio/pages/vc_home.php" />
+<meta property="og:type"               content="images" />
+<meta property="og:title"              content="Viscid Creates" />
+<meta property="og:description"        content="Arts and such" />
+<meta property="og:image"              content="http://beamcreates.com/v_portfolio/branding_icons/Logo_symbol.png" />
+	
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="../styles/vstyle_W3.css">
