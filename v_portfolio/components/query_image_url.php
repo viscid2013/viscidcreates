@@ -46,6 +46,8 @@ try {
 <body>
 <?php
 		echo "<img src='../v_portfolio/images/" . $result["image_link"] . "' alt='viscid creates image' title='" . $result["title"] . "' />";
+		
+		echo "</body></html>";
 	}
 }
 catch(PDOException $e) {
@@ -56,5 +58,4 @@ $conn = null;
 
 
 ?>
-	</body>
-</html>
+
