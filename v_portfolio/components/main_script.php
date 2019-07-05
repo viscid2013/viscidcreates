@@ -380,27 +380,8 @@ function addToCart(aid, mVd){
 	
 	if(size == '' || size == undefined){
 	   //alert("Please select a size");
-		
-		acm.innerHTML = "Please select a size";
-		acm.style.display = "block";
-		acm.style.opacity = 1;
-		
-	  var opac = 1;
-
-		var id = setInterval(op, 75);
-
-		function op() {
-		  if (acm.style.opacity <= 0) {
-			  //alert("zero o!");
-			  acm.style.display = "none";
-			clearInterval(id);
-		  } else {
-			  //alert( "hey hey" );
-			opac -= 0.02;
-			 acm.style.opacity = opac;
-		  }
-		}
-		
+		var msg = "Please select a size"
+		blankEntryMsg( acm, msg );
 	   }
 	else{
 		var cartObj = '{"addId":"' + add + '","size":"' + size +'"}';
@@ -412,47 +393,31 @@ function addToCart(aid, mVd){
 	
 }
 	
-/*
-//add to cart backup
-function addToCart(aid){
-	var add = aid;
-	var size = document.getElementById("size_"+add).value;
-	if(size == '' || size == undefined){
-	   //alert("Please select a size");
-		var acm = document.getElementById("addToCartMsg");
-		acm.innerHTML = "Please select a size";
-		acm.style.display = "block";
-		acm.style.opacity = 1;
+function blankEntryMsg( msgDiv, msg ) {
+		var md = msgDiv;
+		var msg = msg;
+		md.innerHTML = msg;
+		md.style.display = "block";
+		md.style.opacity = 1;
 		
 	  var opac = 1;
 
 		var id = setInterval(op, 75);
 
 		function op() {
-		  if (acm.style.opacity <= 0) {
+		  if (md.style.opacity <= 0) {
 			  //alert("zero o!");
-			  acm.style.display = "none";
+			  md.style.display = "none";
 			clearInterval(id);
 		  } else {
 			  //alert( "hey hey" );
 			opac -= 0.02;
-			 acm.style.opacity = opac;
+			 md.style.opacity = opac;
 		  }
 		}
-		
-	   }
-	else{
-		var cartObj = '{"addId":"' + add + '","size":"' + size +'"}';
-		//alert( cartObj );
-		cartObj = JSON.parse(cartObj);
-	postAjax('../components/create_cart_session.php', cartObj, function(data){ console.log(data); });
-	showAndShrink("addToCartIndicator");
-	}
 	
 }
-*/
 	
-
 	
 function showAndShrink(el){
 	var elem = document.getElementById(el); 
@@ -472,6 +437,7 @@ function showAndShrink(el){
     	}
   	}
 }
+
 	
 function loadPage(url, cFunction) {
 	
@@ -485,6 +451,248 @@ function loadPage(url, cFunction) {
   xhttp.open("GET", url, true);
   xhttp.send();
 	
+}
+	
+function loadPage2(url, cFunction, a3, loc) {
+	var aaa = a3;
+	var loc = loc;
+  var xhttp;
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      cFunction(this, aaa, loc);
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
+	
+}
+
+function execSearch(xhttp){
+		var sContent = xhttp.responseText;
+	document.getElementById("myGrid").innerHTML = sContent;
+}
+
+	
+function filterSearch(){
+	var fvars;
+	fvars = "";
+	var fchecks = document.getElementsByClassName("sizeFilter");
+	var fLen = fchecks.length;
+	var i;
+	var fArray = [];
+	for( i = 0; i < fLen; i++ ){
+		if( fchecks[i].checked ) {
+			fArray.push(fchecks[i].value);
+		}
+	}
+	//alert(fArray);
+	
+	var search = document.getElementById("headerSearch").value;
+	
+	
+	if( fLen > 0){
+		fvars += fArray.join("_");
+	   }
+	else if( fLen < 1 ){
+		fvars = "";
+		}
+
+		var urlApp = '?search=' + search + "&filters=" + fvars;
+
+	
+	//alert(urlApp);
+	loadPage('../components/query_inventory.php' + urlApp, execSearch);
+	
+}
+
+function addFav(xhttp){
+		var favInfo = xhttp.responseText;
+	if( favInfo === "false" ){
+	   alert("Please log in to fav a pic!");
+	   }
+	else{
+	var favInfoA = favInfo.split("_");
+	var favNum = favInfoA[0];
+	var favId = favInfoA[1];
+
+	document.getElementById("favs_" + favId).innerHTML = favNum;
+	document.getElementById("mFavs_" + favId).innerHTML = favNum;
+	}	
+}
+	
+function fetchComments(loc,iid){
+	var lOc = loc;
+	var iId = iid;
+
+		loadPage2('../components/query_fetch_comments.php?iid=' + iId + '&loc=' + lOc, parseComments, iId, lOc);	
+}
+
+
+function commentCount( xhttp, cid ){
+	var cid = cid;
+	var cc = xhttp.responseText;
+	document.getElementById("cNumS_" + cid).innerHTML = cc;
+	document.getElementById("cNum_" + cid).innerHTML = cc;
+}
+
+function entryLimit( entry, wordLimit, cid ){
+	var entry = document.getElementById(entry).value;
+	var limit = Number(wordLimit);
+	var cid = cid;
+	
+	if( entry.length > limit ){
+	   	var msgDiv = document.getElementById("commentMsg_" + cid);
+		msgDiv.innerHTML = entry.length + "/" + limit;
+		msgDiv.style.display = "block";
+	   }
+	else{
+		msgDiv.style.display = "none";
+	}
+	
+}
+	
+function parseComments(xhttp,iid, loc){
+	var cInfo = xhttp.responseText;
+	var iid = iid;
+	var loc = loc;
+	//alert(cInfo.comments[0].comment);
+
+	   	
+	if(loc === 'm'){
+	   var cMain = document.getElementById("viewCommentsM_" + iid );
+		cMain.innerHTML = cInfo;
+		var under = document.getElementById("behindSlidesM_" + iid );
+		var inner = document.getElementById("vcImageTile_" + iid);
+		var innerH = inner.clientHeight;
+		//alert(innerH);
+		under.style.height = innerH + "px";
+		//cMain.style.height = innerH + "px";
+		under.style.display = "block";
+		cMain.style.display = "block";
+	   }
+	else if(loc === 's'){
+	   var cSlides = document.getElementById("viewCommentsS_" + iid );
+		cSlides.innerHTML = cInfo;
+		var under = document.getElementById("behindSlides_" + iid );
+		under.style.display = "block";
+		cSlides.style.display = "block";
+	   }
+		
+	//fetch viewComments class to hide if id no match
+	var commClass = document.getElementsByClassName("viewComments");
+	
+	for( var c = 0; c < commClass.length; c++ ){
+		if( commClass[c].id !== "viewCommentsM_" + iid && commClass[c].id !== "viewCommentsS_" + iid ){
+		   commClass[c].style.display = "none";
+		   }
+	}
+	
+		var shareClass = document.getElementsByClassName("viewShare");
+	
+	for( var s = 0; s < shareClass.length; s++ ){
+		   shareClass[s].style.display = "none";
+	}
+}
+	
+function addComment(addId, loc) {
+	var loc = loc;
+	var aidA = addId;
+	var aidB = aidA.split("_");
+	var aid = aidB[1];
+	loadPage2('../components/commentForm.php?c_iid=' + aid + "&loc=" + loc, enterComment, aid, loc);
+}
+
+function enterComment(xhttp, aid, loc) {
+	//alert(xhttp.responseText);
+	var loc = loc;
+	//var enterDiv = document.getElementById("commentDiv_" + aid);
+	var enterDiv = document.getElementById("commFormContainer_" + aid);
+	var buttDiv = document.getElementById("commentButton_" + aid);
+	enterDiv.innerHTML = xhttp.responseText;
+	var commText = document.getElementById("comment");
+	buttDiv.style.display = "none";
+	commText.focus();
+	
+}
+	
+	
+function postComment(cId,lOc){
+	var cid = cId;
+	var loc = lOc;
+	if( document.getElementById("comment").value === "" ) {
+	   //alert("You forgot to enter a comment!");
+		var msgDiv = document.getElementById("commentMsg_" + cid);
+		var msg = "You forgot to type your comment!";
+		blankEntryMsg( msgDiv, msg );
+	   }
+	else{
+	var formEls = document.getElementsByClassName("commClass_" + cid);
+	var formObj = {};
+	var objCont = '{';
+	for( var f=0; f < formEls.length; f++ ){
+		if( f < (formEls.length - 1) ){  
+			objCont += '"' + formEls[f].id + '":"' + formEls[f].value + '",';
+		   }
+		else{
+			objCont += '"' + formEls[f].id + '":"' + formEls[f].value + '"}';	
+		}
+		
+		//alert(formEls[f].value);
+	}
+	//alert(objCont);
+	formObj = JSON.parse(objCont);
+
+		postAjax('../components/query_add_comment.php', formObj, function(data){ console.log(data); });
+		
+	}//end else comment not blank
+}
+	
+function openShare( loc, sid, iid ){
+	var sid = sid;
+	var loc = loc;
+	var iid = iid;
+	
+	//loadPage2('../components/query_image_url.php?iid=' + sid + "&loc=" + loc + "&iid=" + iid, showShare, sid, loc);
+	window.open('../components/query_image_url.php?iid=' + sid + "&loc=" + loc + "&iid=" + iid, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=500,height=500");
+}
+	
+function showShare( xhttp, sid, loc ){
+	var img = xhttp.responseText;
+	var loc = loc;
+	var sid = sid;
+
+	var share = document.getElementById("share");
+	var shareBtn = document.getElementById(sid);
+	var pos = offset(shareBtn);
+	
+	var fbif = document.getElementById("fb_iframe");
+	fbif.src = "https://www.facebook.com/plugins/share_button.php?" + img + "&appId";
+	
+	var pin = document.getElementById("pinit").querySelector("a");
+	pin.href = "https://www.pinterest.com/pin/create/button/?url=" + img + "&description=Pin%20it!";
+	
+	share.style.display = "block";
+	var sW = share.offsetWidth;
+	share.style.top = pos.top + "px";
+	share.style.left = (pos.left - (sW - 20 ) ) + "px";
+
+	
+		//fetch viewComments class to hide 
+	var commClass = document.getElementsByClassName("viewComments");
+	
+	for( var c = 0; c < commClass.length; c++ ){
+		   commClass[c].style.display = "none";
+	}
+	
+	
+}
+
+function offset(el) {
+    var rect = el.getBoundingClientRect(),
+    scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
 }
 	
 function updateCartCount(xhttp){
@@ -532,7 +740,15 @@ function postAjax(url, data, success) {
     xhr.onreadystatechange = function() {
         if (xhr.readyState>3 && xhr.status==200) { success(xhr.responseText); 
 		
-													  if( xhr.responseText == "true" ){
+													  if( xhr.responseText.split("_")[0] == "commented" ){
+														 //alert( xhr.responseText );
+														 // alert(xhr.responseText.split("_")[2]);
+														  var cid = xhr.responseText.split("_")[1];
+														  var loc = xhr.responseText.split("_")[2];
+														  fetchComments(loc,cid);
+														  loadPage2('../components/query_comment_count.php?cid=' + cid, commentCount, cid, loc);
+														 }
+												  	  else if( xhr.responseText == "true" ){
 														 //alert( xhr.responseText );
 														  showUpdate();
 														 }
@@ -569,6 +785,12 @@ function postAjax(url, data, success) {
 															  }
 												  	  else if( xhr.responseText == "cartBad" ){
 														alert("Cart BAD!");
+															  }
+												  	  else if( xhr.responseText == "commented" ){
+														alert("Comment good!");
+															  }
+												  	  else if( xhr.responseText == "commentBad" ){
+														alert("Comment BAD!");
 															  }
 
 													  else{
@@ -667,6 +889,8 @@ var update = ud;
     }
   }	
 }
+
+
 
 function noticeChecks(){
 	

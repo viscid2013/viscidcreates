@@ -1,7 +1,3 @@
-<div id="share" class="w3-border w3-white w3-card w3-padding-small w3-center viewShare">
-		<?php include("../components/ShareBox.php"); ?>
-		</div>
-
 <!-- begin slideshow modal -->
 
    <div id="slides_modal" class="w3-modal w3-animate-opacity">
@@ -31,10 +27,7 @@
 <?php include('../components/query_inventory.php') ?>
 	
 </div>
-
-
 				<script>
-										
 				var slideIndex;
 				var currSlide;
 					
@@ -86,13 +79,3 @@
 				
 					
 				</script>
-				<?php
-
-					if( isset( $_REQUEST['imgOpen'] ) ) {
-						$imgOpenId = $_REQUEST['imgOpen'];
-						echo "<script>imgOpen('img_{$imgOpenId}');</script>";
-						//echo "<div onload='imgOpen({$imgOpenId})'></div>";
-					}
-
-
-				?>

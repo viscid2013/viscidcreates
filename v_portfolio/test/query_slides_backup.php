@@ -9,12 +9,12 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $stmt = $conn->prepare("SELECT iid, title, image_link, num_favs FROM inventory"); 
     $stmt->execute();
-	
+
     $array = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	
 	$count = $conn->query("SELECT count(*) FROM inventory")->fetchColumn();
 	
-	
+
 		for( $ii = 0; $ii < count($array); $ii++ ){
 			//echo $key . ": " . $value. "<br />";
 			$img[$ii] = $array[$ii]['image_link'];
@@ -22,22 +22,12 @@ try {
 			$favs[$ii] = $array[$ii]["num_favs"];
 			$iid[$ii] = $array[$ii]["iid"];
 			
-			//COMMENTS PER SLIDE
-			$stmt2[$ii] = $conn->prepare("SELECT * FROM comments WHERE iid = :iid"); 
-			$stmt2[$ii]->bindParam(':iid', $iid[$ii]);
-    		$stmt2[$ii]->execute();
-	
-    		$arrayC[$ii] = $stmt2[$ii]->fetchAll(PDO::FETCH_ASSOC);
-			
-			$countC[$ii] = $stmt2[$ii]->rowCount();
-			
-				
-			echo '<div class="w3-cell vcSlides" id="slideDiv_' . $iid[$ii] . '" style="font-size:130%; height: 100%; position: relative;">
-			<div class="viewComments" id="viewCommentsS_' . $iid[$ii] . '" style="display: none"></div>
-			<div id="behindSlides_' . $iid[$ii] . '" class="w3-white w3-opacity behindSlides" style="display: none; z-index: 2"></div>
+			echo '<div class="w3-cell vcSlides" style="font-size:130%; height: 100%">
+			<div id="enterCommentS" style="display: none"></div>
+			<div id="showCommentS" style="display: none"></div>
 			<div class="w3-theme-l3 w3-padding w3-center w3-cell-row slidesBar" style="width: 100%; position: relative; z-index:1;">
 				<div class="w3-cell" onClick="loadPage(\'../components/query_update_fav.php?iid=' . $iid[$ii] . '\', addFav)" style="cursor: pointer"><span class="vcicon icon-favoritesvc"></span>&nbsp;<span id="favs_' . $iid[$ii] . '">' . $favs[$ii] . '</span></div>
-				<div class="w3-cell" onClick="fetchComments(\'s\',\'' . $iid[$ii] . '\')"><span class="vcicon icon-commentsvc"></span>&nbsp;<span id="cNumS_' . $iid[$ii] . '">' . $countC[$ii] . '</span></div>
+				<div class="w3-cell" onClick="fetchComments(\'load\')"><span class="vcicon icon-commentsvc"></span>&nbsp;<span id="cNumS"></span></div>
 				<div class="w3-cell"><span class="vcicon icon-sharevc"></span></div>
 			  </div>
 				<input id="slide_' . $iid[$ii] . '" value="' . ($ii +1) . '" style="display: none;">

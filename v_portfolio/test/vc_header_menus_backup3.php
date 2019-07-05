@@ -1,8 +1,9 @@
+
 	
 <!-- BEGIN SITEWIDE HEADER CONTENT -->
 
 <!-- Sidebar - menu -->
-<nav class="w3-sidebar w3-top w3-theme-d2 w3-animate-top w3-xlarge modalToHide" id="mySidebar">
+<nav class="w3-sidebar w3-top w3-theme-d2 w3-animate-top w3-xlarge modalToHide" style="display:none;padding-top:50px; z-index: 3;" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close('mySidebar')" class="w3-button w3-black w3-xlarge w3-padding w3-display-topright" style="padding:6px 24px">
     <i class="fa fa-remove"></i>
   </a>
@@ -45,10 +46,10 @@
 
 <!-- Behind-Sidebars -->
 <a href="javascript:void(0)" onclick="w3_close()">
-	<nav id="transBackMain" class="w3-sidebar w3-top w3-white w3-xxlarge w3-opacity-min"></nav>	
+	<nav id="transBackMain" class="w3-sidebar w3-top w3-white w3-xxlarge w3-opacity-min" style="display:none;padding-top:150px; z-index: 2;"></nav>	
 </a> 
 	
-<div id="topHeader" class="w3-top">
+<div class="w3-top" style="z-index: 2">
 	
 <!-- Header 3.0 -->
 	
@@ -123,7 +124,7 @@
 	<div class="vc_boxshadow w3-row w3-padding w3-display-container" style="height:40px;">
   		<div class="searchRow w3-half w3-display-left w3-padding-small w3-theme-l4" style="height:100%">
 			<span class="vcicon icon-searchvc" style="font-size: 120%"></span>
-			<input id="headerSearch" onKeyUp="filterSearch()" type="text" style="width:80%" />
+			<input id="headerSearch" onKeyUp="loadPage('../components/query_inventory.php?search=' + this.value, execSearch)" type="text" style="width:80%" />
 			<div class="w3-button w3-display-right w3-hide-large w3-hide-medium" style="height:100%">
 				<a class="iconlink" href="javascript:void(0)" onclick="filter_open()">
 					<span class="vcicon icon-filtervc"><span class="path1"></span><span class="path2"></span></span>
@@ -133,9 +134,9 @@
   		<div class="w3-half w3-display-right w3-padding-small w3-theme-l5 w3-hide-small" style="height:100%">
 			<span class="w3-display-right" style="font-size: 120%;font-weight: 400">
 				Filter: 
-				4x6&nbsp;<input class="sizeFilter" onChange="filterSearch()" type="checkbox" value="0" />&nbsp;|&nbsp;
-				5x7&nbsp;<input class="sizeFilter" onChange="filterSearch()" type="checkbox" value="1" />&nbsp;|&nbsp;
-				11x17&nbsp;<input class="sizeFilter" onChange="filterSearch()" type="checkbox" value="2" />
+				4x6&nbsp;<input class="sizeFilter" onChange="getFilters()" type="checkbox" value="0" />&nbsp;|&nbsp;
+				5x7&nbsp;<input class="sizeFilter" onChange="getFilters()" type="checkbox" value="1" />&nbsp;|&nbsp;
+				11x17&nbsp;<input class="sizeFilter" onChange="getFilters()" type="checkbox" value="2" />
 			</span>
 		</div>
 	</div>
@@ -145,9 +146,9 @@
 <div id="filtersMobile" class="w3-center w3-padding-small w3-margin-bottom w3-theme-l5 w3-hide-medium w3-hide-large w3-animate-left w3-card" style="height:50px;display: none;">
 			<span style="font-size: 120%;font-weight: 400">
 				Filter: 
-				4x6&nbsp;<input class="sizeFilter" onChange="filterSearch()" type="checkbox" value="0" />&nbsp;|&nbsp;
-				5x7&nbsp;<input class="sizeFilter" onChange="filterSearch()" type="checkbox" value="1" />&nbsp;|&nbsp;
-				11x17&nbsp;<input class="sizeFilter" onChange="filterSearch()" type="checkbox" value="2" />
+				4x6&nbsp;<input type="checkbox" />&nbsp;|&nbsp;
+				5x7&nbsp;<input type="checkbox" />&nbsp;|&nbsp;
+				11x17&nbsp;<input type="checkbox" />
 			</span>
 		</div>	
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="main_script.php" server="192.168.2.9//var/www/html/" local="132050284463485558" remote="132050284450000000" Dst="2" />
-<file name="query_inventory.php" server="192.168.2.9//var/www/html/" local="132039614904316044" remote="132039614890000000" Dst="2" />
+<file name="main_script.php" server="192.168.2.9//var/www/html/" local="132067340312183965" remote="132067340300000000" Dst="2" />
+<file name="query_inventory.php" server="192.168.2.9//var/www/html/" local="132067298716386109" remote="132067298700000000" Dst="2" />
 <file name="query_orders.php" server="192.168.2.9//var/www/html/" local="132039615249420403" remote="132039615230000000" Dst="2" />
 <file name="query_order_detail.php" server="192.168.2.9//var/www/html/" local="132039615155455022" remote="132039615140000000" Dst="2" />
 <file name="query_account_reg.php" server="192.168.2.9//var/www/html/" local="132040329852398650" remote="132040329840000000" Dst="2" />
@@ -26,7 +26,7 @@
 <file name="query_toggle_setting.php" server="192.168.2.9//var/www/html/" local="132039615701894953" remote="132039615680000000" Dst="2" />
 <file name="query_check_setting.php" server="192.168.2.9//var/www/html/" local="132039614789247950" remote="132039614770000000" Dst="2" />
 <file name="vc_slides.php" server="192.168.2.9//var/www/html/" local="132038811044907948" remote="132039611500000000" Dst="2" />
-<file name="query_slides.php" server="192.168.2.9//var/www/html/" local="132050284274600859" remote="132050284260000000" Dst="2" />
+<file name="query_slides.php" server="192.168.2.9//var/www/html/" local="132063950723059650" remote="132063950710000000" Dst="2" />
 <file name="vcinfo.inc" server="192.168.2.9//var/www/html/" local="132039613798691335" remote="132039613940000000" Dst="2" />
 <file name="create_cart_session.php" server="192.168.2.9//var/www/html/" local="132045976174374765" remote="132047176090000000" Dst="2" />
 <file name="query_cart_contents.php" server="192.168.2.9//var/www/html/" local="132048563338725726" remote="132048563330000000" Dst="2" />
@@ -35,4 +35,13 @@
 <file name="site_arrays.php" server="192.168.2.9//var/www/html/" local="132047196801770087" remote="132047196810000000" Dst="2" />
 <file name="empty_cart.php" server="192.168.2.9//var/www/html/" local="132047677553752307" remote="132047677550000000" Dst="2" />
 <file name="remove_cart_item.php" server="192.168.2.9//var/www/html/" local="132048559845804698" remote="132048559830000000" Dst="2" />
+<file name="query_update_fav.php" server="192.168.2.9//var/www/html/" local="132054025035492902" remote="132054025030000000" Dst="2" />
+<file name="commentForm.php" server="192.168.2.9//var/www/html/" local="132063659419394601" remote="132063659410000000" Dst="2" />
+<file name="query_add_comment.php" server="192.168.2.9//var/www/html/" local="132060223538719111" remote="132060223530000000" Dst="2" />
+<file name="query_fetch_comments.php" server="192.168.2.9//var/www/html/" local="132064549409034602" remote="132064549390000000" Dst="2" />
+<file name="query_comment_count.php" server="192.168.2.9//var/www/html/" local="132061075785525366" remote="132061075760000000" Dst="2" />
+<file name="testCommentsLayout.html" server="192.168.2.9//var/www/html/" local="132063005511752935" remote="132063005510000000" Dst="2" />
+<file name="testShareBox.php" server="192.168.2.9//var/www/html/" local="132065324714585544" remote="132065324720000000" Dst="2" />
+<file name="ShareBox.php" server="192.168.2.9//var/www/html/" local="132067472319153611" remote="132067472310000000" Dst="2" />
+<file name="query_image_url.php" server="192.168.2.9//var/www/html/" local="132067935558982578" remote="132067935550000000" Dst="2" />
 </dwsync>

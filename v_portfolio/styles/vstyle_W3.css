@@ -40,6 +40,21 @@
 
 /* Size-Independent styles */
 
+#mySidebar{
+	display:none;
+	padding-top:50px; 
+	z-index: 5;
+}
+
+#transBackMain {
+	display:none;
+	padding-top:150px; 
+	z-index: 4;
+}
+
+#topHeader {
+	z-index: 4;
+}
 
 .vc_boxshadow{
 	box-shadow: 0px 2px 3px grey;
@@ -78,6 +93,13 @@
 		opacity: 0.5;
 		border: none;
 	}
+.behindSlides {
+	height: 100%; 
+	width: 100%; 
+	position: absolute; 
+}
+
+
 /* end - copied from v1.5 of vc_slides.php */
 
 .addCartMsgs {
@@ -95,7 +117,62 @@
 	z-index: 2;
 }
 
+.viewComments {
+	display: none; 
+	position: absolute; 
+	z-index: 3;
+	top: 0px; 
+	left: 0px;  
+	width: 100%; 
+	opacity: 0.9;
+}
 
+/*for testing */
+.viewComments1 {
+	position: absolute; 
+	top: 0px; 
+	left: 0px;  
+	width: 100%; 
+	opacity: 0.9;
+}
+
+.viewCommentsContainer {
+	width: 100%; 
+	position: relative;
+}
+
+.viewCommentsInner {
+	position: absolute; 
+	top: 35px; 
+	left: 0px; 
+	width: 100%; 
+	overflow: auto;
+}
+
+.viewShare {
+	width: 125px; 
+	margin: 4px; 
+	display: none;
+	position: absolute; 
+	top: 200px; 
+	left: 200px; 
+	z-index: 3;
+}
+
+.addCommentBtn {
+	position: absolute; 
+	bottom: 0px; 
+	left: 0px; 
+	width: 100%;
+	cursor: pointer;
+}
+
+.closeComments {
+	position: absolute; 
+	top: 0px; 
+	right: 0px;
+	padding: 2px 8px 2px 2px;
+}
 
 .vcImageTileName {
 	
@@ -247,6 +324,19 @@ input:checked + .tSlider:before {
 	overflow: hidden;
 	max-height: inherit;*/
 }
+
+.viewComments {
+	height: 350px; 
+	font-size: 95%;
+}
+	
+.viewCommentsContainer {
+	height: 250px; 
+}
+	
+.viewCommentsInner {
+	height: 180px; 
+}
 	
 #avatar_box_main{
 	min-height: 200px;
@@ -309,6 +399,19 @@ input:checked + .tSlider:before {
 	
 .acct_profile_img{
 	width: 25%;
+}
+	
+.viewComments {
+	height: 180px; 
+	font-size: 80%;
+}
+
+.viewCommentsContainer {
+	height: 180px; 
+}
+	
+.viewCommentsInner {
+	height: 100px; 
 }
 	
 #avatar_box_main{
@@ -385,6 +488,19 @@ input:checked + .tSlider:before {
 	width: 50%;
 }
 	
+.viewComments {
+	height: 300px; 
+	font-size: 100%;
+}
+
+.viewCommentsContainer {
+	height: 300px; 
+}
+	
+.viewCommentsInner {
+	height: 270px; 
+}
+
 #avatar_box_main{
 	min-height: 100px;
 	max-height: 100px;
