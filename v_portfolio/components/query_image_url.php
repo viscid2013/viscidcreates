@@ -41,7 +41,14 @@ try {
 <html>
 <head>
 <meta charset="utf-8">
-<title>Image</title>
+	
+<meta property="og:url"                content="http://beamcreates.com/v_portfolio/pages/vc_home.php" />
+<meta property="og:type"               content="images" />
+<meta property="og:title"              content="Viscid Creates" />
+<meta property="og:description"        content="Arts and such" />
+<meta property="og:image"              content="http://beamcreates.com/v_portfolio/images/" . $result["image_link"] />
+	
+<title>Viscid Creates</title>
 </head>
 <body>
 <?php
