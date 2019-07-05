@@ -21,7 +21,7 @@ try {
 
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 	
-	$result = urlencode($result["image_link"]);
+	$result = urlencode("../images/" . $result["image_link"]);
 	
 	echo $result;
 }
