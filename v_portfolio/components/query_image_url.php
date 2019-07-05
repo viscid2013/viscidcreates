@@ -30,11 +30,21 @@ try {
 
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 	
-	$result = "http://beamcreates.com/v_portfolio/components/query_image_url.php?imgDiv=yes";
+	$result = $link . "?imgDiv=yes";
 	
 	echo $result;
 	
 	if( isset($_REQUEST['imgDiv']) ){
+		
+		?>
+	<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Image</title>
+</head>
+<body>
+<?php
 		echo "<img src='../v_portfolio/images/" . $result["image_link"] . "' alt='viscid creates image' title='" . $result["title"] . "' />";
 	}
 }
@@ -46,3 +56,5 @@ $conn = null;
 
 
 ?>
+	</body>
+</html>
