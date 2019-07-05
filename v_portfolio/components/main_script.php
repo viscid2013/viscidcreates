@@ -653,24 +653,25 @@ function openShare( loc, sid, iid ){
 	var loc = loc;
 	var iid = iid;
 	
-	//loadPage2('../components/query_image_url.php?iid=' + sid + "&loc=" + loc + "&iid=" + iid, showShare, sid, loc);
-	window.open('../components/query_image_url.php?iid=' + sid + "&loc=" + loc + "&iid=" + iid, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=500,height=500");
+	loadPage2('../components/query_image_url.php?iid=' + sid + "&loc=" + loc + "&iid=" + iid, showShare, sid, loc);
+	//window.open('../components/query_image_url.php?iid=' + sid + "&loc=" + loc + "&iid=" + iid, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=500,height=500");
 }
 	
-function showShare( xhttp, sid, loc ){
+function showShare( xhttp, sid, loc){
 	var img = xhttp.responseText;
 	var loc = loc;
 	var sid = sid;
+	var iid = iid;
 
 	var share = document.getElementById("share");
 	var shareBtn = document.getElementById(sid);
 	var pos = offset(shareBtn);
 	
-	var fbif = document.getElementById("fb_iframe");
-	fbif.src = "https://www.facebook.com/plugins/share_button.php?" + img + "&appId";
+	var fbBtn = document.getElementById("fbBtn");
+	fbBtn.value = img;
 	
-	var pin = document.getElementById("pinit").querySelector("a");
-	pin.href = "https://www.pinterest.com/pin/create/button/?url=" + img + "&description=Pin%20it!";
+	//var pin = document.getElementById("pinit").querySelector("a");
+	//pin.href = "https://www.pinterest.com/pin/create/button/?url=" + img + "&description=Pin%20it!";
 	
 	share.style.display = "block";
 	var sW = share.offsetWidth;

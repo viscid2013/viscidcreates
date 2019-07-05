@@ -1,5 +1,40 @@
+<script>
+	
+
+	
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '960610207610265',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v3.3'
+    });
+  };
+	
+function doFB(val){
+	var val = val;
+	  FB.ui({
+  method: 'share_open_graph',
+  action_type: 'og.likes',
+  action_properties: JSON.stringify({
+    object: val,
+  })
+}, function(response){
+  // Debug response (optional)
+  console.log(response);
+});
+	
+}	  
+
+
+</script>
+<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+
+
 <div id="share" class="w3-border w3-white w3-card w3-padding-small w3-center viewShare">
-		<?php include("../components/ShareBox.php"); ?>
+		<?php //include("../components/ShareBox.php"); ?>
+		<div id="fbBtn" class="w3-padding w3-blue w3-button" value="" onclick="doFB(this.value)">Facebook!</div>
 		</div>
 
 <!-- begin slideshow modal -->
