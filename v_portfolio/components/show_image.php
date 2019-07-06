@@ -1,11 +1,13 @@
-<?php
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
 
-// Program to display current page URL. 
-  
-$link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 
-                "https" : "http") . "://" . $_SERVER['HTTP_HOST']; 
-  
-//echo $link; 
+<body>
+	
+<?php
 
 if (isset($_REQUEST['iid'])){
 	$iid = $_REQUEST['iid'];
@@ -18,8 +20,6 @@ else{
 include("vcinfo.inc");
 
 
-
-
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -29,18 +29,17 @@ try {
 
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 	
-	$result = $link . "/components/show_image.php?iid=" . $iid;
-	
-	//echo $result;
-	
+		
+		echo "<img src='../images/" . $result["image_link"] . "' alt='" . $result["title"] . "' title='" . $result["title"] . "' />";
 
 }
 catch(PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
-$conn = null;
-
-
-
+$conn = null;	
+	
 ?>
-
+	
+	
+</body>
+</html>
