@@ -29,7 +29,8 @@ try {
 
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 	
-	$result = $link . "/v_portfolio/components/show_image.php?iid=" . $iid;
+	//$result = $link . "/v_portfolio/components/show_image.php?iid=" . $iid;
+	$result = $link . "/v_portfolio/images/" . $result["image_link"];
 	
 	echo $result;
 	

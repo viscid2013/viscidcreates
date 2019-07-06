@@ -15,6 +15,7 @@ function doFB(val){
 	var val = val;
 	  FB.ui({
   method: 'share_open_graph',
+		  href: val,
   action_type: 'og.likes',
   action_properties: JSON.stringify({
     object: val,
