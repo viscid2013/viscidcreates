@@ -31,7 +31,7 @@ try {
 	
 	$result = $link . "/components/show_image.php?iid=" . $iid;
 	
-	//echo $result;
+	echo $result;
 	
 
 }
