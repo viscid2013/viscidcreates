@@ -28,7 +28,7 @@ try {
 <meta charset="utf-8">
 	
 <meta property="og:url"                content="http://beamcreates.com/v_portfolio/pages/vc_home.php" />
-<!--<meta property="og:type"               content="website" />-->
+<meta property="og:type"               content="website" />
 <meta property="og:title"              content="<?php echo $result['title']; ?>" />
 <meta property="og:description"        content="Arts and such" />
 <meta property="og:image"              content="http://beamcreates.com/v_portfolio/images/<?php echo $result['image_link']; ?>" />
@@ -39,7 +39,7 @@ try {
 <body>
 
 <?php
-		echo "<img src='../images/" . $result["image_link"] . "' alt='" . $result["title"] . "' title='" . $result["title"] . "' />";
+		echo "<img src='../images/" . $result["image_link"] . "' alt='" . $result["title"] . "' title='" . $result["title"] . "' style='width: 1080px' />";
 
 }
 catch(PDOException $e) {
