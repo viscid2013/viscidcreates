@@ -13,11 +13,20 @@
 	
 function doFB(val){
 	var val = val;
+	// Dynamically gather and set the FB share data. 
+    var FBDesc      = 'Yin Yanga';
+    var FBTitle     = 'Ana';
+    var FBPic       = 'http://beamcreates.com/v_portfolio/images/anaYang.png';
 	  FB.ui({
   method: 'share_open_graph',
   action_type: 'og.likes',
   action_properties: JSON.stringify({
-    object: val,
+    object: {
+              'og:url': val,
+              'og:title': FBTitle,
+              'og:description': FBDesc,
+              'og:image': FBPic
+              }
   })
 }, function(response){
   // Debug response (optional)
