@@ -5,7 +5,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 	
 <meta property="og:url"                content="http://beamcreates.com/v_portfolio/pages/vc_home.php" />
-<meta property="og:type"               content="images" />
+<meta property="og:type"               content="website" />
 <meta property="og:title"              content="Viscid Creates" />
 <meta property="og:description"        content="Arts and such" />
 <meta property="og:image"              content="http://beamcreates.com/v_portfolio/branding_icons/Logo_symbol.png" />
