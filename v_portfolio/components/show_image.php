@@ -1,12 +1,3 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Untitled Document</title>
-</head>
-
-<body>
-	
 <?php
 
 if (isset($_REQUEST['iid'])){
@@ -29,7 +20,25 @@ try {
 
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 	
-		
+?>
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	
+<meta property="og:url"                content="http://beamcreates.com/v_portfolio/pages/vc_home.php" />
+<meta property="og:type"               content="images" />
+<meta property="og:title"              content="<?php echo $result['title']; ?>" />
+<meta property="og:description"        content="Arts and such" />
+<meta property="og:image"              content="http://beamcreates.com/v_portfolio/images/<?php echo $result['image_link']; ?>" />
+	
+<title>Viscid Creates Images</title>
+</head>
+
+<body>
+
+<?php
 		echo "<img src='../images/" . $result["image_link"] . "' alt='" . $result["title"] . "' title='" . $result["title"] . "' />";
 
 }
