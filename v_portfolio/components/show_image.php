@@ -39,6 +39,12 @@ try {
 <body>
 
 <?php
+	
+	if( isset($_REQUEST['pinit']) ){
+		
+		echo '<a href="https://www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark"></a>';
+	}
+	
 		echo "<img src='../images/" . $result["image_link"] . "' alt='" . $result["title"] . "' title='" . $result["title"] . "' style='width: 1080px' />";
 
 }
@@ -49,6 +55,10 @@ $conn = null;
 	
 ?>
 	
-	
+<script
+    type="text/javascript"
+    async defer
+    src="//assets.pinterest.com/js/pinit.js"
+></script>	
 </body>
 </html>

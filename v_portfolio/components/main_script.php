@@ -674,8 +674,8 @@ function showShare( xhttp, sid, loc){
 	var tumbBtn = document.getElementById("tumBtn");
 	tumbBtn.value = img;
 	
-	//var pin = document.getElementById("pinit").querySelector("a");
-	//pin.href = "https://www.pinterest.com/pin/create/button/?url=" + img + "&description=Pin%20it!";
+	var pin = document.getElementById("pinBtn");
+	pin.value = img;
 	
 	share.style.display = "block";
 	var sW = share.offsetWidth;

@@ -32,6 +32,11 @@ function doTumb(tVal){
 	window.open('http://tumblr.com/widgets/share/tool?canonicalUrl=' + tval, "_blank", "toolbar=yes,scrollbars=yes,top=100,left=100,width=540,height=600");
 }
 	
+function doPin(pVal){
+	var pval = pVal;
+	window.open(pval, "_blank", "toolbar=yes,scrollbars=yes,top=100,left=100,width=540,height=600");
+}
+	
 
 </script>
 <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
@@ -42,6 +47,7 @@ function doTumb(tVal){
 		<?php //include("../components/ShareBox.php"); ?>
 		<div id="fbBtn" class="w3-padding w3-blue w3-button" value="" onclick="doFB(this.value)">Facebook!</div>
 		<div id="tumBtn" class="w3-padding w3-teal w3-button" value="" onclick="doTumb(this.value)">Tumblr!</div>
+		<div id="pinBtn" class="w3-padding w3-red w3-button" value="" onclick="doPin(this.value)">Tumblr!</div>
 		</div>
 
 <!-- begin slideshow modal -->
