@@ -18,7 +18,7 @@ function doFB(val){
 		  href: val,
   action_type: 'og.likes',
   action_properties: JSON.stringify({
-    object: "http://beamcreates.com/v_portfolio/components/show_image.php?iid=6",
+    object: val,
   })
 }, function(response){
   // Debug response (optional)

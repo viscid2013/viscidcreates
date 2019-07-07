@@ -8,7 +8,7 @@
 <meta property="og:type"               content="website" />
 <meta property="og:title"              content="Viscid Creates" />
 <meta property="og:description"        content="Arts and such" />
-<meta property="og:image"              content="http://beamcreates.com/v_portfolio/images/anaYang.png" />
+<meta property="og:image"              content="http://beamcreates.com/v_portfolio/branding_icons/vc_logoSymbol_PNG.png" />
 	
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
