@@ -126,7 +126,7 @@ try {
 		<div id="behindSlidesM_<?php echo $result[$i]['iid']; ?>" class="w3-theme-l3 w3-opacity behindSlides" style="display: none; z-index: 2;"></div>
 		<div class="w3-container w3-cell" style="cursor: pointer;" onClick="loadPage('../components/query_update_fav.php?iid=<?php echo $result[$i]['iid']; ?>', addFav)"><span class="vcicon icon-favoritesvc"></span>&nbsp;<span id="mFavs_<?php echo $result[$i]['iid']; ?>"><?php echo $result[$i]['num_favs']; ?></span></div>
 		  <div class="w3-container w3-cell" onClick="fetchComments('m','<?php echo $result[$i]['iid']; ?>')" style="cursor: pointer"><span class="vcicon icon-commentsvc"></span>&nbsp;<span id="cNum_<?php echo $result[$i]['iid']; ?>"><?php echo $cCount[$i]; ?></span></div>
-		  <div id="shareButt_<?php echo $result[$i]['iid']; ?>" class="w3-container w3-cell" onClick="openShare('m', this.id, '<?php echo $result[$i]['iid']; ?>')"><span class="vcicon icon-sharevc"></span></div>
+		  <div id="shareButt_<?php echo $result[$i]['iid']; ?>" class="w3-container w3-cell" onClick="openShare('m', this.id, '<?php echo $result[$i]['iid']; ?>', 'tumb')"><span class="vcicon icon-sharevc"></span></div>
     </div><!-- end image tileBar -->
 	  
 		<div class="vcImage"> 

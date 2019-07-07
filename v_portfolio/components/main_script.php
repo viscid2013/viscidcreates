@@ -652,6 +652,7 @@ function openShare( loc, sid, iid ){
 	var sid = sid;
 	var loc = loc;
 	var iid = iid;
+	var sm = sm;
 	
 	loadPage2('../components/query_image_url.php?iid=' + sid + "&loc=" + loc + "&iid=" + iid, showShare, sid, loc);
 	//window.open('../components/query_image_url.php?iid=' + sid + "&loc=" + loc + "&iid=" + iid, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=500,height=500");
@@ -669,6 +670,9 @@ function showShare( xhttp, sid, loc){
 	
 	var fbBtn = document.getElementById("fbBtn");
 	fbBtn.value = img;
+	
+	var tumbBtn = document.getElementById("tumbBtn");
+	tumbBtn.value = img;
 	
 	//var pin = document.getElementById("pinit").querySelector("a");
 	//pin.href = "https://www.pinterest.com/pin/create/button/?url=" + img + "&description=Pin%20it!";
@@ -688,6 +692,7 @@ function showShare( xhttp, sid, loc){
 	
 	
 }
+	
 
 function offset(el) {
     var rect = el.getBoundingClientRect(),

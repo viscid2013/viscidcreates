@@ -27,6 +27,11 @@ function doFB(val){
 	
 }	  
 
+function doTumb(tVal){
+	var tval = tVal;
+	window.open('http://tumblr.com/widgets/share/tool?canonicalUrl=http://beamcreates.com/v_portfolio/images/' + tval, "_blank", "toolbar=yes,scrollbars=yes,top=100,left=100,width=540,height=600");
+}
+	
 
 </script>
 <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
@@ -36,6 +41,7 @@ function doFB(val){
 <div id="share" class="w3-border w3-white w3-card w3-padding-small w3-center viewShare">
 		<?php //include("../components/ShareBox.php"); ?>
 		<div id="fbBtn" class="w3-padding w3-blue w3-button" value="" onclick="doFB(this.value)">Facebook!</div>
+		<div id="tumBtn" class="w3-padding w3-teal w3-button" value="" onclick="doTumb(this.value)">Tumblr!</div>
 		</div>
 
 <!-- begin slideshow modal -->
@@ -132,3 +138,4 @@ function doFB(val){
 
 
 				?>
+<script id="tumblr-js" async src="https://assets.tumblr.com/share-button.js"></script>
