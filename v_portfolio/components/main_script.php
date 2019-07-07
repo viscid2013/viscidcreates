@@ -453,14 +453,15 @@ function loadPage(url, cFunction) {
 	
 }
 	
-function loadPage2(url, cFunction, a3, loc) {
+function loadPage2(url, cFunction, a3, loc, iid) {
 	var aaa = a3;
 	var loc = loc;
+	var iid = iid;
   var xhttp;
   xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      cFunction(this, aaa, loc);
+      cFunction(this, aaa, loc, iid);
     }
   };
   xhttp.open("GET", url, true);
@@ -525,7 +526,7 @@ function fetchComments(loc,iid){
 	var lOc = loc;
 	var iId = iid;
 
-		loadPage2('../components/query_fetch_comments.php?iid=' + iId + '&loc=' + lOc, parseComments, iId, lOc);	
+		loadPage2('../components/query_fetch_comments.php?iid=' + iId + '&loc=' + lOc, parseComments, iId, lOc, iId);	
 }
 
 
@@ -600,7 +601,7 @@ function addComment(addId, loc) {
 	var aidA = addId;
 	var aidB = aidA.split("_");
 	var aid = aidB[1];
-	loadPage2('../components/commentForm.php?c_iid=' + aid + "&loc=" + loc, enterComment, aid, loc);
+	loadPage2('../components/commentForm.php?c_iid=' + aid + "&loc=" + loc, enterComment, aid, loc, aid);
 }
 
 function enterComment(xhttp, aid, loc) {
@@ -652,13 +653,12 @@ function openShare( loc, sid, iid ){
 	var sid = sid;
 	var loc = loc;
 	var iid = iid;
-	var sm = sm;
 	
-	loadPage2('../components/query_image_url.php?iid=' + sid + "&loc=" + loc + "&iid=" + iid, showShare, sid, loc);
+	loadPage2('../components/query_image_url.php?iid=' + sid + "&loc=" + loc + "&iid=" + iid, showShare, sid, loc, iid);
 	//window.open('../components/query_image_url.php?iid=' + sid + "&loc=" + loc + "&iid=" + iid, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=500,height=500");
 }
 	
-function showShare( xhttp, sid, loc){
+function showShare( xhttp, sid, loc, iid){
 	var img = xhttp.responseText;
 	var loc = loc;
 	var sid = sid;
@@ -675,7 +675,7 @@ function showShare( xhttp, sid, loc){
 	tumbBtn.value = img;
 	
 	var pin = document.getElementById("pinBtn");
-	pin.value = img;
+	pin.value = "../components/show_image.php?iid=" + iid;
 	
 	share.style.display = "block";
 	var sW = share.offsetWidth;
@@ -752,7 +752,7 @@ function postAjax(url, data, success) {
 														  var cid = xhr.responseText.split("_")[1];
 														  var loc = xhr.responseText.split("_")[2];
 														  fetchComments(loc,cid);
-														  loadPage2('../components/query_comment_count.php?cid=' + cid, commentCount, cid, loc);
+														  loadPage2('../components/query_comment_count.php?cid=' + cid, commentCount, cid, loc, '');
 														 }
 												  	  else if( xhr.responseText == "true" ){
 														 //alert( xhr.responseText );
