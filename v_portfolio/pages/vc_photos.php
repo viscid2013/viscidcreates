@@ -29,7 +29,7 @@ function doFB(val){
 
 function doTumb(tVal){
 	var tval = tVal;
-	window.open('http://tumblr.com/widgets/share/tool?canonicalUrl=http://beamcreates.com/v_portfolio/images/' + tval, "_blank", "toolbar=yes,scrollbars=yes,top=100,left=100,width=540,height=600");
+	window.open('http://tumblr.com/widgets/share/tool?canonicalUrl=' + tval, "_blank", "toolbar=yes,scrollbars=yes,top=100,left=100,width=540,height=600");
 }
 	
 
