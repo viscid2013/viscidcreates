@@ -18,7 +18,7 @@ function doFB(val){
 		  href: val,
   action_type: 'og.likes',
   action_properties: JSON.stringify({
-    object: val,
+    object: "http://beamcreates.com/v_portfolio/branding_icons/vc_logoSymbol_PNG.png",
   })
 }, function(response){
   // Debug response (optional)
