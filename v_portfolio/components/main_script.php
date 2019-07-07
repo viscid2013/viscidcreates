@@ -671,7 +671,7 @@ function showShare( xhttp, sid, loc){
 	var fbBtn = document.getElementById("fbBtn");
 	fbBtn.value = img;
 	
-	var tumbBtn = document.getElementById("tumbBtn");
+	var tumbBtn = document.getElementById("tumBtn");
 	tumbBtn.value = img;
 	
 	//var pin = document.getElementById("pinit").querySelector("a");
