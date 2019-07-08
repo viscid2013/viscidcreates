@@ -42,10 +42,10 @@ try {
 	
 	if( isset($_REQUEST['pinit']) ){
 		
-		echo '<a href="https://www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark"></a>';
+		echo '<a href="https://www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark" onclick="window.close()"></a>';
 	}
 	
-		echo "<img src='../images/" . $result["image_link"] . "' alt='" . $result["title"] . "' title='" . $result["title"] . "' style='width: 1080px' />";
+		echo "<img src='../images/" . $result["image_link"] . "' alt='" . $result["title"] . "' title='" . $result["title"] . "' style='width: 500px' />";
 
 }
 catch(PDOException $e) {
