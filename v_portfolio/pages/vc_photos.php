@@ -31,10 +31,28 @@ function doTumb(tVal){
 	var tval = tVal;
 	window.open('http://tumblr.com/widgets/share/tool?canonicalUrl=' + tval, "_blank", "toolbar=yes,scrollbars=yes,top=100,left=100,width=540,height=600");
 }
+
 	
-function doPin(pVal){
-	var pval = pVal;
-	window.open(pval + "&pinit=yes", "_blank", "toolbar=yes,scrollbars=yes,top=100,left=100,width=540,height=600");
+function loadPin(url, pFunction) {
+  var url = url + "&pinit=yes";
+  var xhttp;
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      pFunction(this);
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
+	
+}
+	
+function doPin(xhttp){
+	var xhttp = xhttp.responseText;
+	var show = document.getElementById("pinShow");
+	show.innerHTML = xhttp;
+	show.style.display = "block";
+	
 }
 	
 
@@ -48,6 +66,7 @@ function doPin(pVal){
 		<div id="fbBtn" class="w3-padding w3-blue w3-button" value="" onclick="doFB(this.value)">Facebook!</div>
 		<div id="tumBtn" class="w3-padding w3-teal w3-button" value="" onclick="doTumb(this.value)">Tumblr!</div>
 		<div id="pinBtn" class="w3-padding w3-red w3-button" value="" onclick="doPin(this.value)">Pinterest!</div>
+			<div id="pinShow" style="display: none;" class="w3-white w3-padding-small"></div>
 		</div>
 
 <!-- begin slideshow modal -->
