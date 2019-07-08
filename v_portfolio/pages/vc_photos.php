@@ -35,6 +35,7 @@ function doTumb(tVal){
 	
 function loadPin(url, pFunction) {
   var url = url + "&pinit=yes";
+	alert(url);
   var xhttp;
   xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
