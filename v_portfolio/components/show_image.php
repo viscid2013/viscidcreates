@@ -42,7 +42,9 @@ try {
 	
 	//if( isset($_REQUEST['pinit']) ){
 		
-		echo '<a href="https://www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark">HELLO?</a>';
+	?> <script> document.getElementById('pb').click; </script> <?php
+	
+		echo '<a id="pb" href="https://www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark">HELLO?</a>';
 	//}
 	
 		echo "<img src='../images/" . $result["image_link"] . "' alt='" . $result["title"] . "' title='" . $result["title"] . "' style='width: 50px' />";
