@@ -165,8 +165,3 @@ function doPin(xhttp){
 
 				?>
 <script id="tumblr-js" async src="https://assets.tumblr.com/share-button.js"></script>
-<script
-    type="text/javascript"
-    async defer
-    src="//assets.pinterest.com/js/pinit.js"
-></script>	
