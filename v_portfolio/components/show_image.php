@@ -41,7 +41,7 @@ try {
 <?php
 	
 	//if( isset($_REQUEST['pinit']) ){
-	echo '<div id="pinBox" onClick="window.close()">';
+	echo '<div id="pinBox">';
 		echo '<a href="https://www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark"></a>';
 	echo '</div>';
 	//}
@@ -61,5 +61,13 @@ $conn = null;
     async defer
     src="//assets.pinterest.com/js/pinit.js"
 ></script>	
+	<script>
+	
+		window.addEventListener('blur',doClose);
+		function doClose(){
+			window.close();
+		}
+		
+	</script>
 </body>
 </html>
