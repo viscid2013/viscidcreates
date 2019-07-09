@@ -41,13 +41,12 @@ try {
 <?php
 	
 	//if( isset($_REQUEST['pinit']) ){
-		
-	?> <script> document.getElementById('pb').click; </script> <?php
-	
-		echo '<a id="pb" href="https://www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark">HELLO?</a>';
+	echo '<div id="pinBox" onClick="window.close()">';
+		echo '<a href="https://www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark"></a>';
+	echo '</div>';
 	//}
 	
-		echo "<img src='../images/" . $result["image_link"] . "' alt='" . $result["title"] . "' title='" . $result["title"] . "' style='width: 50px' />";
+		echo "<img src='../images/" . $result["image_link"] . "' alt='" . $result["title"] . "' title='" . $result["title"] . "' style='width: 350px' />";
 
 }
 catch(PDOException $e) {
