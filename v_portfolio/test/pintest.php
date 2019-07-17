@@ -54,11 +54,10 @@ img {margin-bottom: -7px}
 		window.open(
 		'https://www.pinterest.com/pin/create/button/?url=' + ShareUrl + '&media=' + ImageUrl + '&description=' + Description,
 		'share',
-		'width=600, height=300',
-		afterPin
+		'width=600, height=300'
 		);
 			
-		});
+		}, function(){ return false; });
 	}
 	
 	function afterPin(){
