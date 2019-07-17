@@ -29,6 +29,7 @@ img {margin-bottom: -7px}
 	
 <a href="https://api.pinterest.com/v1/pins/?image_url=http://beamcreates.com/v_portfolio/branding_icons/vc_logoSymbol_PNG.png&note=VC_Logo&link=http://beamcreates.com/v_portfolio/pages/vc_home.php">PIN IT DAMMIT!</a>
 	
+<a onlick="doPin('http://beamcreates.com/v_portfolio/branding_icons/vc_logoSymbol_PNG.png','VC_Logo','http://beamcreates.com/v_portfolio/pages/vc_home.php')">PIN IT DAMMIT!</a>
 	
 <script>
     window.pAsyncInit = function() {
@@ -37,15 +38,6 @@ img {margin-bottom: -7px}
             cookie: true
         });
 		
-		var pdkShareUrl = "https://api.pinterest.com/v1/pins/?image_url=http://beamcreates.com/v_portfolio/branding_icons/vc_logoSymbol_PNG.png";
-		var pdkImageUrl = "http://beamcreates.com/v_portfolio/pages/vc_home.php";
-		var pdkDescription = "VC_Logo";
-		
-		window.open(
-		'https://www.pinterest.com/pin/create/button/?url=' + pdkShareUrl + '&media=' + pdkImageUrl + '&description=' + pdkDescription,
-		'share',
-		'width=600, height=300'
-		);
     };
 
     (function(d, s, id){
@@ -55,6 +47,19 @@ img {margin-bottom: -7px}
         js.src = "//assets.pinterest.com/sdk/sdk.js";
         pjs.parentNode.insertBefore(js, pjs);
     }(document, 'script', 'pinterest-jssdk'));
+	
+	function doPin( ImageUrl, Description, ShareUrl ) {
+		PDK.pin( ImageUrl, Description, ShareUrl, function(){
+			
+		window.open(
+		'https://www.pinterest.com/pin/create/button/?url=' + ShareUrl + '&media=' + ImageUrl + '&description=' + Description,
+		'share',
+		'width=600, height=300'
+		);
+			
+		});
+	}
+	
 </script>
 </body>
 </html>
