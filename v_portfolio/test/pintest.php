@@ -29,7 +29,7 @@ img {margin-bottom: -7px}
 	
 <a href="https://api.pinterest.com/v1/pins/?image_url=http://beamcreates.com/v_portfolio/branding_icons/vc_logoSymbol_PNG.png&note=VC_Logo&link=http://beamcreates.com/v_portfolio/pages/vc_home.php">PIN IT DAMMIT!</a>
 	
-<a onlick="doPin('http://beamcreates.com/v_portfolio/branding_icons/vc_logoSymbol_PNG.png','VC_Logo','http://beamcreates.com/v_portfolio/pages/vc_home.php')">PIN IT DAMMIT!</a>
+<a onclick="doPin('http://beamcreates.com/v_portfolio/branding_icons/vc_logoSymbol_PNG.png','VC_Logo','http://beamcreates.com/v_portfolio/pages/vc_home.php')">PIN IT DAMMIT!</a>
 	
 <script>
     window.pAsyncInit = function() {
