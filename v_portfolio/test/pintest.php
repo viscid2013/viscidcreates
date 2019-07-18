@@ -69,9 +69,9 @@ img {margin-bottom: -7px}
 	}
 	
 	function doPin(data, callback){
-		createPin: function(data, callback) {
+
 		PDK.request('/pins/', 'POST', data, callback);
-		}	
+	
 	}//end doPin
 	
 	function afterPin(){
