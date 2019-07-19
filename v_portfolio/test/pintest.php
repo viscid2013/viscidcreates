@@ -57,7 +57,7 @@ img {margin-bottom: -7px}
 		'width=600, height=300'
 		);
 			
-		}, afterPin);
+		});
 	}
 
 	
