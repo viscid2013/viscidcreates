@@ -29,7 +29,7 @@ img {margin-bottom: -7px}
 	
 <a href="https://api.pinterest.com/v1/pins/?image_url=http://beamcreates.com/v_portfolio/branding_icons/vc_logoSymbol_PNG.png&note=VC_Logo&link=http://beamcreates.com/v_portfolio/pages/vc_home.php">PIN IT DAMMIT!</a>
 	
-<a onclick="doPin( 'http://beamcreates.com/v_portfolio/branding_icons/vc_logoSymbol_PNG.png', 'VC_logo', 'http://beamcreates.com/v_portfolio/pages/vc_home.php' )">PIN IT DAMMIT!</a>
+<a onclick="doPin( )">PIN IT DAMMIT!</a>
 	
 	
 <script>
@@ -39,6 +39,9 @@ img {margin-bottom: -7px}
                    cookie: true
                });
                var acc = "";
+			   function doPin(){
+				   
+			   
                PDK.login({ scope : 'read_relationships,write_relationships, read_public , write_public' }, function(response){
                    if (!response || response.error) {
                    } else {
@@ -61,7 +64,7 @@ img {margin-bottom: -7px}
                    }
                })
 
-
+				   	}
            };
            // }
             (function(d, s, id){
