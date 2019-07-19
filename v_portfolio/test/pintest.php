@@ -29,7 +29,7 @@ img {margin-bottom: -7px}
 	
 <a href="https://api.pinterest.com/v1/pins/?image_url=http://beamcreates.com/v_portfolio/branding_icons/vc_logoSymbol_PNG.png&note=VC_Logo&link=http://beamcreates.com/v_portfolio/pages/vc_home.php">PIN IT DAMMIT!</a>
 	
-<a onclick="startPin()">PIN IT DAMMIT!</a>
+<a onclick="doPin( 'http://beamcreates.com/v_portfolio/branding_icons/vc_logoSymbol_PNG.png', 'VC_logo', 'http://beamcreates.com/v_portfolio/pages/vc_home.php' )">PIN IT DAMMIT!</a>
 	
 <script>
     window.pAsyncInit = function() {
@@ -48,7 +48,7 @@ img {margin-bottom: -7px}
         pjs.parentNode.insertBefore(js, pjs);
     }(document, 'script', 'pinterest-jssdk'));
 	
-	/*function doPin( ImageUrl, Description, ShareUrl, callBack ) {
+	function doPin( ImageUrl, Description, ShareUrl ) {
 		PDK.pin( ImageUrl, Description, ShareUrl, function(){
 			
 		window.open(
@@ -57,22 +57,9 @@ img {margin-bottom: -7px}
 		'width=600, height=300'
 		);
 			
-		}, function(){ return false; });
-	}*/
-	function startPin(){
-	var data = {
-		note : 'vc_Logo', 
-		link : 'http://beamcreates.com/v_portfolio/pages/vc_home.php', 
-		image_url : 'http://beamcreates.com/v_portfolio/branding_icons/vc_logoSymbol_PNG.png'
-				};
-		doPin(data,afterPin);
+		}, afterPin);
 	}
-	
-	function doPin(data, callback){
 
-		PDK.request('/pins/', 'POST', data, callback);
-	
-	}//end doPin
 	
 	function afterPin(){
 		alert("Done been pinned");
