@@ -696,8 +696,9 @@ function showShare( xhttp, sid, loc, iid){
 function doLink(thisVal){
 	var tval = thisVal;
 	var urlField = document.getElementById("imgUrl");
+	var urlDiv = document.getElementById("linkShow");
 	urlField.value = tval;
-	urlField.style.display = "block";
+	urlDiv.style.display = "block";
 }
 	
 
