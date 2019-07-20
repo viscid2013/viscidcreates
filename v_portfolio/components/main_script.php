@@ -694,12 +694,20 @@ function showShare( xhttp, sid, loc, iid){
 }
 	
 function doLink(thisVal){
-	var tval = thisVal;
+	var baseURL = function () {
+            document.getElementById('rootresult').innerHTML += 
+            window.location.origin 
+                ? window.location.origin + '/'
+                : window.location.protocol + '/' + window.location.host + '/';
+        }
+	var tval = thisVal.split("/")[1];
 	var urlField = document.getElementById("imgUrl");
 	var urlDiv = document.getElementById("linkShow");
-	urlField.value = tval;
+	urlField.value = baseURL + "/" + tval;
 	urlDiv.style.display = "block";
 }
+	
+
 	
 
 function offset(el) {
