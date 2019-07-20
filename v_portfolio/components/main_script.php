@@ -701,7 +701,7 @@ function doLink(thisVal){
                 : window.location.protocol + '/' + window.location.host + '/';
 			return burl;
         }
-	var baseURL = baseUrl;
+	var baseURL = baseUrl();
 	var tval = thisVal.split("/")[1];
 	var urlField = document.getElementById("imgUrl");
 	var urlDiv = document.getElementById("linkShow");
