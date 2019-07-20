@@ -702,10 +702,12 @@ function doLink(thisVal){
 			return burl;
         }
 	var baseURL = baseUrl();
-	var tval = thisVal.split("/")[1];
+	var tval = thisVal.split("/");
+	var tvalA = tval[1];
+	var tvalB = tval[2];
 	var urlField = document.getElementById("imgUrl");
 	var urlDiv = document.getElementById("linkShow");
-	urlField.value = baseURL + "/" + tval;
+	urlField.value = baseURL + "/" + tvalA + "/" + tvalB;
 	urlDiv.style.display = "block";
 }
 	
