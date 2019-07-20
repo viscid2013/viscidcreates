@@ -694,14 +694,17 @@ function showShare( xhttp, sid, loc, iid){
 }
 	
 function doLink(thisVal){
-	function baseUrl() {
+	/*function baseUrl() {
             var burl =  
 				window.location.origin 
                 ? window.location.origin + '/'
                 : window.location.protocol + '/' + window.location.host + '/';
 			return burl;
-        }
-	var baseURL = baseUrl();
+        }*/
+	//var baseURL = baseUrl();
+	var baseURLa = window.location;
+	var baseURLb = baseURL.split("/");
+	var baseURL = baseURL[0] + "/" + baseURL[1] + "/";
 	var tval = thisVal.split("/");
 	var tvalA = tval[1];
 	var tvalB = tval[2];
