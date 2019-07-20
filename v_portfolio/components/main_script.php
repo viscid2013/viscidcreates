@@ -707,7 +707,7 @@ function doLink(thisVal){
 	var tvalB = tval[2];
 	var urlField = document.getElementById("imgUrl");
 	var urlDiv = document.getElementById("linkShow");
-	urlField.value = baseURL + "/" + tvalA + "/" + tvalB;
+	urlField.value = baseURL + tvalA + "/" + tvalB;
 	urlDiv.style.display = "block";
 }
 	
