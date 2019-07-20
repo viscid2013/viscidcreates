@@ -674,8 +674,8 @@ function showShare( xhttp, sid, loc, iid){
 	var tumbBtn = document.getElementById("tumBtn");
 	tumbBtn.value = img;
 	
-	var pin = document.getElementById("pinBtn");
-	pin.value = "../components/show_image.php?iid=" + iid;
+	var imgLink = document.getElementById("linkBtn");
+	imgLink.value = "../components/show_image.php?iid=" + iid;
 	
 	share.style.display = "block";
 	var sW = share.offsetWidth;
@@ -691,6 +691,13 @@ function showShare( xhttp, sid, loc, iid){
 	}
 	
 	
+}
+	
+function doLink(thisVal){
+	var tval = thisVal;
+	var urlField = document.getElementById("imgUrl");
+	urlField.value = tval;
+	urlField.style.display = "block";
 }
 	
 
