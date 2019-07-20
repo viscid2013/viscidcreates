@@ -694,12 +694,14 @@ function showShare( xhttp, sid, loc, iid){
 }
 	
 function doLink(thisVal){
-	var baseURL = function () {
-            document.getElementById('rootresult').innerHTML += 
-            window.location.origin 
+	function baseUrl() {
+            var burl = document.getElementById('rootresult').innerHTML += 
+				window.location.origin 
                 ? window.location.origin + '/'
                 : window.location.protocol + '/' + window.location.host + '/';
-        };
+			retur burl;
+        }
+	var baseURL = baseUrl;
 	var tval = thisVal.split("/")[1];
 	var urlField = document.getElementById("imgUrl");
 	var urlDiv = document.getElementById("linkShow");
