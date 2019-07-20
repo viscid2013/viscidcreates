@@ -705,6 +705,7 @@ function doLink(thisVal){
 	var baseURLa = window.location.href;
 	var baseURLb = baseURLa.split("/");
 	var baseURL = baseURLb[0] + "/" + baseURLb[1] + "/";
+	alert(baseURLa);
 	var tval = thisVal.split("/");
 	var tvalA = tval[1];
 	var tvalB = tval[2];
