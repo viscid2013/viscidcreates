@@ -712,7 +712,7 @@ function doLink(thisVal){
 	var tvalB = tval[2];
 	var urlField = document.getElementById("imgUrl");
 	var urlDiv = document.getElementById("linkShow");
-	urlField.value = "http://" + hostURL + "/" + baseURL + tvalA + "/" + tvalB;
+	urlField.value = "http://" + hostURL + "/" + baseURL + "/" + tvalA + "/" + tvalB;
 	urlDiv.style.display = "block";
 }
 	
