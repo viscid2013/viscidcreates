@@ -704,14 +704,15 @@ function doLink(thisVal){
 	//var baseURL = baseUrl();
 	var baseURLa = window.location.href;
 	var baseURLb = baseURLa.split("/");
-	var baseURL = baseURLb[0] + "/" + baseURLb[1] + "/";
+	var baseURL = baseURLb[3];
+	var hostURL = window.location.hostname;
 	alert(baseURLa);
 	var tval = thisVal.split("/");
 	var tvalA = tval[1];
 	var tvalB = tval[2];
 	var urlField = document.getElementById("imgUrl");
 	var urlDiv = document.getElementById("linkShow");
-	urlField.value = baseURL + tvalA + "/" + tvalB;
+	urlField.value = hostURL + "/" + baseURL + tvalA + "/" + tvalB;
 	urlDiv.style.display = "block";
 }
 	
