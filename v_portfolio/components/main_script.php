@@ -699,7 +699,7 @@ function doLink(thisVal){
             window.location.origin 
                 ? window.location.origin + '/'
                 : window.location.protocol + '/' + window.location.host + '/';
-        }
+        };
 	var tval = thisVal.split("/")[1];
 	var urlField = document.getElementById("imgUrl");
 	var urlDiv = document.getElementById("linkShow");
