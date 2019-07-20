@@ -699,7 +699,7 @@ function doLink(thisVal){
 				window.location.origin 
                 ? window.location.origin + '/'
                 : window.location.protocol + '/' + window.location.host + '/';
-			retur burl;
+			return burl;
         }
 	var baseURL = baseUrl;
 	var tval = thisVal.split("/")[1];
