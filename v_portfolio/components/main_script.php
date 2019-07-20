@@ -702,7 +702,7 @@ function doLink(thisVal){
 			return burl;
         }*/
 	//var baseURL = baseUrl();
-	var baseURLa = window.location;
+	var baseURLa = window.location.href;
 	var baseURLb = baseURLa.split("/");
 	var baseURL = baseURLb[0] + "/" + baseURLb[1] + "/";
 	var tval = thisVal.split("/");
