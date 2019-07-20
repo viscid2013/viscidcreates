@@ -695,7 +695,7 @@ function showShare( xhttp, sid, loc, iid){
 	
 function doLink(thisVal){
 	function baseUrl() {
-            var burl = document.getElementById('rootresult').innerHTML += 
+            var burl =  
 				window.location.origin 
                 ? window.location.origin + '/'
                 : window.location.protocol + '/' + window.location.host + '/';
