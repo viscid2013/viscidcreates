@@ -41,14 +41,14 @@ function doTumb(tVal){
 
 <div id="share" class="w3-border w3-white w3-card w3-padding-small w3-center viewShare">
 		<div class="w3-header">Share it!</div>
-		<span class="w3-large w3-button w3-padding-16" onClick="document.getElementById('viewShare').style.display = 'none';">&times;</span>
-		<div id="fbBtn" class="w3-padding w3-blue w3-button" value="" onclick="doFB(this.value)">
+		<span class="w3-large w3-button w3-padding-16" onClick="document.getElementById('share').style.display = 'none';">&times;</span>
+		<div id="fbBtn" class="w3-button" value="" onclick="doFB(this.value)">
 			<img src="../branding_icons/flogo-grey.png" alt="fb logo" style="width: 20px" />
 		</div>
-		<div id="tumBtn" class="w3-padding w3-teal w3-button" value="" onclick="doTumb(this.value)">
+		<div id="tumBtn" class="w3-button" value="" onclick="doTumb(this.value)">
 			<img src="../branding_icons/ios-black.png" alt="tumblr logo" style="width: 20px" />
 		</div>
-		<div id="linkBtn" class="w3-padding w3-red w3-button" value="" onclick="doLink(this.value)">
+		<div id="linkBtn" class="w3-button" value="" onclick="doLink(this.value)">
 			<img src="../branding_icons/ios-black.png" alt="tumblr logo" style="width: 20px" />
 		</div>
 			<div id="linkShow" style="display: none;" class="w3-white w3-padding-small">
