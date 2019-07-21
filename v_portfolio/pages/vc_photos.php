@@ -40,7 +40,9 @@ function doTumb(tVal){
 
 
 <div id="share" class="w3-border w3-white w3-card w3-padding-small w3-center w3-container viewShare">
-		<div class="w3-header">Share it!</div>
+	<header class="w3-container w3-theme">
+		<h3>Share it!</h3>
+	</header>
 		<span class="w3-large w3-button w3-padding-16 w3-display-topright" onClick="document.getElementById('share').style.display = 'none';">&times;</span>
 		<div id="fbBtn" class="w3-button" value="" onclick="doFB(this.value)">
 			<img src="../branding_icons/flogo-grey.png" alt="fb logo" style="width: 20px" />
@@ -49,7 +51,7 @@ function doTumb(tVal){
 			<img src="../branding_icons/ios-black.png" alt="tumblr logo" style="width: 20px" />
 		</div>
 		<div id="linkBtn" class="w3-button" value="" onclick="doLink(this.value)">
-			<img src="../branding_icons/ios-black.png" alt="tumblr logo" style="width: 20px" />
+			<img src="../branding_icons/link-icon.png" alt="link copy icon" style="width: 20px" />
 		</div>
 			<div id="linkShow" style="display: none;" class="w3-white w3-padding-small">
 				<input type="url" id="imgUrl" class="w3-input w3-border" value="" />
