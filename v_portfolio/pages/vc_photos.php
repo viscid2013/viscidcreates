@@ -40,10 +40,17 @@ function doTumb(tVal){
 
 
 <div id="share" class="w3-border w3-white w3-card w3-padding-small w3-center viewShare">
-		<?php //include("../components/ShareBox.php"); ?>
-		<div id="fbBtn" class="w3-padding w3-blue w3-button" value="" onclick="doFB(this.value)">Facebook!</div>
-		<div id="tumBtn" class="w3-padding w3-teal w3-button" value="" onclick="doTumb(this.value)">Tumblr!</div>
-		<div id="linkBtn" class="w3-padding w3-red w3-button" value="" onclick="doLink(this.value)">Link!</div>
+		<div class="w3-header">Share it!</div>
+		<span class="w3-large w3-button w3-padding-16" onClick="document.getElementById('viewShare').style.display = 'none';">&times;</span>
+		<div id="fbBtn" class="w3-padding w3-blue w3-button" value="" onclick="doFB(this.value)">
+			<img src="../branding_icons/flogo-grey.png" alt="fb logo" style="width: 20px" />
+		</div>
+		<div id="tumBtn" class="w3-padding w3-teal w3-button" value="" onclick="doTumb(this.value)">
+			<img src="../branding_icons/ios-black.png" alt="tumblr logo" style="width: 20px" />
+		</div>
+		<div id="linkBtn" class="w3-padding w3-red w3-button" value="" onclick="doLink(this.value)">
+			<img src="../branding_icons/ios-black.png" alt="tumblr logo" style="width: 20px" />
+		</div>
 			<div id="linkShow" style="display: none;" class="w3-white w3-padding-small">
 				<input type="url" id="imgUrl" class="w3-input w3-border" value="" />
 					<div class="w3-button w3-gray" onClick="copyText('imgUrl')" style="cursor: pointer;">-></div>
