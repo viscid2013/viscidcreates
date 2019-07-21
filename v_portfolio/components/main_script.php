@@ -736,10 +736,10 @@ function copyText(tField) {
 	
 function textFieldMsg(orig, tField){
 	var orig = orig;
+	var tfColor = tf.style.color;
 	var tf = document.getElementById(tField);
 	tf.style.color = "red";
 	tf.value = "Link copied.";
-	var tfColor = tf.style.color;
 	var rt = setInterval(revertText, 1500);
   
   function revertText() {
