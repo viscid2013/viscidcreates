@@ -680,7 +680,7 @@ function showShare( xhttp, sid, loc, iid){
 	share.style.display = "block";
 	var sW = share.offsetWidth;
 	share.style.top = pos.top + "px";
-	share.style.left = (pos.left - (sW - 20 ) ) + "px";
+	share.style.left = (pos.left - (sW - 10 ) ) + "px";
 
 	
 		//fetch viewComments class to hide 

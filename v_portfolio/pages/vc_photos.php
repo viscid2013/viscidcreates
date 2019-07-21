@@ -39,13 +39,13 @@ function doTumb(tVal){
 
 
 
-<div id="share" class="w3-border w3-white w3-card w3-padding-small w3-center w3-container viewShare">
-	<span class="w3-medium w3-button w3-display-topright" onClick="document.getElementById('share').style.display = 'none';" style="font-size: 120%;">&times;</span>
+<div id="share" class="w3-border w3-white w3-card w3-padding-small w3-center w3-container w3-animate-zoom viewShare">
+	<span class="w3-medium w3-button w3-display-topright" onClick="document.getElementById('share').style.display = 'none';" style="font-size: 130%;">&times;</span>
 	<div class="w3-container w3-text-theme w3-padding w3-display-topleft vcBold" style="font-size: 120%;">
 		Share it!
 	</div>
 		
-	<div id="shareRow" style="margin-top: 15px;">	
+	<div id="shareRow" style="margin-top: 25px;">	
 		<div id="fbBtn" class="w3-button" value="" onclick="doFB(this.value)">
 			<img src="../branding_icons/flogo-grey.png" alt="fb logo" style="width: 20px" />
 		</div>
