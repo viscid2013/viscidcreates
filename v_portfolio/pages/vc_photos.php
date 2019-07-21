@@ -45,7 +45,8 @@ function doTumb(tVal){
 		<div id="tumBtn" class="w3-padding w3-teal w3-button" value="" onclick="doTumb(this.value)">Tumblr!</div>
 		<div id="linkBtn" class="w3-padding w3-red w3-button" value="" onclick="doLink(this.value)">Link!</div>
 			<div id="linkShow" style="display: none;" class="w3-white w3-padding-small">
-				<input type="url" id="imgUrl" class="w3-input w3-border" value="" /><div class="w3-button w3-gray">-></div>
+				<input type="url" id="imgUrl" class="w3-input w3-border" value="" />
+					<div class="w3-button w3-gray" onClick="copyText('imgUrl')" style="cursor: pointer;">-></div>
 			</div>
 		</div>
 

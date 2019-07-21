@@ -716,7 +716,20 @@ function doLink(thisVal){
 	urlDiv.style.display = "block";
 }
 	
+function copyText(tField) {
+  /* Get the text field */
+  var tfid = tField;
+  var copyText = document.getElementById(tfid);
 
+  /* Select the text field */
+  copyText.select();
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Copied the text: " + copyText.value);
+}
 	
 
 function offset(el) {
