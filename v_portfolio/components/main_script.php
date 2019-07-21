@@ -738,9 +738,9 @@ function textFieldMsg(orig, tField){
 	var orig = orig;
 	var tf = document.getElementById(tField);
 	var tfColor = tf.style.color;
-	tf.style.color = "red";
+	tf.style.color = "#d5c2d6";
 	tf.value = "Link copied.";
-	var rt = setInterval(revertText, 1500);
+	var rt = setInterval(revertText, 1000);
   
   function revertText() {
     if ( tf.value === orig ) {

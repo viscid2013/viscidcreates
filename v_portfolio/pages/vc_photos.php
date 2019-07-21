@@ -40,7 +40,7 @@ function doTumb(tVal){
 
 
 <div id="share" class="w3-border w3-white w3-card w3-padding-small w3-center w3-container w3-animate-zoom viewShare">
-	<span class="w3-medium w3-button w3-display-topright" onClick="document.getElementById('share').style.display = 'none';" style="font-size: 130%;">&times;</span>
+	<span class="w3-medium w3-button w3-display-topright" onClick="document.getElementById('share').style.display = 'none';document.getElementById('linkShow').style.display = 'none';" style="font-size: 130%;">&times;</span>
 	<div class="w3-container w3-text-theme w3-padding w3-display-topleft vcBold" style="font-size: 120%;">
 		Share it!
 	</div>
@@ -57,7 +57,7 @@ function doTumb(tVal){
 		</div>
 			<div id="linkShow" style="display: none;" class="w3-white w3-padding-small">
 				<input type="url" id="imgUrl" class="w3-input w3-border" value="" />
-					<div class="w3-button w3-gray" onClick="copyText('imgUrl')" style="cursor: pointer;">-></div>
+					<div class="w3-button w3-gray" onClick="copyText('imgUrl')" style="cursor: pointer;">Copy Link</div>
 			</div>
 	</div>
 		</div>
