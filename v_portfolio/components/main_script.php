@@ -727,8 +727,18 @@ function copyText(tField) {
   /* Copy the text inside the text field */
   document.execCommand("copy");
 
+	//temp change text field to message
+	textFieldMsg(copyText.value, tfid);
+	
   /* Alert the copied text */
-  alert("Copied the text: " + copyText.value);
+ // alert("Copied the text: " + copyText.value);
+}
+	
+function textFieldMsg(orig, tField){
+	var orig = orig;
+	var tf = document.getElementById(tField);
+	tf.style.color = "red";
+	tf.value = "Link copied.";
 }
 	
 
