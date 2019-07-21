@@ -46,10 +46,10 @@ function doTumb(tVal){
 			<img src="../branding_icons/flogo-grey.png" alt="fb logo" style="width: 20px" />
 		</div>
 		<div id="tumBtn" class="w3-button" value="" onclick="doTumb(this.value)">
-			<img src="../branding_icons/ios-black.png" alt="tumblr logo" />
+			<img src="../branding_icons/ios-black.png" alt="tumblr logo" style="width: 20px" />
 		</div>
 		<div id="linkBtn" class="w3-button" value="" onclick="doLink(this.value)">
-			<img src="../branding_icons/ios-black.png" alt="tumblr logo" />
+			<img src="../branding_icons/ios-black.png" alt="tumblr logo" style="width: 20px" />
 		</div>
 			<div id="linkShow" style="display: none;" class="w3-white w3-padding-small">
 				<input type="url" id="imgUrl" class="w3-input w3-border" value="" />
