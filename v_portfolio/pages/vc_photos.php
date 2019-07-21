@@ -40,7 +40,7 @@ function doTumb(tVal){
 
 
 <div id="share" class="w3-border w3-white w3-card w3-padding-small w3-center w3-container viewShare">
-	<span class="w3-large w3-button w3-display-topright" onClick="document.getElementById('share').style.display = 'none';">&times;</span>
+	<span class="w3-medium w3-button w3-display-topright" onClick="document.getElementById('share').style.display = 'none';">&times;</span>
 	<div class="w3-container w3-theme w3-padding-small">
 		Share it!
 	</div>
