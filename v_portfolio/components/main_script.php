@@ -739,13 +739,15 @@ function textFieldMsg(orig, tField){
 	var tf = document.getElementById(tField);
 	tf.style.color = "red";
 	tf.value = "Link copied.";
-	var rt = setInterval(revertText, 2000);
+	var tfColor = tf.style.color;
+	var rt = setInterval(revertText, 1500);
   
   function revertText() {
     if ( tf.value === orig ) {
       clearInterval(rt);
     } else {
       tf.value = orig;  
+		tf.style.color = tfColor;
     }
   }	
 }
