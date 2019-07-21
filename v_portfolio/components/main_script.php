@@ -736,8 +736,8 @@ function copyText(tField) {
 	
 function textFieldMsg(orig, tField){
 	var orig = orig;
-	var tfColor = tf.style.color;
 	var tf = document.getElementById(tField);
+	var tfColor = tf.style.color;
 	tf.style.color = "red";
 	tf.value = "Link copied.";
 	var rt = setInterval(revertText, 1500);
