@@ -45,7 +45,7 @@ function doTumb(tVal){
 		Share it!
 	</div>
 		
-	<div id="shareRow" style="margin-top: 25px;">	
+	<div id="shareRow" style="margin-top: 35px;">	
 		<div id="fbBtn" class="w3-button" value="" onclick="doFB(this.value)">
 			<img src="../branding_icons/flogo-grey.png" alt="fb logo" style="width: 20px" />
 		</div>
@@ -57,7 +57,7 @@ function doTumb(tVal){
 		</div>
 			<div id="linkShow" style="display: none;" class="w3-white w3-padding-small">
 				<input type="url" id="imgUrl" class="w3-input w3-border" value="" />
-					<div class="w3-button w3-gray" onClick="copyText('imgUrl')" style="cursor: pointer;">Copy Link</div>
+					<div class="w3-block w3-gray" onClick="copyText('imgUrl')" style="cursor: pointer; margin-top:3px;">Copy Link</div>
 			</div>
 	</div>
 		</div>
