@@ -45,4 +45,5 @@
 <file name="ShareBox.php" server="192.168.2.9//var/www/html/" local="132067472319153611" remote="132067472310000000" Dst="2" />
 <file name="query_image_url.php" server="192.168.2.9//var/www/html/" local="132068918952647510" remote="132068918950000000" Dst="2" />
 <file name="show_image.php" server="192.168.2.9//var/www/html/" local="132071377315066500" remote="132071377300000000" Dst="2" />
+<file name="query_faves.php" server="192.168.2.9//var/www/html/" local="132083540609012239" remote="132083540610000000" Dst="2" />
 </dwsync>

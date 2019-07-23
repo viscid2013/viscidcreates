@@ -339,7 +339,7 @@ else {
 
 <div id="imgFavsPanel" class="panel w3-container w3-center">
   <?php
-	include("vc_photos_faves.php");
+	include("../components/query_faves.php");
 	?>
 </div>
 	
