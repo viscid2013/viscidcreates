@@ -17,7 +17,7 @@ try {
 							FROM inventory
 							INNER JOIN faves ON inventory.iid=faves.iid
 							WHERE faves.uid = :uid");		
-	
+	$stmt->bindParam(':uid', $uid);
     $stmt->execute();
 
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
