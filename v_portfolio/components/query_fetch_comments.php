@@ -36,7 +36,7 @@ try {
 		
 		echo "<div class='w3-container viewCommentsContainer' id='commentDiv_"  . $iid .  "'>
 		
-		<span class='w3-button w3-xlarge w3-right closeComments' onClick='document.getElementById(\"viewCommentsS_"  . $iid .  "\").style.display=\"none\"; document.getElementById(\"viewCommentsM_"  . $iid .  "\").style.display=\"none\"; document.getElementById(\"behindSlides_"  . $iid .  "\").style.display=\"none\"; document.getElementById(\"behindSlidesM_"  . $iid .  "\").style.display=\"none\"'>&times;</span>
+		<span class='w3-button w3-xlarge w3-right closeComments' onClick='document.getElementById(\"viewCommentsM_"  . $iid .  "\").style.display=\"none\"; document.getElementById(\"viewCommentsM_"  . $iid .  "\").style.display=\"none\"; document.getElementById(\"behindSlides_"  . $iid .  "\").style.display=\"none\"; document.getElementById(\"behindSlidesM_"  . $iid .  "\").style.display=\"none\"'>&times;</span>
 		
 
 			<div class='w3-padding w3-white viewCommentsInner' id='viewInnerM_"  . $iid .  "'>
