@@ -649,6 +649,25 @@ function postComment(cId,lOc){
 	}//end else comment not blank
 }
 	
+function closeComments(theId, which){
+	var cid = theId;
+	var wc = which;
+	
+	if( wc === "m" ){
+	   	var cw = document.getElementById("viewCommentsM_" + cid );
+		var bw = document.getElementById("behindSlidesM_" + cid  );
+	   }
+	if( wc === "s" ){
+	   	var cw = document.getElementById("viewCommentsS_" + cid );
+		var bw = document.getElementById("behindSlides_" + cid  );
+	   }
+	
+	cw.style.display = "none"; 
+	bw.style.display = "none"; 
+							
+							
+}
+	
 function openShare( loc, sid, iid ){
 	var sid = sid;
 	var loc = loc;
