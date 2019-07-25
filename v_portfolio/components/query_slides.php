@@ -7,7 +7,7 @@ include("vcinfo.inc");
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $conn->prepare("SELECT iid, title, image_link, num_favs FROM inventory"); 
+    $stmt = $conn->prepare("SELECT iid, title, image_link FROM inventory"); 
     $stmt->execute();
 	
     $array = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -31,6 +31,15 @@ try {
 			
 			$countC[$ii] = $stmt2[$ii]->rowCount();
 			
+			//FAVES PER SLIDE
+			$stmt3[$ii] = $conn->prepare("SELECT * FROM faves WHERE iid = :iid"); 
+			$stmt3[$ii]->bindParam(':iid', $iid[$ii]);
+    		$stmt3[$ii]->execute();
+	
+    		$arrayF[$ii] = $stmt3[$ii]->fetchAll(PDO::FETCH_ASSOC);
+			
+			$countF[$ii] = $stmt3[$ii]->rowCount();
+			
 				
 			echo '<div class="w3-cell vcSlides" id="slideDiv_' . $iid[$ii] . '" style="font-size:130%; height: 100%; position: relative;">
 			<div class="viewComments" id="viewCommentsS_' . $iid[$ii] . '" style="display: none"></div>
@@ -38,10 +47,10 @@ try {
 			<div class="w3-theme-l3 w3-padding w3-center w3-cell-row slidesBar" style="width: 100%; position: relative; z-index:1;">
 				<div class="w3-cell" onClick="loadPage(\'../components/query_update_fav.php?iid=' . $iid[$ii] . '\', addFav)" style="cursor: pointer">';
 				if( $faved === 0 ){
-				echo '<span class="vcicon icon-favoritesvc"></span>&nbsp;<span id="favs_' . $iid[$ii] . '">' . $favs[$ii] . '</span>';
+				echo '<span class="vcicon icon-favoritesvc"></span>&nbsp;<span id="favs_' . $iid[$ii] . '">' . $countF[$ii] . '</span>';
 				}
 				else if( $faved > 0 ){
-				echo '<span class="vcicon icon-favoritesvc" class="w3-text-theme"></span>&nbsp;<span id="favs_' . $iid[$ii] . '">' . $favs[$ii] . '</span>';
+				echo '<span class="vcicon icon-favoritesvc" class="w3-text-theme"></span>&nbsp;<span id="favs_' . $iid[$ii] . '">' . $countF[$ii] . '</span>';
 				}
 				echo '</div>
 				<div class="w3-cell" onClick="fetchComments(\'s\',\'' . $iid[$ii] . '\')"><span class="vcicon icon-commentsvc"></span>&nbsp;<span id="cNumS_' . $iid[$ii] . '">' . $countC[$ii] . '</span></div>
