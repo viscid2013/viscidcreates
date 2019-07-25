@@ -1,3 +1,7 @@
+<?php
+include("../components/query_check_fav.php")
+?>
+
 <script>
 	
 
