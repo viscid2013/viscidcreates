@@ -516,6 +516,8 @@ function addFav(xhttp){
 	var favInfoA = favInfo.split("_");
 	var favNum = favInfoA[0];
 	var favId = favInfoA[1];
+		
+		alert( favId );
 
 	document.getElementById("favs_" + favId).innerHTML = favNum;
 	document.getElementById("mFavs_" + favId).innerHTML = favNum;
