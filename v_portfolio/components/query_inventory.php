@@ -133,10 +133,10 @@ try {
 		
 		<div id="behindSlidesM_<?php echo $result[$i]['iid']; ?>" class="w3-theme-l3 w3-opacity behindSlides" style="display: none; z-index: 2;"></div>
 		<div class="w3-container w3-cell" style="cursor: pointer;" onClick="loadPage('../components/query_update_fav.php?iid=<?php echo $result[$i]['iid']; ?>', addFav)">
-		<?php if( $faved === 0 ){	?>
+		<?php if( $faved === 0 ){ echo $faved;	?>
 			<span class="vcicon icon-favoritesvc"></span>&nbsp;<span id="mFavs_<?php echo $result[$i]['iid']; ?>"><?php echo $fCount[$i]; ?></span>
 		<?php } 
-			else if( $faved > 0 ){	?>
+			else if( $faved > 0 ){ echo $faved;	?>
 			<span class="vcicon icon-faves_addedvc"><span class="path1"></span><span class="path2"></span></span>&nbsp;<span id="mFavs_<?php echo $result[$i]['iid']; ?>"><?php echo $fCount[$i]; ?></span>
 		<?php } ?>
 		</div>
