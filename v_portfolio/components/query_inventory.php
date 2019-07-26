@@ -125,11 +125,11 @@ try {
 			$fCount[$i] = $stmtF[$i]->rowCount();
 			
 			if( $resF[$i]["uid"] === $uid ){
-				echo "<script>alert('uid = uid: ' + " . print_r($resF[$i]) . ")</script>";
+				echo "<script>alert('uid = uid: ' + " . $resF[$i][$uid] . ")</script>";
 				$faved = 1;
 			}
 			else{
-				echo "<script>alert('uid NO= uid: ' + " . print_r($resF[$i]) . ")</script>";
+				echo "<script>alert('uid NO= uid: ' + " . $resF[$i][$uid] . ")</script>";
 				$faved = 0;
 			}
 			
