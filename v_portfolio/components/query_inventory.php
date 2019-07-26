@@ -116,17 +116,17 @@ try {
 			
 			$cCount[$i] = $stmtB[$i]->rowCount();
 			
-		$stmtF[$i] = $conn->prepare("SELECT * FROM faves WHERE iid = :iid"); 
-			$stmtF[$i]->bindParam(':iid', $result[$i]['iid']);
+		$stmtF[$i] = $conn->prepare("SELECT * FROM faves WHERE uid = :uid"); 
+			$stmtF[$i]->bindParam(':uid', $uid);
     		$stmtF[$i]->execute();
 	
-    		$resF[$i] = $stmtF[$i]->fetchAll(PDO::FETCH_ASSOC);
+    		//$resF[$i] = $stmtF[$i]->fetchAll(PDO::FETCH_ASSOC);
 			
 			$fCount[$i] = $stmtF[$i]->rowCount();
 			
-			echo "<script>alert('faves row count: ' + " . $fCount[$i] . ")</script>";
+			//echo "<script>alert('faves row count: ' + " . $fCount[$i] . ")</script>";
 			
-			if( $resF[$i]["uid"] === $uid ){
+			if( $fCount[$i] > 0 ){
 				echo "<script>alert('uid = uid: ' + " . $resF[$i]["uid"] . ")</script>";
 				$faved = 1;
 			}
