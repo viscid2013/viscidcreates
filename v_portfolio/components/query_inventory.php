@@ -120,11 +120,11 @@ try {
 			$stmtF[$i]->bindParam(':iid', $result[$i]['iid']);
     		$stmtF[$i]->execute();
 	
-    		$resF[$i] = $stmtF[$i]->fetch(PDO::FETCH_ASSOC);
+    		$resF[$i] = $stmtF[$i]->fetchAll(PDO::FETCH_ASSOC);
 			
 			$fCount[$i] = $stmtF[$i]->rowCount();
 			
-			echo "<script>alert('UID-Inv: ' + " . $resF[$i] . ")</script>";
+			echo "<script>alert('UID-Inv: ' + " .  print_r($resF[$i]) . ")</script>";
 			
 			if( $resF[$i]["uid"] === $uid ){
 				$faved = 1;
