@@ -137,7 +137,7 @@ try {
 			<span class="vcicon icon-favoritesvc"></span>&nbsp;<span id="mFavs_<?php echo $result[$i]['iid']; ?>"><?php echo $fCount[$i]; ?></span>
 		<?php } 
 			else if( $faved > 0 ){	?>
-			<span class="vcicon icon-faves_addedvc path1 icon-faves_addedvc path2"></span>&nbsp;<span id="mFavs_<?php echo $result[$i]['iid']; ?>"><?php echo $fCount[$i]; ?></span>
+			<span class="vcicon icon-faves_addedvc"><span class="path1"></span><span class="path2"></span></span>&nbsp;<span id="mFavs_<?php echo $result[$i]['iid']; ?>"><?php echo $fCount[$i]; ?></span>
 		<?php } ?>
 		</div>
 		  <div class="w3-container w3-cell" onClick="fetchComments('m','<?php echo $result[$i]['iid']; ?>')" style="cursor: pointer"><span class="vcicon icon-commentsvc"></span>&nbsp;<span id="cNum_<?php echo $result[$i]['iid']; ?>"><?php echo $cCount[$i]; ?></span></div>
