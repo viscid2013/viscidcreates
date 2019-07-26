@@ -124,7 +124,7 @@ try {
 			
 			$fCount[$i] = $stmtF[$i]->rowCount();
 			
-			echo "<script>alert('UID-Inv: ' + " . $resF[$i]["uid"] . ")</script>";
+			echo "<script>alert('UID-Inv: ' + " . print_r($resF[$i]["uid"]) . ")</script>";
 			
 			if( $resF[$i]["uid"] === $uid ){
 				$faved = 1;
