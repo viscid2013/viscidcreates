@@ -1,5 +1,8 @@
 <?php
-
+session_start();
+if (isset($_SESSION['id'])){
+	$uid = $_SESSION['id'];
+}
 include("vcinfo.inc");
 
 //<img class="vcSlides" src="img_snowtops.jpg" style="width:100%">
@@ -40,12 +43,27 @@ try {
 			
 			$countF[$ii] = $stmt3[$ii]->rowCount();
 			
+			
+			if( $arrayF[$ii]["uid"] === $uid){
+				$faved[$ii] = 1;
+			}
+			else {
+				$faved[$ii] = 0;
+			}
+			
 				
 			echo '<div class="w3-cell vcSlides" id="slideDiv_' . $iid[$ii] . '" style="font-size:130%; height: 100%; position: relative;">
 			<div class="viewComments" id="viewCommentsS_' . $iid[$ii] . '" style="display: none"></div>
 			<div id="behindSlides_' . $iid[$ii] . '" class="w3-white w3-opacity behindSlides" style="display: none; z-index: 2"></div>
 			<div class="w3-theme-l3 w3-padding w3-center w3-cell-row slidesBar" style="width: 100%; position: relative; z-index:1;">
-				<div class="w3-cell" onClick="loadPage(\'../components/query_update_fav.php?iid=' . $iid[$ii] . '\', addFav)" style="cursor: pointer"><span class="vcicon icon-favoritesvc"></span>&nbsp;<span id="favs_' . $iid[$ii] . '">' . $countF[$ii] . '</span></div>
+				<div class="w3-cell" onClick="loadPage(\'../components/query_update_fav.php?iid=' . $iid[$ii] . '\', addFav)" style="cursor: pointer">';
+				if( $faved[$ii] === 0 ){
+				echo '<span class="vcicon icon-favoritesvc"></span>&nbsp;<span id="favs_' . $iid[$ii] . '">' . $countF[$ii] . '</span>';
+				}
+				else if( $faved[$ii] > 0 ){
+				echo '<span class="vcicon icon-favoritesvc" class="w3-text-theme"></span>&nbsp;<span id="favs_' . $iid[$ii] . '">' . $countF[$ii] . '</span>';
+				}
+				echo '</div>
 				<div class="w3-cell" onClick="fetchComments(\'s\',\'' . $iid[$ii] . '\')"><span class="vcicon icon-commentsvc"></span>&nbsp;<span id="cNumS_' . $iid[$ii] . '">' . $countC[$ii] . '</span></div>
 				<div class="w3-cell"><span class="vcicon icon-sharevc"></span></div>
 			  </div>
