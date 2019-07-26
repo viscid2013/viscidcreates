@@ -116,8 +116,9 @@ try {
 			
 			$cCount[$i] = $stmtB[$i]->rowCount();
 			
-		$stmtF[$i] = $conn->prepare("SELECT * FROM faves WHERE uid = :uid"); 
+		$stmtF[$i] = $conn->prepare("SELECT * FROM faves WHERE (iid = :iid2) AND (uid = :uid)"); 
 			$stmtF[$i]->bindParam(':uid', $uid);
+			$stmtF[$i]->bindParam(':iid2', $result[$i]['iid']);
     		$stmtF[$i]->execute();
 	
     		//$resF[$i] = $stmtF[$i]->fetchAll(PDO::FETCH_ASSOC);
