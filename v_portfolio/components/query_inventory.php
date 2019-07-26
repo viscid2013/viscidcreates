@@ -124,12 +124,14 @@ try {
 			
 			$fCount[$i] = $stmtF[$i]->rowCount();
 			
+			echo "<script>alert('faves row count: ' + " . $fCount[$i] . ")</script>";
+			
 			if( $resF[$i]["uid"] === $uid ){
-				echo "<script>alert('uid = uid: ' + " . $resF[$i][$uid] . ")</script>";
+				echo "<script>alert('uid = uid: ' + " . $resF[$i]["uid"] . ")</script>";
 				$faved = 1;
 			}
 			else{
-				echo "<script>alert('uid NO= uid: ' + " . $resF[$i][$uid] . ")</script>";
+				echo "<script>alert('uid NO= uid: ' + " . $resF[$i]["uid"] . ")</script>";
 				$faved = 0;
 			}
 			
