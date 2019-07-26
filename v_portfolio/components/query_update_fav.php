@@ -62,11 +62,11 @@ try {
 
 		$newNumFav = $stmt1->rowCount();
 
-		$stmt2 = $conn->prepare("UPDATE inventory SET num_favs = :newNumFav WHERE iid = :iid"); 
+		/*$stmt2 = $conn->prepare("UPDATE inventory SET num_favs = :newNumFav WHERE iid = :iid"); 
 			$stmt2->bindParam(':newNumFav', $newNumFav);
 			$stmt2->bindParam(':iid', $iid);
 
-		$stmt2->execute();
+		$stmt2->execute();*/
 		
 		}//else if checkExist
 		
