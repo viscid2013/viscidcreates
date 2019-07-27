@@ -116,25 +116,27 @@ try {
 			
 			$cCount[$i] = $stmtB[$i]->rowCount();
 			
-		$stmtF[$i] = $conn->prepare("SELECT * FROM faves WHERE (iid = :iid2) AND (uid = :uid)"); 
-			$stmtF[$i]->bindParam(':uid', $uid);
-			$stmtF[$i]->bindParam(':iid2', $result[$i]['iid']);
-    		$stmtF[$i]->execute();
-	
-    		//$resF[$i] = $stmtF[$i]->fetchAll(PDO::FETCH_ASSOC);
+		$stmtFU[$i] = $conn->prepare("SELECT * FROM faves WHERE (iid = :iid2) AND (uid = :uid)"); 
+			$stmtFU[$i]->bindParam(':uid', $uid);
+			$stmtFU[$i]->bindParam(':iid2', $result[$i]['iid']);
+    		$stmtFU[$i]->execute();
 			
-			$fCount[$i] = $stmtF[$i]->rowCount();
+			$fCountU[$i] = $stmtF[$i]->rowCount();
 			
-			//echo "<script>alert('faves row count: ' + " . $fCount[$i] . ")</script>";
 			
-			if( $fCount[$i] > 0 ){
-				echo "<script>alert('uid = uid: ' + " . $resF[$i]["uid"] . ")</script>";
+			if( $fCountU[$i] > 0 ){
 				$faved = 1;
 			}
 			else{
-				echo "<script>alert('uid NO= uid: ' + " . $resF[$i]["uid"] . ")</script>";
 				$faved = 0;
 			}
+			
+		$stmtF[$i] = $conn->prepare("SELECT * FROM faves WHERE iid = :iid3"); 
+			$stmtF[$i]->bindParam(':uid', $uid);
+			$stmtF[$i]->bindParam(':iid3', $result[$i]['iid']);
+    		$stmtF[$i]->execute();
+			
+			$fCount[$i] = $stmtF[$i]->rowCount();
 			
 			
 		?>
