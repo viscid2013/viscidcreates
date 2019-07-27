@@ -518,14 +518,14 @@ function addFav(xhttp){
 	var favId = favInfoA[1];
 
 	var ficon = document.getElementById("ficon_" + favId);
+	var ficonA = document.getElementById("ficonA_" + favId);
 		
 	document.getElementById("favs_" + favId).innerHTML = favNum;
 		
 	document.getElementById("mFavs_" + favId).innerHTML = favNum;
-	ficon.classList.remove("icon-favoritesvc");
-	ficon.classList.add("icon-faves_addedvc");
-	document.getElementById("mp1_" + favId).style.display = "block";
-	document.getElementById("mp1_" + favId).style.display = "block";
+
+	ficon.style.display = "none";
+	ficonA.style.display = "block";
 		
 	}	
 }
