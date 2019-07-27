@@ -151,8 +151,7 @@ try {
 		<?php if( $faved === 0 ){	?>
 			<span id="ficon_<?php echo $result[$i]['iid']; ?>">
 				<span class="vcicon icon-favoritesvc"></span>
-			</span>
-			<span id="ficonA_<?php echo $result[$i]['iid']; ?>" style="display: none">
+			</span><span id="ficonA_<?php echo $result[$i]['iid']; ?>" style="display: none">
 				<span class="vcicon icon-faves_addedvc"><span class="path1"></span><span class="path2"></span></span>
 			</span>&nbsp;<span id="mFavs_<?php echo $result[$i]['iid']; ?>"><?php echo $fCount[$i]; ?></span>
 			
