@@ -121,7 +121,7 @@ try {
 			$stmtFU[$i]->bindParam(':iid2', $result[$i]['iid']);
     		$stmtFU[$i]->execute();
 			
-			$fCountU[$i] = $stmtF[$i]->rowCount();
+			$fCountU[$i] = $stmtFU[$i]->rowCount();
 			
 			
 			if( $fCountU[$i] > 0 ){
