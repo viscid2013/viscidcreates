@@ -132,7 +132,6 @@ try {
 			}
 			
 		$stmtF[$i] = $conn->prepare("SELECT * FROM faves WHERE iid = :iid3"); 
-			$stmtF[$i]->bindParam(':uid', $uid);
 			$stmtF[$i]->bindParam(':iid3', $result[$i]['iid']);
     		$stmtF[$i]->execute();
 			
