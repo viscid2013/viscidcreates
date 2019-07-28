@@ -150,13 +150,13 @@ try {
 		<div class="w3-container w3-cell" style="cursor: pointer;" onClick="loadPage('../components/query_update_fav.php?iid=<?php echo $result[$i]['iid']; ?>', addFav)">
 		<?php if( $faved === 0 ){	?>
 			<div class="w3-cell-row">
-				<div class="w3-cell" id="ficon_<?php echo $result[$i]['iid']; ?>">
+				<div class="w3-cell" id="ficon_<?php echo $result[$i]['iid']; ?>" style="padding: 0 !important;">
 					<span class="vcicon icon-favoritesvc"></span>
 				</div>
-				<div class="w3-cell" id="ficonA_<?php echo $result[$i]['iid']; ?>" style="display: none">
+				<div class="w3-cell" id="ficonA_<?php echo $result[$i]['iid']; ?>" style="display: none; padding: 0 !important;">
 					<span class="vcicon icon-faves_addedvc"><span class="path1"></span><span class="path2"></span></span>
 				</div>
-				<div class="w3-cell">
+				<div class="w3-cell" style="padding: 0 !important;">
 					&nbsp;<span id="mFavs_<?php echo $result[$i]['iid']; ?>"><?php echo $fCount[$i]; ?></span>
 				</div>
 			</div><!-- end cell row -->
