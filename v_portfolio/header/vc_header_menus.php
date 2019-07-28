@@ -26,7 +26,34 @@
 	  ?>
   </div>
 </nav>	
-	
+
+<!-- Begin Contact Modal -->
+
+   <div id="contact_modal" class="w3-modal w3-animate-opacity">
+    <div id="contact_modal_content" class="w3-modal-content w3-card w3-animate-zoom w3-center">
+	<header class="w3-container w3-theme">
+		<h3>Contact Me!</h3>
+		<span onclick="document.getElementById('contact_modal').style.display='none'" class="w3-button w3-display-topright" style="font-size: 170%">&times;</span>
+	</header>
+		<div id="contactContent" class="w3-container">
+			<form>
+				<label>Email Address:</label>
+			<input type="text" class="w3-input" id="email_contact" name="email_contact" value="" />
+				<label>Name:</label>
+			<input type="text" class="w3-input" id="email_contact" name="email_contact" value="" />
+				<label>Topic:</label>
+			<select id="topic" name="topic">
+				<option value="question">General question</option>
+				<option value="order">Order I placed</option>
+				<option value="custom">Custom work</option>
+			</select>
+				<div class="w3-button w3-theme">Submit</div>
+				<div class="w3-button w3-red">Cancel</div>
+			</form>
+		</div>
+    </div>
+  </div>
+
 <!-- Begin Cart Modal -->
 
    <div id="cart_modal" class="w3-modal w3-animate-opacity">
