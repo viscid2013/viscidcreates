@@ -76,7 +76,7 @@ try {
 					<span class="vcicon icon-faves_addedvc"><span class="path1"></span><span class="path2"></span></span>
 				</div>
 				<div style="display: inline-block">
-					&nbsp;<span id="favs_' . $iid[$ii] . '"><?php echo $fCount[$i]; ?></span>
+					&nbsp;<span id="favs_' . $iid[$ii] . '">' . $countF[$ii] . '</span>
 				</div>';
 					
 				}
