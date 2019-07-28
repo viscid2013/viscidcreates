@@ -149,17 +149,17 @@ try {
 		<div id="behindSlidesM_<?php echo $result[$i]['iid']; ?>" class="w3-theme-l3 w3-opacity behindSlides" style="display: none; z-index: 2;"></div>
 		<div class="w3-container w3-cell" style="cursor: pointer;" onClick="loadPage('../components/query_update_fav.php?iid=<?php echo $result[$i]['iid']; ?>', addFav)">
 		<?php if( $faved === 0 ){	?>
-			<div class="w3-cell-row">
-				<div class="w3-cell" id="ficon_<?php echo $result[$i]['iid']; ?>" style="padding: 0 !important;">
+			
+				<div class="w3-cell" id="ficon_<?php echo $result[$i]['iid']; ?>" style="display: inline-block">
 					<span class="vcicon icon-favoritesvc"></span>
 				</div>
-				<div class="w3-cell" id="ficonA_<?php echo $result[$i]['iid']; ?>" style="display: none; padding: 0 !important;">
+				<div class="w3-cell" id="ficonA_<?php echo $result[$i]['iid']; ?>" style="display: none">
 					<span class="vcicon icon-faves_addedvc"><span class="path1"></span><span class="path2"></span></span>
 				</div>
-				<div class="w3-cell" style="padding: 0 !important;">
+				<div style="display: inline-block">
 					&nbsp;<span id="mFavs_<?php echo $result[$i]['iid']; ?>"><?php echo $fCount[$i]; ?></span>
 				</div>
-			</div><!-- end cell row -->
+
 		<?php } 
 			else if( $faved > 0 ){	?>
 			<span class="vcicon icon-faves_addedvc"><span class="path1"></span><span class="path2"></span></span>&nbsp;<span id="mFavs_<?php echo $result[$i]['iid']; ?>"><?php echo $fCount[$i]; ?></span>

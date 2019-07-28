@@ -525,7 +525,7 @@ function addFav(xhttp){
 	document.getElementById("mFavs_" + favId).innerHTML = favNum;
 
 	ficon.style.display = "none";
-	ficonA.style.display = "block";
+	ficonA.style.display = "inline-block";
 		
 	}	
 }
