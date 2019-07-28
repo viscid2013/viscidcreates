@@ -167,6 +167,11 @@ function w3_close(menuid) {
 	 
 }
 	
+function openContact(){
+	w3_close('mySidebar');
+	document.getElementById('contact_modal').style.display='block';
+}
+	
 function loadLogin(where) {
 	var target = where;
 	if( document.body.contains(document.getElementById(target)) ){
