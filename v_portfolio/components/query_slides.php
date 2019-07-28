@@ -35,21 +35,30 @@ try {
 			$countC[$ii] = $stmt2[$ii]->rowCount();
 			
 			//FAVES PER SLIDE
-			$stmt3[$ii] = $conn->prepare("SELECT * FROM faves WHERE iid = :iid"); 
+			$stmt3[$ii] = $conn->prepare("SELECT * FROM faves WHERE (iid = :iid) AND (uid = :uid)"); 
 			$stmt3[$ii]->bindParam(':iid', $iid[$ii]);
+			$stmt3[$ii]->bindParam(':uid', $uid);
     		$stmt3[$ii]->execute();
 	
-    		$arrayF[$ii] = $stmt3[$ii]->fetchAll(PDO::FETCH_ASSOC);
+    		//$arrayF[$ii] = $stmt3[$ii]->fetchAll(PDO::FETCH_ASSOC);
 			
-			$countF[$ii] = $stmt3[$ii]->rowCount();
+			$countFU[$ii] = $stmt3[$ii]->rowCount();
 			
 			
-			if( $arrayF[$ii]["uid"] === $uid){
+			if( $countFU[$ii] > 0 ){
 				$faved[$ii] = 1;
 			}
 			else {
 				$faved[$ii] = 0;
 			}
+			
+			$stmt4[$ii] = $conn->prepare("SELECT * FROM faves WHERE iid = :iid"); 
+			$stmt4[$ii]->bindParam(':iid', $iid[$ii]);
+    		$stmt4[$ii]->execute();
+	
+    		//$arrayF[$ii] = $stmt3[$ii]->fetchAll(PDO::FETCH_ASSOC);
+			
+			$countF[$ii] = $stmt4[$ii]->rowCount();
 			
 				
 			echo '<div class="w3-cell vcSlides" id="slideDiv_' . $iid[$ii] . '" style="font-size:130%; height: 100%; position: relative;">
@@ -58,7 +67,18 @@ try {
 			<div class="w3-theme-l3 w3-padding w3-center w3-cell-row slidesBar" style="width: 100%; position: relative; z-index:1;">
 				<div class="w3-cell" onClick="loadPage(\'../components/query_update_fav.php?iid=' . $iid[$ii] . '\', addFav)" style="cursor: pointer">';
 				if( $faved[$ii] === 0 ){
-				echo '<span class="vcicon icon-favoritesvc"></span>&nbsp;<span id="favs_' . $iid[$ii] . '">' . $countF[$ii] . '</span>';
+				//echo '<span class="vcicon icon-favoritesvc"></span>&nbsp;<span id="favs_' . $iid[$ii] . '">' . $countF[$ii] . '</span>';
+					
+				echo '<div class="w3-cell" id="ficon_' . $iid[$ii] . '" style="display: inline-block">
+					<span class="vcicon icon-favoritesvc"></span>
+				</div>
+				<div class="w3-cell" id="ficonA_' . $iid[$ii] . '" style="display: none">
+					<span class="vcicon icon-faves_addedvc"><span class="path1"></span><span class="path2"></span></span>
+				</div>
+				<div style="display: inline-block">
+					&nbsp;<span id="mFavs_' . $iid[$ii] . '"><?php echo $fCount[$i]; ?></span>
+				</div>';
+					
 				}
 				else if( $faved[$ii] > 0 ){
 				echo '<span class="vcicon icon-favoritesvc" class="w3-text-theme"></span>&nbsp;<span id="favs_' . $iid[$ii] . '">' . $countF[$ii] . '</span>';
