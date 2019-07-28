@@ -26,7 +26,7 @@
 <file name="query_toggle_setting.php" server="192.168.2.9//var/www/html/" local="132039615701894953" remote="132039615680000000" Dst="2" />
 <file name="query_check_setting.php" server="192.168.2.9//var/www/html/" local="132039614789247950" remote="132039614770000000" Dst="2" />
 <file name="vc_slides.php" server="192.168.2.9//var/www/html/" local="132038811044907948" remote="132039611500000000" Dst="2" />
-<file name="query_slides.php" server="192.168.2.9//var/www/html/" local="132087832840588651" remote="132087843640000000" Dst="2" />
+<file name="query_slides.php" server="192.168.2.9//var/www/html/" local="132087845348394031" remote="132087845360000000" Dst="2" />
 <file name="vcinfo.inc" server="192.168.2.9//var/www/html/" local="132039613798691335" remote="132039613940000000" Dst="2" />
 <file name="create_cart_session.php" server="192.168.2.9//var/www/html/" local="132045976174374765" remote="132047176090000000" Dst="2" />
 <file name="query_cart_contents.php" server="192.168.2.9//var/www/html/" local="132048563338725726" remote="132048563330000000" Dst="2" />
