@@ -49,8 +49,8 @@
 					<option value="custom">Custom work</option>
 				</select>
 			</div>
-				<div class="w3-block w3-theme">Submit</div>
-				<div class="w3-block w3-red">Cancel</div>
+				<div class="w3-block w3-theme w3-padding" style="margin-top: 8px; margin-bottom: 8px">Submit</div>
+				<div class="w3-block w3-red w3-padding" style="margin-bottom: 8px">Cancel</div>
 			</form>
 		</div>
     </div>
