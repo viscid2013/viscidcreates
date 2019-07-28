@@ -13,7 +13,7 @@ try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	
-	$stmt = $conn->prepare("SELECT inventory.title, inventory.iid, inventory.image_link, inventory.num_favs
+	$stmt = $conn->prepare("SELECT inventory.title, inventory.iid, inventory.image_link
 							FROM inventory
 							INNER JOIN faves ON inventory.iid=faves.iid
 							WHERE faves.uid = :uid");		
@@ -41,6 +41,16 @@ try {
 			
 			$cCount[$i] = $stmtB[$i]->rowCount();
 			
+		//favese count
+	
+		$stmtC[$i] = $conn->prepare("SELECT * FROM faves WHERE iid = :iid"); 
+			$stmtC[$i]->bindParam(':iid', $result[$i]['iid']);
+    		$stmtC[$i]->execute();
+	
+    		$resF[$i] = $stmtC[$i]->fetchAll(PDO::FETCH_ASSOC);
+			
+			$fCount[$i] = $stmtC[$i]->rowCount();
+			
 			
 			
 		?>
@@ -52,7 +62,7 @@ try {
 		<div class="w3-border w3-white w3-card viewComments" id="viewCommentsM_<?php echo $result[$i]['iid']; ?>"></div>
 		
 		<div id="behindSlidesM_<?php echo $result[$i]['iid']; ?>" class="w3-theme-l3 w3-opacity behindSlides" style="display: none; z-index: 2;"></div>
-		<div class="w3-container w3-cell" style="cursor: pointer;" onClick="loadPage('../components/query_update_fav.php?iid=<?php echo $result[$i]['iid']; ?>', addFav)"><span class="vcicon icon-favoritesvc"></span>&nbsp;<span id="mFavs_<?php echo $result[$i]['iid']; ?>"><?php echo $result[$i]['num_favs']; ?></span></div>
+		<div class="w3-container w3-cell" style="cursor: pointer;" onClick="loadPage('../components/query_update_fav.php?iid=<?php echo $result[$i]['iid']; ?>', addFav)"><span class="vcicon icon-favoritesvc"></span>&nbsp;<span id="mFavs_<?php echo $result[$i]['iid']; ?>"><?php echo $fCount[$i]; ?></span></div>
 		  <div class="w3-container w3-cell" onClick="fetchComments('m','<?php echo $result[$i]['iid']; ?>')" style="cursor: pointer"><span class="vcicon icon-commentsvc"></span>&nbsp;<span id="cNum_<?php echo $result[$i]['iid']; ?>"><?php echo $cCount[$i]; ?></span></div>
 		  <div id="shareButt_<?php echo $result[$i]['iid']; ?>" class="w3-container w3-cell" onClick="openShare('m', this.id, '<?php echo $result[$i]['iid']; ?>', 'tumb')"><span class="vcicon icon-sharevc"></span></div>
     </div><!-- end image tileBar -->
