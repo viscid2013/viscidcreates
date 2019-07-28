@@ -43,7 +43,7 @@
 			<input type="text" class="w3-input" id="email_contact" name="email_contact" value="" />
 			<div>
 					<label>Topic:</label>
-				<select id="topic" name="topic" style="width: 70%">
+				<select id="topic" name="topic" style="width: 70%; margin-top: 8px; margin-bottom: 8px">
 					<option value="question">General question</option>
 					<option value="order">Order I placed</option>
 					<option value="custom">Custom work</option>
