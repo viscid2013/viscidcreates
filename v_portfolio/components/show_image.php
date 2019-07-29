@@ -40,12 +40,6 @@ try {
 
 <?php
 	
-	//if( isset($_REQUEST['pinit']) ){
-	echo '<div id="pinBox">';
-		echo '<a href="https://www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark"></a>';
-	echo '</div>';
-	//}
-	
 		echo "<img src='../images/" . $result["image_link"] . "' alt='" . $result["title"] . "' title='" . $result["title"] . "' style='width: 350px' />";
 
 }

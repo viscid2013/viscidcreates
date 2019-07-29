@@ -44,7 +44,8 @@
 <file name="testShareBox.php" server="192.168.2.9//var/www/html/" local="132065324714585544" remote="132065324720000000" Dst="2" />
 <file name="ShareBox.php" server="192.168.2.9//var/www/html/" local="132067472319153611" remote="132067472310000000" Dst="2" />
 <file name="query_image_url.php" server="192.168.2.9//var/www/html/" local="132068918952647510" remote="132068918950000000" Dst="2" />
-<file name="show_image.php" server="192.168.2.9//var/www/html/" local="132071377315066500" remote="132071377300000000" Dst="2" />
+<file name="show_image.php" server="192.168.2.9//var/www/html/" local="132088692918332014" remote="132088692940000000" Dst="2" />
 <file name="query_faves.php" server="192.168.2.9//var/www/html/" local="132087859190192312" remote="132087859200000000" Dst="2" />
 <file name="query_check_fav.php" server="192.168.2.9//var/www/html/" local="132085680452774754" remote="132085680500000000" Dst="2" />
+<file name="query_contact_info.php" server="192.168.2.9//var/www/html/" local="132088693818533278" remote="132088693820000000" Dst="2" />
 </dwsync>

@@ -37,10 +37,16 @@
 	</header>
 		<div id="contactContent" class="w3-container w3-card w3-padding">
 			<form>
+			<?php if (!isset($_SESSION['loggedin'])) { ?>
 				<label>Email Address:</label>
 			<input type="text" class="w3-input w3-margin-top" id="email_contact" name="email_contact" value="" />
 				<label>Name:</label>
 			<input type="text" class="w3-input w3-margin-top" id="email_contact" name="email_contact" value="" />
+				  	<?php }
+
+					  else{
+						  	include("../components/query_contact_info.php");	  
+					  } ?>
 					<label>Topic:</label>
 				<select id="topic" name="topic" class="w3-input w3-margin-top">
 					<option value="question">General question</option>
