@@ -41,17 +41,15 @@
 			<input type="text" class="w3-input" id="email_contact" name="email_contact" value="" />
 				<label>Name:</label>
 			<input type="text" class="w3-input" id="email_contact" name="email_contact" value="" />
-			<div>
 					<label>Topic:</label>
-				<select id="topic" name="topic" class="w3-input" style="width: 70%; margin-top: 8px; margin-bottom: 8px">
+				<select id="topic" name="topic" class="w3-input">
 					<option value="question">General question</option>
 					<option value="order">Order I placed</option>
 					<option value="custom">Custom work</option>
 				</select>
-			</div>
 			<div class="w3-row">
-				<div class="w3-block w3-theme w3-padding w3-half" style="margin-top: 8px; margin-bottom: 8px">Submit</div>
-				<div class="w3-block w3-red w3-padding w3-half" style="margin-bottom: 8px">Cancel</div>	
+				<div class="w3-block w3-theme w3-padding w3-half">Submit</div>
+				<div class="w3-block w3-red w3-padding w3-half">Cancel</div>	
 			</div>
 				
 			</form>
