@@ -18,7 +18,7 @@ try {
     $stmt->bindParam(':uid', $oid);
 	$stmt->execute();
 
-    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
 	
 	echo "Logged in as " . $result["first"] . "&nbsp;" . $result["last"];
 
