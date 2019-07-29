@@ -35,21 +35,21 @@
 		<h3>Contact Me!</h3>
 		<span onclick="document.getElementById('contact_modal').style.display='none'" class="w3-button w3-display-topright" style="font-size: 170%">&times;</span>
 	</header>
-		<div id="contactContent" class="w3-container">
+		<div id="contactContent" class="w3-container w3-card w3-padding">
 			<form>
 				<label>Email Address:</label>
-			<input type="text" class="w3-input" id="email_contact" name="email_contact" value="" />
+			<input type="text" class="w3-input w3-margin-top" id="email_contact" name="email_contact" value="" />
 				<label>Name:</label>
-			<input type="text" class="w3-input" id="email_contact" name="email_contact" value="" />
+			<input type="text" class="w3-input w3-margin-top" id="email_contact" name="email_contact" value="" />
 					<label>Topic:</label>
-				<select id="topic" name="topic" class="w3-input">
+				<select id="topic" name="topic" class="w3-input w3-margin-top">
 					<option value="question">General question</option>
 					<option value="order">Order I placed</option>
 					<option value="custom">Custom work</option>
 				</select>
-			<div class="w3-row">
-				<div class="w3-block w3-theme w3-padding w3-half">Submit</div>
-				<div class="w3-block w3-red w3-padding w3-half">Cancel</div>	
+			<div class="w3-row w3-padding-24">
+				<div class="w3-button w3-theme w3-padding w3-half">Submit</div>
+				<div class="w3-button w3-red w3-padding w3-half">Cancel</div>	
 			</div>
 				
 			</form>

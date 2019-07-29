@@ -40,4 +40,5 @@
 <file name="arrays.php" server="192.168.2.9//var/www/html/" local="132044895548274439" remote="132044895540000000" Dst="2" />
 <file name="pintest.php" server="192.168.2.9//var/www/html/" local="132080020484228929" remote="132080020480000000" Dst="2" />
 <file name="pintest2.php" server="192.168.2.9//var/www/html/" local="132080096946704499" remote="132080096960000000" Dst="2" />
+<file name="contactTest.php" server="192.168.2.9//var/www/html/" local="132088667354494722" remote="132088667350000000" Dst="2" />
 </dwsync>
