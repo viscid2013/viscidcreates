@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['id'])){
-	$oid = $_SESSION['id'];
+	$uid = $_SESSION['id'];
 }
 
 include("vcinfo.inc");
@@ -15,12 +15,12 @@ try {
 							FROM users
 							WHERE uid = :uid
 							"); 
-    $stmt->bindParam(':uid', $oid);
+    $stmt->bindParam(':uid', $uid);
 	$stmt->execute();
 
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 	
-	echo "Logged in as " . $result["first"] . "&nbsp;" . $result["last"];
+	echo "<div class='w3-padding'>Logged in as <span class='vcItalic'>" . $result["first"] . "&nbsp;" . $result["last"] . "</span></div>";
 
 }
 catch(PDOException $e) {

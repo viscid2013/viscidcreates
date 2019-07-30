@@ -41,11 +41,15 @@
 				<label>Email Address:</label>
 			<input type="text" class="w3-input w3-margin-top" id="email_contact" name="email_contact" value="" />
 				<label>Name:</label>
-			<input type="text" class="w3-input w3-margin-top" id="email_contact" name="email_contact" value="" />
+			<input type="text" class="w3-input w3-margin-top" id="name_contact" name="name_contact" value="" />
 				  	<?php }
 
 					  else{
 						  	include("../components/query_contact_info.php");	  
+						  ?>
+			<input type="text" id="email_contact" name="email_contact" value="<?php echo $result["email"] ?>" style="display: none" />
+			<input type="text" id="name_contact" name="name_contact" value="<?php echo $result["first"] . " " . $result["last"] ?>" style="display: none" />				
+					<?php
 					  } ?>
 					<label>Topic:</label>
 				<select id="topic" name="topic" class="w3-input w3-margin-top">
