@@ -705,36 +705,13 @@ function postContact(){
 
 }
 	
-/*function postContact(){
 
-
-	var formEls = document.getElementsByClassName("contact");
-	var formObj = {};
-	var objCont = '{';
-	for( var f=0; f < formEls.length; f++ ){
-		if( f < (formEls.length - 1) ){  
-			objCont += '"' + formEls[f].id + '":"' + formEls[f].value + '",';
-		   }
-		else{
-			objCont += '"' + formEls[f].id + '":"' + formEls[f].value + '"}';	
-		}
-		
-		//alert(formEls[f].value);
-	}
-	alert(objCont);
-	formObj = JSON.parse(objCont);
-
-		postAjax('../components/query_post_contact.php', formObj, function(data){ console.log(data); });
-		
-
-}*/
-	
 function afterContact(result){
 	if(result === "error") {
 	   var msg = "Sorry, something went wrong. Please refresh the page and try again.";
 	   }
 	else {
-	   var msg = "Message sent. Thanks!";
+	   var msg = "<div='w3-card w3-padding'>Message sent. Thanks!</div>";
 	   }
 	document.getElementById("contactContent").innerHTML = msg;
 }
