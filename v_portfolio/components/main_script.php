@@ -691,7 +691,7 @@ function postContact(){
 		if( f < (formEls.length - 1) ){  
 			alert( formEls[f].id );
 			if( formEls[f].id === "details_contact" ){
-			   objCont += '"' + formEls[f].id + '":"' + formEls[f].innerHTML + '",';
+			   objCont += '"' + formEls[f].id + '":"' + formEls[f].value + '",';
 			   }
 			else {
 			   objCont += '"' + formEls[f].id + '":"' + formEls[f].value + '",';
@@ -700,7 +700,7 @@ function postContact(){
 		   }
 		else{
 			if( formEls[f].id === "details_contact" ){
-				objCont += '"' + formEls[f].id + '":"' + formEls[f].innerHTML + '"}';
+				objCont += '"' + formEls[f].id + '":"' + formEls[f].value + '"}';
 			}
 			else {
 				objCont += '"' + formEls[f].id + '":"' + formEls[f].value + '"}';
