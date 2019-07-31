@@ -33,10 +33,10 @@ try {
 	
 	$stmt1 = $conn->prepare("INSERT INTO correspondence (uid, name, email, topic, details, date_of_contact) VALUES (:uid, :name, :email, :topic, :details, :date_c)"); 
 		$stmt1->bindParam(':uid', $uid);
-		$stmt1->bindParam(':name', $name);
-		$stmt1->bindParam(':email', $email);
-		$stmt1->bindParam(':topic', $topic);
-		$stmt1->bindParam(':details', $details);
+		$stmt1->bindParam(':name', $name_contact);
+		$stmt1->bindParam(':email', $email_contact);
+		$stmt1->bindParam(':topic', $topic_contact);
+		$stmt1->bindParam(':details', $details_contact);
 		$stmt1->bindParam(':date_c', $date_contact);
 		
 	
