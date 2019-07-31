@@ -689,6 +689,41 @@ function postContact(){
 	var objCont = '{';
 	for( var f=0; f < formEls.length; f++ ){
 		if( f < (formEls.length - 1) ){  
+			if( formEls[f].id === "details_contact" ){
+			   objCont += '"' + formEls[f].id + '":"' + formEls[f].innerHTML + '",';
+			   }
+			else {
+			   objCont += '"' + formEls[f].id + '":"' + formEls[f].value + '",';
+			   }
+			
+		   }
+		else{
+			if( formEls[f].id === "details_contact" ){
+				objCont += '"' + formEls[f].id + '":"' + formEls[f].innerHTML + '"}';
+			}
+			else {
+				objCont += '"' + formEls[f].id + '":"' + formEls[f].value + '"}';
+			}
+		}
+		
+		//alert(formEls[f].value);
+	}
+	alert(objCont);
+	formObj = JSON.parse(objCont);
+
+		postAjax('../components/query_post_contact.php', formObj, function(data){ console.log(data); });
+		
+
+}
+	
+/*function postContact(){
+
+
+	var formEls = document.getElementsByClassName("contact");
+	var formObj = {};
+	var objCont = '{';
+	for( var f=0; f < formEls.length; f++ ){
+		if( f < (formEls.length - 1) ){  
 			objCont += '"' + formEls[f].id + '":"' + formEls[f].value + '",';
 		   }
 		else{
@@ -703,7 +738,7 @@ function postContact(){
 		postAjax('../components/query_post_contact.php', formObj, function(data){ console.log(data); });
 		
 
-}
+}*/
 	
 function afterContact(result){
 	if(result === "error") {
