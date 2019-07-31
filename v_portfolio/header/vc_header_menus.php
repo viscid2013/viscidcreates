@@ -58,7 +58,7 @@
 					<option value="custom">Custom work</option>
 				</select>
 					<label>Details:</label>
-				<textarea id="details_contact" name="details_contact" class"w3-input w3-margin-top contact"></textarea>
+				<textarea id="details_contact" name="details_contact" class"w3-input w3-margin-top contact" style="width: 100%"></textarea>
 			<div class="w3-row w3-padding-24">
 				<div class="w3-button w3-theme w3-padding w3-half" onClick="postContact()">Submit</div>
 				<div class="w3-button w3-theme-alertPink w3-padding w3-half" onclick="document.getElementById('contact_modal').style.display='none'">Cancel</div>	
