@@ -697,7 +697,7 @@ function postContact(){
 		
 		//alert(formEls[f].value);
 	}
-	//alert(objCont);
+	alert(objCont);
 	formObj = JSON.parse(objCont);
 
 		postAjax('../components/query_post_contact.php', formObj, function(data){ console.log(data); });
