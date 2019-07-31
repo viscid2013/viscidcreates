@@ -689,6 +689,7 @@ function postContact(){
 	var objCont = '{';
 	for( var f=0; f < formEls.length; f++ ){
 		if( f < (formEls.length - 1) ){  
+			alert( formEls[f].id );
 			if( formEls[f].id === "details_contact" ){
 			   objCont += '"' + formEls[f].id + '":"' + formEls[f].innerHTML + '",';
 			   }
