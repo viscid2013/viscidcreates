@@ -1,5 +1,15 @@
+<?php
+
+if( isset( $_REQUEST['uid'] ) ){
+	$uid = $_REQUEST['uid'];
+}
+
+?>
+
 <form name="contact_form" id="contact_form">
-			<?php if (!isset($_SESSION['loggedin'])) { ?>
+			<?php if ( !isset( $_REQUEST['uid'] ) ) { 
+						
+				?>
 				<label>Email Address:</label>
 			<input type="text" class="w3-input w3-margin-top contact" id="email_contact" name="email_contact" value="" />
 				<label>Name:</label>
@@ -7,7 +17,31 @@
 				  	<?php }
 
 					  else{
-						  	include("../components/query_contact_info.php");	  
+		
+							include("vcinfo.inc");
+
+							//echo '{"order":';
+
+							try {
+								$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+								$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+								$stmt = $conn->prepare("SELECT first, last, email, address1, address2, city, state, zip, avatar_link, bgPos, bgSize, date_of_birth, date_created
+														FROM users
+														WHERE uid = :uid
+														"); 
+								$stmt->bindParam(':uid', $uid);
+								$stmt->execute();
+
+								$result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+								echo "<div class='w3-padding'>Logged in as <span class='vcItalic'>" . $result["first"] . "&nbsp;" . $result["last"] . "</span></div>";
+
+							}
+							catch(PDOException $e) {
+								echo "Error: " . $e->getMessage();
+							}
+							$conn = null;
+
 						  ?>
 			<input type="text" class="contact" id="email_contact" name="email_contact" value="<?php echo $result["email"] ?>" style="display: none" />
 			<input type="text" class="contact" id="name_contact" name="name_contact" value="<?php echo $result["first"] . " " . $result["last"] ?>" style="display: none" />				

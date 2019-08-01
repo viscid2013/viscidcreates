@@ -168,16 +168,17 @@ function w3_close(menuid) {
 	 
 }
 	
-function openContact(){
+function openContact(uid){
+	var uid = uid;
 	w3_close('mySidebar');
-	loadPage('../components/contactForm.php', loadContact);
+	loadPage('../components/contactForm.php?uid=' + uid, loadContact);
 	
 }
 	
 function loadContact(xhttp){
 	var form = xhttp.responseText;
-	document.getElementById('contact_modal').style.display='block';
 	document.getElementById('contactContent').innerHTML = form;
+	document.getElementById('contact_modal').style.display='block';
 }
 	
 function loadLogin(where) {

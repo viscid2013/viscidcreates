@@ -8,7 +8,18 @@
   </a>
   <div class="w3-bar-block w3-center">
     <a href="vc_home.php" class="w3-bar-item w3-button w3-text-light-grey w3-hover-black">Home</a>
-	<a href="#" class="w3-bar-item w3-button w3-text-light-grey w3-hover-black" onclick="openContact()">Contact</a>
+	<?php if (isset($_SESSION['loggedin'])) { ?>
+	<a href="#" class="w3-bar-item w3-button w3-text-light-grey w3-hover-black" onclick="openContact( '<?php echo $_SESSION['id']; ?>' )">Contact</a>
+	  	<?php }
+
+	  else{
+	  ?>	  
+	<a href="#" class="w3-bar-item w3-button w3-text-light-grey w3-hover-black" onclick="openContact('none')">Contact</a>
+	  <?php     		  
+		  
+	  }
+	  
+	  ?>
 	<a href="vc_bio.php" class="w3-bar-item w3-button w3-text-light-grey w3-hover-black">Bio</a>
 	<?php if (!isset($_SESSION['loggedin'])) { ?>
 	<a href="vc_account.php" class="w3-bar-item w3-button w3-text-light-grey w3-hover-black">Log In</a>
