@@ -148,6 +148,7 @@ function openAccordion(){
 function w3_open(menuid,size) {
   document.getElementById(menuid).style.width = size;
   document.getElementById(menuid).style.display = "block";
+	
 if( menuid !== 'avatar_modal' && menuid !== 'edit_avatar_modal' && menuid !== 'delete_avatar_modal' && menuid != 'cart_modal' ) {
   document.getElementById("transBackMain").style.display = "block";
   document.getElementById("transBackMain").style.width = "100%";
@@ -169,7 +170,14 @@ function w3_close(menuid) {
 	
 function openContact(){
 	w3_close('mySidebar');
+	loadPage('../components/contactForm.php', loadContact);
+	
+}
+	
+function loadContact(xhttp){
+	var form = xhttp.responseText;
 	document.getElementById('contact_modal').style.display='block';
+	document.getElementById('contactContent').innerHTML = form;
 }
 	
 function loadLogin(where) {
