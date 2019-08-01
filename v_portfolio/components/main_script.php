@@ -694,9 +694,22 @@ function postContact(){
 
 
 	var formEls = document.getElementsByClassName("contact");
+	var formVals = document.getElementsByClassName("contactV")
+	var fel = formEls.length;
+	var vNum = 0;
+	
+	for( var fv=0; fv < fel; fv++ ){
+		if( formEls[fv].value === "" ){
+			formVals[fv].innerHTML = "Field required";
+			vNum++;
+		}
+	}
+	
+	if( vNum < 1 ) {
+
 	var formObj = {};
 	var objCont = '{';
-	for( var f=0; f < formEls.length; f++ ){
+	for( var f=0; f < fel; f++ ){
 		if( f < (formEls.length - 1) ){  
 			   objCont += '"' + formEls[f].id + '":"' + formEls[f].value + '",';
 		   }
@@ -711,6 +724,7 @@ function postContact(){
 
 		postAjax('../components/query_post_contact.php', formObj, function(data){ console.log(data); });
 		
+	}//end if Vnum
 
 }
 	

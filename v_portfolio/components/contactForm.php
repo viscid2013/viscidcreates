@@ -12,8 +12,10 @@ if( isset( $_REQUEST['uid'] ) ){
 				?>
 				<label>Email Address:</label>
 			<input type="text" class="w3-input w3-margin-top contact" id="email_contact" name="email_contact" value="" />
+				<div class="contactV w3-padding w3-text-red" style="display: none"></div>
 				<label>Name:</label>
 			<input type="text" class="w3-input w3-margin-top contact" id="name_contact" name="name_contact" value="" />
+				<div class="contactV w3-padding w3-text-red" style="display: none"></div>
 				  	<?php }
 
 					  else{
@@ -53,9 +55,10 @@ if( isset( $_REQUEST['uid'] ) ){
 					<option value="order">Order I placed</option>
 					<option value="custom">Custom work</option>
 				</select>
+					<div class="contactV w3-padding w3-text-red" style="display: none"></div>
 					<label>Details:</label>
 				<textarea class="contact w3-input w3-margin-top" id="details_contact" style="width: 100%"></textarea>
-				<!--<textarea class"w3-input w3-margin-top contact" id="details_contact" name="details_contact" style="width: 100%"></textarea>-->
+					<div class="contactV w3-padding w3-text-red" style="display: none"></div>
 			<div class="w3-row w3-padding-24">
 				<div class="w3-button w3-theme w3-padding w3-half" onClick="postContact()">Submit</div>
 				<div class="w3-button w3-theme-alertPink w3-padding w3-half" onclick="document.getElementById('contact_modal').style.display='none'">Cancel</div>	
