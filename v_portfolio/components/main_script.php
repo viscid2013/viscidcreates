@@ -701,6 +701,7 @@ function postContact(){
 	for( var fv=0; fv < fel; fv++ ){
 		if( formEls[fv].value === "" ){
 			formVals[fv].innerHTML = "Field required";
+			formVals[fv].style.display = "block";
 			vNum++;
 		}
 	}
