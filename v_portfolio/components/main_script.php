@@ -694,16 +694,32 @@ function postContact(){
 
 
 	var formEls = document.getElementsByClassName("contact");
-	var formVals = document.getElementsByClassName("contactV")
+	var formVals = document.getElementsByClassName("contactV");
+	//var formVe = document.getElementsByClassName("contactVmail");
 	var fel = formEls.length;
 	var vNum = 0;
 	
 	for( var fv=0; fv < fel; fv++ ){
-		alert( formVals[fv].id );
+		//alert( formVals[fv].id );
 		if( formEls[fv].value === "" ){
 			formVals[fv].innerHTML = "Field required";
 			formVals[fv].style.display = "block";
 			vNum++;
+		}
+		else if( formEls[fv].id === "email_contact" ) {
+				if ( /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(formEls[fv].value) )
+  				{
+    				formEls[fv].style.display = "none";
+  				}
+				else{
+					formVals[fv].innerHTML = "Please enter valid email";
+					formVals[fv].style.display = "block";
+    				vNum++;
+				}
+    					
+		}//end else if
+		else {
+			vNum = 0;
 		}
 	}
 	
