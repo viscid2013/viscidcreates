@@ -699,6 +699,7 @@ function postContact(){
 	var vNum = 0;
 	
 	for( var fv=0; fv < fel; fv++ ){
+		alert( formVals[fv].id );
 		if( formEls[fv].value === "" ){
 			formVals[fv].innerHTML = "Field required";
 			formVals[fv].style.display = "block";
