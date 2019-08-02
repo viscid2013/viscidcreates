@@ -7,7 +7,7 @@ if( isset( $_REQUEST['uid'] ) ){
 ?>
 
 <form name="contact_form" id="contact_form">
-			<?php if ( !isset( $_REQUEST['uid'] ) ) { 
+			<?php if ( !isset( $_SESSION['id'] ) ) { 
 						
 				?>
 				<label>Email Address:</label>
