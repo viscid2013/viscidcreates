@@ -705,23 +705,18 @@ function postContact(){
 			formVals[fv].innerHTML = "Field required";
 			formVals[fv].style.display = "block";
 			vNum++;
-		}
-		else if( formEls[fv].id === "email_contact" ) {
-				if ( /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(formEls[fv].value) )
-  				{
-    				formEls[fv].style.display = "none";
-  				}
-				else{
+		}//end if
+		else if( formEls[fv].id === "email_contact" && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test( formEls[fv].value ) !== true ) {
+
 					formVals[fv].innerHTML = "Please enter valid email";
 					formVals[fv].style.display = "block";
     				vNum++;
-				}
-    					
+			
 		}//end else if
 		else {
 			vNum = 0;
-		}
-	}
+		}//end else
+	}//end for
 	
 	if( vNum < 1 ) {
 
