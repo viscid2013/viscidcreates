@@ -216,6 +216,16 @@
 	opacity: 0;
 }
 
+#idDo{
+	margin-left: 10%; 
+	margin-top: 165px; 
+}
+
+#idAm{
+	margin-left: 25%; 
+	margin-top: 35px; 
+}
+
 /* Slider Switches */
 .switch {
   position: relative;
@@ -357,6 +367,14 @@ input:checked + .tSlider:before {
 	width: 30%;
 }
 	
+#idDo{
+	width: 45%
+}
+
+#idAm{
+	width: 45%
+}
+	
 }/* end large styles */
 
 /* Medium-specific styles */
@@ -431,6 +449,14 @@ input:checked + .tSlider:before {
 	
 #cart_modal_content{
 	width: 65%;
+}
+	
+#idDo{
+	width: 65%
+}
+
+#idAm{
+	width: 65%
 }
 	
 }/* end medium styles */
@@ -522,6 +548,14 @@ input:checked + .tSlider:before {
 	
 #cart_modal_content{
 	width: 90%;
+}
+	
+#idDo{
+	width: 85%
+}
+
+#idAm{
+	width: 85%
 }
 	
 }/* end small styles */
