@@ -216,6 +216,14 @@
 	opacity: 0;
 }
 
+#bioBody{
+	width: 100%;
+	height: auto; 
+	margin-top: 150px;
+	background-image: url('../branding_icons/bio_sequence.png'); 
+	background-repeat: no-repeat; 
+}
+
 #idDo{
 	margin-left: 10%; 
 	margin-top: 165px; 
@@ -367,6 +375,10 @@ input:checked + .tSlider:before {
 	width: 30%;
 }
 	
+#bioBody{
+	background-size: 50%;
+}
+	
 #idDo{
 	width: 45%
 }
@@ -449,6 +461,10 @@ input:checked + .tSlider:before {
 	
 #cart_modal_content{
 	width: 65%;
+}
+
+#bioBody{
+	background-size: 70%;
 }
 	
 #idDo{
@@ -548,6 +564,10 @@ input:checked + .tSlider:before {
 	
 #cart_modal_content{
 	width: 90%;
+}
+	
+#bioBody{
+	background-size: 100%;
 }
 	
 #idDo{
