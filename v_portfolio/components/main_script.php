@@ -844,6 +844,12 @@ function showShare( xhttp, sid, loc, iid){
 	var shareBtn = document.getElementById(sid);
 	var pos = offset(shareBtn);
 	
+	if( loc === "s" ){
+	var sbz = shareBtn.style.zIndex;
+	var shz = share.style.zIndex;
+		share.style.zIndex = (sbz + 1);
+	}
+	
 	var fbBtn = document.getElementById("fbBtn");
 	fbBtn.value = img;
 	
