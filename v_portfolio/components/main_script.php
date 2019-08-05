@@ -848,7 +848,7 @@ function showShare( xhttp, sid, loc, iid){
 	var sbz = shareBtn.style.zIndex;
 	var shz = share.style.zIndex;
 		alert( "Share button z: " + sbz + " | Share div z: " + shz );
-		share.style.zIndex = (sbz + 1);
+		share.style.zIndex = 20;
 	}
 	
 	var fbBtn = document.getElementById("fbBtn");
