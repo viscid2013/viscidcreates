@@ -844,12 +844,12 @@ function showShare( xhttp, sid, loc, iid){
 	var shareBtn = document.getElementById(sid);
 	var pos = offset(shareBtn);
 
-	if( loc === "s" ){
+	/*if( loc === "s" ){
 	var sbz = shareBtn.style.zIndex;
 	var shz = share.style.zIndex;
 		alert( "Share button z: " + sbz + " | Share div z: " + shz );
 		share.style.zIndex = 20;
-	}
+	}*/
 	
 	var fbBtn = document.getElementById("fbBtn");
 	fbBtn.value = img;
