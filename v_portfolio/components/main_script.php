@@ -843,10 +843,11 @@ function showShare( xhttp, sid, loc, iid){
 	var share = document.getElementById("share");
 	var shareBtn = document.getElementById(sid);
 	var pos = offset(shareBtn);
-	alert(loc);
+
 	if( loc === "s" ){
 	var sbz = shareBtn.style.zIndex;
 	var shz = share.style.zIndex;
+		alert( "Share button z: " + sbz + " | Share div z: " + shz );
 		share.style.zIndex = (sbz + 1);
 	}
 	
