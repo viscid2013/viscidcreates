@@ -36,6 +36,12 @@
 .vcItalic{ font-style: italic; color: #333; }
 
 
+/* W3 override attempts */
+
+.w3-modal {
+	z-index: 6 !important;
+}
+
 /* Other styles */
 
 /* Size-Independent styles */
@@ -156,7 +162,7 @@
 	position: absolute; 
 	top: 200px; 
 	left: 200px; 
-	z-index: 6;
+	z-index: 7;
 }
 
 .addCommentBtn {
