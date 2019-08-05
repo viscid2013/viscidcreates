@@ -85,7 +85,8 @@ try {
 				}
 				echo '</div>
 				<div class="w3-cell" onClick="fetchComments(\'s\',\'' . $iid[$ii] . '\')"><span class="vcicon icon-commentsvc"></span>&nbsp;<span id="cNumS_' . $iid[$ii] . '">' . $countC[$ii] . '</span></div>
-				<div class="w3-cell"><span class="vcicon icon-sharevc"></span></div>
+				
+				<div id="shareButtS_' . $iid[$ii] . '" class="w3-cell" onClick="openShare(\'s\', this.id, \'' . $iid[$ii] . '\', \'tumb\')"><span class="vcicon icon-sharevc"></span></div>
 			  </div>
 				<input id="slide_' . $iid[$ii] . '" value="' . ($ii +1) . '" style="display: none;">
 			  <img id="slideImg_' . ($ii +1) . '" class="vcSlidesImg" src="../images/' . $img[$ii] . '" style="width:100%">
