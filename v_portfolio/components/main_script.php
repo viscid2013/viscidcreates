@@ -564,13 +564,14 @@ function entryLimit( entry, wordLimit, cid, mdiv ){
 	var limit = Number(wordLimit);
 	var cid = cid;
 	
-	if( entry.length > limit ){
 		if( mdiv === 'cont' ){
 		   var msgDiv = document.getElementById("contMsg");
 		   }
 		else {
 		  var msgDiv = document.getElementById("commentMsg_" + cid); 
 		   }
+	
+	if( entry.length > limit ){
 	   	
 		msgDiv.innerHTML = entry.length + "/" + limit;
 		msgDiv.style.display = "block";
