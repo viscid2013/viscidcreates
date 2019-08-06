@@ -79,8 +79,9 @@
 	
 <div class="w3-bar w3-white">
   <div class="w3-bar-item">
-	  <span class="w3-button w3-xlarge w3-white w3-hide-small" onclick="w3_open('mySidebar','25%')"><i class="fa fa-bars"></i></span>
-	  <span class="w3-button w3-xlarge w3-white w3-hide-large w3-hide-medium" onclick="w3_open('mySidebar','75%')"><i class="fa fa-bars"></i></span>
+	  <span class="w3-button w3-xlarge w3-white w3-hide-small w3-hide-medium" onclick="w3_open('mySidebar','25%')"><i class="fa fa-bars"></i></span>
+	  <span class="w3-button w3-xlarge w3-white w3-hide-small w3-hide-large" onclick="w3_open('mySidebar','50%')"><i class="fa fa-bars"></i></span>
+	  <span class="w3-button w3-xlarge w3-white w3-hide-large w3-hide-medium" onclick="w3_open('mySidebar','100%')"><i class="fa fa-bars"></i></span>
 	</div>
  	<div class="logoTypeBar w3-bar-item w3-button w3-xlarge w3-center">
 		<a class="iconlink" href="vc_home.php"><img class="logoTypeImage" src="../branding_icons/vc_logotype.svg" alt="viscid creates title image" /></a>

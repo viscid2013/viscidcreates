@@ -39,7 +39,7 @@
 /* W3 override attempts */
 
 .w3-modal {
-	z-index: 6 !important;
+	z-index: 7 !important;
 }
 
 /* Other styles */
@@ -49,13 +49,13 @@
 #mySidebar{
 	display:none;
 	padding-top:50px; 
-	z-index: 5;
+	z-index: 6;
 }
 
 #transBackMain {
 	display:none;
 	padding-top:150px; 
-	z-index: 4;
+	z-index: 5;
 }
 
 #topHeader {
@@ -162,7 +162,7 @@
 	position: absolute; 
 	top: 200px; 
 	left: 200px; 
-	z-index: 7;
+	z-index: 8;
 }
 
 .addCommentBtn {
