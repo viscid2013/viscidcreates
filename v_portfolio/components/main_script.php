@@ -523,14 +523,15 @@ function filterSearch(){
 
 function addFav(xhttp){
 		var favInfo = xhttp.responseText;
+		var favInfoA = favInfo.split("_");
+		var favNum = favInfoA[0];
+		var favId = favInfoA[1];
+	
 	if( favInfo === "false" ){
-	   alert("Please log in to fav a pic!");
+	   var msg = 'Please <a href="vc_account.php" class="w3-bar-item w3-button w3-text-light-grey w3-hover-black">Log In</a> to fav a pic!';
+		var msgDiv = document.getElementById("favcommContent").innerHTML = msg;
 	   }
 	else{
-	var favInfoA = favInfo.split("_");
-	var favNum = favInfoA[0];
-	var favId = favInfoA[1];
-
 	var ficon = document.getElementById("ficon_" + favId);
 	var ficonA = document.getElementById("ficonA_" + favId);
 		
@@ -567,7 +568,7 @@ function entryLimit( entry, wordLimit, cid, mdiv ){
 		if( mdiv === 'cont' ){
 		   var msgDiv = document.getElementById("contMsg");
 		   }
-		else {
+		else ( mdiv === 'comm' ) {
 		  var msgDiv = document.getElementById("commentMsg_" + cid); 
 		   }
 	
