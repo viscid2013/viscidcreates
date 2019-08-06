@@ -700,26 +700,7 @@ function postContact(){
 	var fel = formEls.length;
 	var vNum = 0;
 	
-	/*for( var fv=0; fv < fel; fv++ ){
-		//alert( formVals[fv].id );
-		if( formEls[fv].value === "" ){
-			formVals[fv].innerHTML = "Field required";
-			formVals[fv].style.display = "block";
-			vNum++;
-		}//end if
-		else if( formEls[fv].id === "email_contact" && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test( formEls[fv].value ) !== true ) {
 
-					formVals[fv].innerHTML = "Please enter valid email";
-					formVals[fv].style.display = "block";
-    				vNum++;
-			
-		}//end else if
-		else {
-			vNum = 0;
-		}//end else
-	}*/
-	//end for
-	
 	var formObj = {};
 	var objCont = '{';
 	for( var f=0; f < fel; f++ ){
@@ -761,60 +742,6 @@ function postContact(){
 
 }
 	
-/* 
-
-function postContact(){
-
-
-	var formEls = document.getElementsByClassName("contact");
-	var formVals = document.getElementsByClassName("contactV");
-	//var formVe = document.getElementsByClassName("contactVmail");
-	var fel = formEls.length;
-	var vNum = 0;
-	
-	for( var fv=0; fv < fel; fv++ ){
-		//alert( formVals[fv].id );
-		if( formEls[fv].value === "" ){
-			formVals[fv].innerHTML = "Field required";
-			formVals[fv].style.display = "block";
-			vNum++;
-		}//end if
-		else if( formEls[fv].id === "email_contact" && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test( formEls[fv].value ) !== true ) {
-
-					formVals[fv].innerHTML = "Please enter valid email";
-					formVals[fv].style.display = "block";
-    				vNum++;
-			
-		}//end else if
-		else {
-			vNum = 0;
-		}//end else
-	}//end for
-	
-	if( vNum < 1 ) {
-
-	var formObj = {};
-	var objCont = '{';
-	for( var f=0; f < fel; f++ ){
-		if( f < (formEls.length - 1) ){  
-			   objCont += '"' + formEls[f].id + '":"' + formEls[f].value + '",';
-		   }
-		else{
-				objCont += '"' + formEls[f].id + '":"' + formEls[f].value + '"}';
-		}
-		
-		//alert(formEls[f].value);
-	}
-	alert(objCont);
-	formObj = JSON.parse(objCont);
-
-		postAjax('../components/query_post_contact.php', formObj, function(data){ console.log(data); });
-		
-	}//end if Vnum
-
-}
-*/
-
 function afterContact(result){
 	if(result === "error") {
 	   var msg = "Sorry, something went wrong. Please refresh the page and try again.";
