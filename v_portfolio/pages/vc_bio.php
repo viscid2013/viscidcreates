@@ -28,7 +28,7 @@ include("../header/vc_header_menus.php");
 			<div id="idDo" class="w3-card w3-padding w3-white w3-opacity-min">
 				<h3>What I Do</h3>
 				<p>I create illustrations and graphics for a variety of themes and needs, as well as create comics of various sorts.</p>
-				<p>I also am a still-learning web coder and web designer, with a soon-to-be growing body of work on BeAmCreates.com.</p>
+				<p>I also am a still-learning web coder and web designer, with a soon-to-be growing body of work on <a href="http://beamcreates.com">BeAmCreates.com</a>.</p>
 			</div>
 		
 			<div id="idAm" class="w3-card w3-padding w3-white w3-opacity-min">

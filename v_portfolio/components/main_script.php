@@ -559,13 +559,19 @@ function commentCount( xhttp, cid ){
 	document.getElementById("cNum_" + cid).innerHTML = cc;
 }
 
-function entryLimit( entry, wordLimit, cid ){
+function entryLimit( entry, wordLimit, cid, mdiv ){
 	var entry = document.getElementById(entry).value;
 	var limit = Number(wordLimit);
 	var cid = cid;
 	
 	if( entry.length > limit ){
-	   	var msgDiv = document.getElementById("commentMsg_" + cid);
+		if( mdiv === 'cont' ){
+		   var msgDiv = document.getElementById("contMsg");
+		   }
+		else {
+		  var msgDiv = document.getElementById("commentMsg_" + cid); 
+		   }
+	   	
 		msgDiv.innerHTML = entry.length + "/" + limit;
 		msgDiv.style.display = "block";
 	   }

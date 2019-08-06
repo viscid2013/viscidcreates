@@ -59,7 +59,8 @@ if( isset( $_REQUEST['uid'] ) ){
 				</select>
 					<div id="cv_topic" class="contactV w3-padding w3-text-theme-required" style="display: none"></div>
 					<label>Details:</label>
-				<textarea class="contact w3-input w3-margin-top" id="details_contact" style="width: 100%"></textarea>
+				<div id="contMsg" class="w3-block w3-theme-alertPink" style="display: none; padding: 4px;"></div>
+				<textarea class="contact w3-input w3-margin-top" id="details_contact" style="width: 100%" onKeyUp="entryLimit(this.id,'1000','0','cont')"></textarea>
 					<div id="cv_details" class="contactV w3-padding w3-text-theme-required" style="display: none"></div>
 			<div class="w3-row w3-padding-24">
 				<div class="w3-button w3-theme w3-padding w3-half" onClick="postContact()">Submit</div>
