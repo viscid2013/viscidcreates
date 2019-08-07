@@ -534,13 +534,18 @@ function addFav(xhttp){
 		document.getElementById("favcomm_modal").style.display = "block";
 	   }
 	else{
+	var ficon1 = document.getElementById("ficon1_" + favId);
 	var ficon = document.getElementById("ficon_" + favId);
+	var ficonA1 = document.getElementById("ficonA1_" + favId);
 	var ficonA = document.getElementById("ficonA_" + favId);
 		
 	document.getElementById("favs_" + favId).innerHTML = favNum;
 		
 	document.getElementById("mFavs_" + favId).innerHTML = favNum;
 
+	ficon1.style.display = "none";
+	ficonA1.style.display = "inline-block";
+		
 	ficon.style.display = "none";
 	ficonA.style.display = "inline-block";
 		
