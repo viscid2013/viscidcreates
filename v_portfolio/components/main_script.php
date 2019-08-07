@@ -528,7 +528,7 @@ function addFav(xhttp){
 		var favId = favInfoA[1];
 	
 	if( favInfo === "false" ){
-	   var msg = 'Please <a href="vc_account.php" class="w3-bar-item w3-button w3-text-light-grey w3-hover-black">Log In</a> to fav a pic!';
+	   var msg = 'Please log in to fav a pic!';
 		var msgDiv = document.getElementById("favcommContent").innerHTML = msg;
 	   }
 	else{
