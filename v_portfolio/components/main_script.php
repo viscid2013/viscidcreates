@@ -521,7 +521,7 @@ function filterSearch(){
 	
 }
 
-/*function addFav(xhttp){
+function addFav(xhttp){
 		var favInfo = xhttp.responseText;
 		var favInfoA = favInfo.split("_");
 		var favNum = favInfoA[0];
@@ -542,7 +542,7 @@ function filterSearch(){
 	ficonA.style.display = "inline-block";
 		
 	}	
-}*/
+}
 	
 function fetchComments(loc,iid){
 	var lOc = loc;
