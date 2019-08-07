@@ -521,7 +521,7 @@ function filterSearch(){
 	
 }
 
-function addFav(xhttp){
+/*function addFav(xhttp){
 		var favInfo = xhttp.responseText;
 		var favInfoA = favInfo.split("_");
 		var favNum = favInfoA[0];
@@ -542,7 +542,7 @@ function addFav(xhttp){
 	ficonA.style.display = "inline-block";
 		
 	}	
-}
+}*/
 	
 function fetchComments(loc,iid){
 	var lOc = loc;
@@ -559,7 +559,7 @@ function commentCount( xhttp, cid ){
 	document.getElementById("cNum_" + cid).innerHTML = cc;
 }
 
-/*function entryLimit( entry, wordLimit, cid, mdiv ){
+function entryLimit( entry, wordLimit, cid, mdiv ){
 	var entry = document.getElementById(entry).value;
 	var limit = Number(wordLimit);
 	var cid = cid;
@@ -580,7 +580,7 @@ function commentCount( xhttp, cid ){
 		msgDiv.style.display = "none";
 	}
 	
-}*/
+}
 	
 function parseComments(xhttp,iid, loc){
 	var cInfo = xhttp.responseText;
