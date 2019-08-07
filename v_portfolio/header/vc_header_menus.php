@@ -43,7 +43,7 @@
    <div id="favcomm_modal" class="w3-modal w3-animate-opacity">
     <div id="favcomm_modal_content" class="w3-modal-content w3-card w3-animate-zoom w3-center">
 	<header class="w3-container w3-theme">
-		<h3>Contact Me!</h3>
+		<h3>Please Log in</h3>
 		<span onclick="document.getElementById('favcomm_modal').style.display='none'" class="w3-button w3-display-topright" style="font-size: 170%">&times;</span>
 	</header>
 		<div id="favcommContent" class="w3-container w3-card w3-padding">

@@ -530,6 +530,7 @@ function addFav(xhttp){
 	if( favInfo === "false" ){
 	   var msgDiv = document.getElementById("favcommContent");
 		var msg = 'Please <a href="vc_account.php">Log In</a> to add favorites!';
+		msgDiv.innerHTML = msg;
 		document.getElementById("favcomm_modal").style.display = "block";
 	   }
 	else{
