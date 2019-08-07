@@ -567,7 +567,7 @@ function entryLimit( entry, wordLimit, cid, mdiv ){
 		if( mdiv === 'cont' ){
 		   var msgDiv = document.getElementById("contMsg");
 		   }
-		else ( mdiv === 'comm' ){
+		else if mdiv === 'comm' ){
 		  var msgDiv = document.getElementById("commentMsg_" + cid); 
 		   }
 	
