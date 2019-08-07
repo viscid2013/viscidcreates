@@ -528,7 +528,7 @@ function addFav(xhttp){
 		var favId = favInfoA[1];
 	
 	if( favInfo === "false" ){
-	   "alert("Please log in to fav a pic!");"
+	   alert("Please log in to fav a pic!");
 	   }
 	else{
 	var ficon = document.getElementById("ficon_" + favId);
