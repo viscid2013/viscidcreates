@@ -528,6 +528,32 @@ function addFav(xhttp){
 		var favId = favInfoA[1];
 	
 	if( favInfo === "false" ){
+	   var msgDiv = document.getElementById("favcommContent");
+		var msg = 'Please <a href="vc_account.php">Log In</a> to add favorites!';
+		document.getElementById("favcomm_modal").style.display = "block";
+	   }
+	else{
+	var ficon = document.getElementById("ficon_" + favId);
+	var ficonA = document.getElementById("ficonA_" + favId);
+		
+	document.getElementById("favs_" + favId).innerHTML = favNum;
+		
+	document.getElementById("mFavs_" + favId).innerHTML = favNum;
+
+	ficon.style.display = "none";
+	ficonA.style.display = "inline-block";
+		
+	}	
+}
+	
+/*
+function addFav(xhttp){
+		var favInfo = xhttp.responseText;
+		var favInfoA = favInfo.split("_");
+		var favNum = favInfoA[0];
+		var favId = favInfoA[1];
+	
+	if( favInfo === "false" ){
 	   alert("Please log in to fav a pic!");
 	   }
 	else{
@@ -543,6 +569,7 @@ function addFav(xhttp){
 		
 	}	
 }
+*/
 	
 function fetchComments(loc,iid){
 	var lOc = loc;

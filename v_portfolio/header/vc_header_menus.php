@@ -47,7 +47,7 @@
 		<span onclick="document.getElementById('favcomm_modal').style.display='none'" class="w3-button w3-display-topright" style="font-size: 170%">&times;</span>
 	</header>
 		<div id="favcommContent" class="w3-container w3-card w3-padding">
-			<!-- contacForm.php loaded by ajax call on open -->
+			<!-- load message here -->
 		</div>
     </div>
   </div>
