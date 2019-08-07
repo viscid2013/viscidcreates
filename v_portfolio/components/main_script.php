@@ -559,7 +559,7 @@ function commentCount( xhttp, cid ){
 	document.getElementById("cNum_" + cid).innerHTML = cc;
 }
 
-function entryLimit( entry, wordLimit, cid, mdiv ){
+/*function entryLimit( entry, wordLimit, cid, mdiv ){
 	var entry = document.getElementById(entry).value;
 	var limit = Number(wordLimit);
 	var cid = cid;
@@ -580,7 +580,7 @@ function entryLimit( entry, wordLimit, cid, mdiv ){
 		msgDiv.style.display = "none";
 	}
 	
-}
+}*/
 	
 function parseComments(xhttp,iid, loc){
 	var cInfo = xhttp.responseText;
